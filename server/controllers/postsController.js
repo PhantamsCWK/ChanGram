@@ -1,18 +1,81 @@
+import mongoose from "mongoose";
+import Post from "../models/Post.js";
+import User from "../models/User.js";
+
 
 export const getAllPosts = async (req, res) => {
-    res.status(200).json({ posts: "ini semua posts" });
+    try {
+        const posts = await Post.find();
+
+        res.status(200).json({ posts });
+    } catch (error) {
+        res.status(500).json({ message: error.message });
+    }
 };
 
 export const getUserPosts = async (req, res) => {
-    res.status(200).json({ posts: "ini semua posts" });
+    try {
+        const { author } = req.params;
+
+        const user = await User.findOne({ username: author })
+
+        if(!user) return res.status(404).json({ message: "user not found" });
+
+        const posts = await Post.find({ author });
+
+        res.status(200).json({ posts });
+    } catch (error) {
+        res.status(500).json({ message: error.message });
+    }
+};
+
+export const getPostById = async (req, res) => {
+    try {
+        const { id } = req.params;
+
+        if(!mongoose.Types.ObjectId.isValid(id)) return res.status(400).json({ message: "bad request" });
+
+        const post = await Post.findById(id);
+
+        if(post){
+            res.status(200).json({ post });
+        }
+        
+        res.status(404).json({ message: "post not found" });
+    } catch (error) {
+        res.status(500).json({ message: error.message });
+    }
 };
 
 export const createPost = async (req, res) => {
-    res.status(200).json({ posts: "ini semua posts" });
+    try {
+        const { author, description } = req.body;
+
+        if (!req.file) return res.status(400).json({ message: "response need file" });
+
+        const picture = req.file;
+
+        const newPost = new Post({ 
+            author, 
+            description, 
+            picture_url: picture.path, 
+            picture_id: picture.filename.split("/")[1],
+            likes: {} })
+
+        const result = await newPost.save();
+
+        res.status(201).json({
+            post: result
+        });
+    } catch (error) {
+        res.status(500).json({ message: error.message });
+    }
+
+
 };
 
 export const deletePost = async (req, res) => {
-    res.status(200).json({ posts: "ini semua posts" });
+    res.status(200).json({ posts: "menghapus user" });
 };
 
 export const likePost = async (req, res) => {
