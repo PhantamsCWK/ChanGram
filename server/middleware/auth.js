@@ -15,7 +15,7 @@ export const verification = (req, res, next) => {
 
     const verifyToken = jwt.verify(token, process.env.JWT_SECRET)
 
-    req.userId = verifyToken;
+    req.user = verifyToken;
 
     next();
 };
