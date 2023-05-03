@@ -1,0 +1,55 @@
+[05/03/2023, 15:21:39] myBackendAPI - INFO: POST /auth/login	http://localhost:5173/
+[05/03/2023, 15:21:49] myBackendAPI - INFO: POST /auth/login	http://localhost:5173/
+[05/03/2023, 15:22:23] myBackendAPI - INFO: POST /auth/login	http://localhost:5173/
+[05/03/2023, 15:22:46] myBackendAPI - INFO: GET /posts	undefined
+[05/03/2023, 15:22:59] myBackendAPI - INFO: GET /posts	undefined
+[05/03/2023, 15:24:04] myBackendAPI - INFO: GET /posts	undefined
+[05/03/2023, 15:24:33] myBackendAPI - INFO: GET /posts/643b9cdd7758ab9187dca666	undefined
+[05/03/2023, 15:24:45] myBackendAPI - INFO: GET /posts/643b9cdd7758ab9187dca666	undefined
+[05/03/2023, 15:24:45] myBackendAPI - ERROR: Error: Cannot set headers after they are sent to the client	GET /posts/643b9cdd7758ab9187dca666	undefined
+[05/03/2023, 15:26:11] myBackendAPI - INFO: GET /posts/643b9cdd7758ab9187dca666	undefined
+[05/03/2023, 15:30:32] myBackendAPI - INFO: POST /posts	undefined
+[05/03/2023, 15:30:49] myBackendAPI - INFO: POST /posts	undefined
+[05/03/2023, 15:31:55] myBackendAPI - INFO: POST /posts	undefined
+[05/03/2023, 15:33:33] myBackendAPI - INFO: GET /posts/test-test/user	undefined
+[05/03/2023, 15:35:07] myBackendAPI - INFO: GET /posts/64521bff66849083f2ee295b/like	undefined
+[05/03/2023, 15:35:07] myBackendAPI - ERROR: error not found
+[05/03/2023, 15:36:54] myBackendAPI - INFO: GET /posts/64521bff66849083f2ee295b/like	undefined
+[05/03/2023, 15:36:54] myBackendAPI - ERROR: error not found
+[05/03/2023, 15:37:12] myBackendAPI - INFO: PATCH /posts/64521bff66849083f2ee295b/like	undefined
+[05/03/2023, 15:39:26] myBackendAPI - INFO: PATCH /posts/64521bff66849083f2ee295b/like	undefined
+[05/03/2023, 15:39:26] myBackendAPI - ERROR: TypeError: Post.findByid is not a function	PATCH /posts/64521bff66849083f2ee295b/like	undefined
+[05/03/2023, 15:40:09] myBackendAPI - INFO: PATCH /posts/64521bff66849083f2ee295b/like	undefined
+[05/03/2023, 15:40:37] myBackendAPI - INFO: PATCH /posts/64521bff66849083f2ee295b/like	undefined
+[05/03/2023, 15:40:37] myBackendAPI - INFO: PATCH /posts/64521bff66849083f2ee295b/like	undefined
+[05/03/2023, 15:40:39] myBackendAPI - INFO: PATCH /posts/64521bff66849083f2ee295b/like	undefined
+[05/03/2023, 15:40:40] myBackendAPI - INFO: PATCH /posts/64521bff66849083f2ee295b/like	undefined
+[05/03/2023, 15:40:41] myBackendAPI - INFO: PATCH /posts/64521bff66849083f2ee295b/like	undefined
+[05/03/2023, 15:40:51] myBackendAPI - INFO: GET /posts/64521bff66849083f2ee295b	undefined
+[05/03/2023, 15:41:12] myBackendAPI - INFO: GET /posts/test-test/user	undefined
+[05/03/2023, 15:41:33] myBackendAPI - INFO: DELETE /posts/64521bff66849083f2ee295b	undefined
+[05/03/2023, 15:42:07] myBackendAPI - INFO: GET /posts/643b9cdd7758ab9187dca666	undefined
+[05/03/2023, 15:42:11] myBackendAPI - INFO: GET /posts/test-test/user	undefined
+[05/03/2023, 15:47:11] myBackendAPI - INFO: GET /users	undefined
+[05/03/2023, 15:47:11] myBackendAPI - ERROR: error not found
+[05/03/2023, 15:48:07] myBackendAPI - INFO: GET /users/644a2e70f0ec98615ec56dc5	undefined
+[05/03/2023, 15:48:07] myBackendAPI - ERROR: error not found
+[05/03/2023, 15:48:19] myBackendAPI - INFO: GET /user/644a2e70f0ec98615ec56dc5	undefined
+[05/03/2023, 15:48:29] myBackendAPI - INFO: GET /user/test-test	undefined
+[05/03/2023, 15:49:11] myBackendAPI - INFO: GET /user/test-test/following	undefined
+[05/03/2023, 15:49:16] myBackendAPI - INFO: GET /user/test-test/follower	undefined
+[05/03/2023, 15:49:23] myBackendAPI - INFO: PATCH /user/test-test	undefined
+[05/03/2023, 15:50:16] myBackendAPI - INFO: GET /user/test-test	undefined
+[05/03/2023, 15:50:19] myBackendAPI - INFO: PATCH /user/test-test	undefined
+[05/03/2023, 15:50:19] myBackendAPI - ERROR: CastError: Cast to ObjectId failed for value "test-test" (type string) at path "_id" for model "Users"	PATCH /user/test-test	undefined
+[05/03/2023, 15:55:01] myBackendAPI - INFO: GET /user/test-test	undefined
+[05/03/2023, 15:55:04] myBackendAPI - INFO: GET /user/test-test/following	undefined
+[05/03/2023, 15:55:07] myBackendAPI - INFO: GET /user/test-test/follower	undefined
+[05/03/2023, 15:55:07] myBackendAPI - ERROR: CastError: Cast to ObjectId failed for value "test-test" (type string) at path "_id" for model "Users"	GET /user/test-test/follower	undefined
+[05/03/2023, 15:55:14] myBackendAPI - INFO: PATCH /user/test-test	undefined
+[05/03/2023, 15:55:18] myBackendAPI - INFO: PATCH /user/test-test	undefined
+[05/03/2023, 15:55:20] myBackendAPI - INFO: PATCH /user/test-test	undefined
+[05/03/2023, 15:55:27] myBackendAPI - INFO: GET /user/test-test/follower	undefined
+[05/03/2023, 15:55:27] myBackendAPI - ERROR: CastError: Cast to ObjectId failed for value "test-test" (type string) at path "_id" for model "Users"	GET /user/test-test/follower	undefined
+[05/03/2023, 15:56:14] myBackendAPI - INFO: GET /user/test-test/follower	undefined
+[05/03/2023, 15:56:18] myBackendAPI - INFO: GET /user/test-test/following	undefined

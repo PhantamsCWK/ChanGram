@@ -1,0 +1,9 @@
+[05/03/2023, 15:24:45] myBackendAPI - ERROR: Error: Cannot set headers after they are sent to the client	GET /posts/643b9cdd7758ab9187dca666	undefined
+[05/03/2023, 15:35:07] myBackendAPI - ERROR: error not found
+[05/03/2023, 15:36:54] myBackendAPI - ERROR: error not found
+[05/03/2023, 15:39:26] myBackendAPI - ERROR: TypeError: Post.findByid is not a function	PATCH /posts/64521bff66849083f2ee295b/like	undefined
+[05/03/2023, 15:47:11] myBackendAPI - ERROR: error not found
+[05/03/2023, 15:48:07] myBackendAPI - ERROR: error not found
+[05/03/2023, 15:50:19] myBackendAPI - ERROR: CastError: Cast to ObjectId failed for value "test-test" (type string) at path "_id" for model "Users"	PATCH /user/test-test	undefined
+[05/03/2023, 15:55:07] myBackendAPI - ERROR: CastError: Cast to ObjectId failed for value "test-test" (type string) at path "_id" for model "Users"	GET /user/test-test/follower	undefined
+[05/03/2023, 15:55:27] myBackendAPI - ERROR: CastError: Cast to ObjectId failed for value "test-test" (type string) at path "_id" for model "Users"	GET /user/test-test/follower	undefined

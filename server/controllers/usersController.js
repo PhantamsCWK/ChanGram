@@ -1,6 +1,6 @@
 import User from "../models/User.js";
 
-export const getUser = async (req, res) => {
+export const getUser = async (req, res, next) => {
     try {
         const { unique } = req.params;
 
@@ -10,11 +10,11 @@ export const getUser = async (req, res) => {
 
         res.status(200).json({ user });
     } catch (error) {
-        res.status(500).json({ message: error.message });
+        next(error);
     }
 }
 
-export const getFollowingUser = async (req, res) => {
+export const getFollowingUser = async (req, res, next) => {
     try {
         const { unique } = req.params;
 
@@ -26,11 +26,11 @@ export const getFollowingUser = async (req, res) => {
 
         res.status(200).json({ following });
     } catch (error) {
-        res.status(500).json({ message: error.message });
+        next(error);
     }
 }
 
-export const getFollowerUser = async (req, res) => {
+export const getFollowerUser = async (req, res, next) => {
     try {
         const { unique } = req.params;
 
@@ -42,33 +42,33 @@ export const getFollowerUser = async (req, res) => {
 
         res.status(200).json({ follower });
     } catch (error) {
-        res.status(500).json({ message: error.message });
+        next(error);
     }
 }
 
-export const addRemoveFollow = async (req, res) => {
+export const addRemoveFollow = async (req, res, next) => {
     try {
         const { unique } = req.params;
-        const user_id = req.user._id;
+        const username = req.user.username;
 
         const followUser = await User.findOne({ username: unique });
-        const currentUser = await User.findById(user_id);
+        const currentUser = await User.findOne({ username });
 
         if (currentUser.following.includes(followUser._id.toString())) {
             currentUser.following = currentUser.following.filter(follow => follow !== followUser._id.toString());
-            followUser.follower = followUser.follower.filter(follow => follow !== user_id);
+            followUser.follower = followUser.follower.filter(follow => follow !== currentUser._id.toString());
         } else {
             currentUser.following.push(followUser._id.toString());
-            followUser.follower.push(user_id);
+            followUser.follower.push(currentUser._id.toString());
         }
 
 
-        await User.findByIdAndUpdate(followUser._id, { follower: followUser.follower });
-        const updatedCurrentUser = await User.findByIdAndUpdate(user_id, { following: currentUser.following }, { new: true });
+        await User.findOneAndUpdate({ username: unique}, { follower: followUser.follower });
+        const updatedCurrentUser = await User.findOneAndUpdate({ username }, { following: currentUser.following }, { new: true });
 
         res.status(202).json({ following: updatedCurrentUser.following, follower: updatedCurrentUser.follower });
     } catch (error) {
-        res.status(500).json({ message: error.message });
+        next(error);
     }
 }
 

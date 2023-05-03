@@ -9,13 +9,18 @@ export const verification = (req, res, next) => {
  
     if (!token) return res.status(403).json({ message: "Access denied"});
 
-    if (!token.startsWith("Shield ")) return res.status(403).json({ message: "Access denied"});
+    if (!token.startsWith("Bearer ")) return res.status(403).json({ message: "Access denied"});
 
     token = token.slice(7, token.length).trimStart();
 
-    const verifyToken = jwt.verify(token, process.env.JWT_SECRET)
+    jwt.verify(
+        token,
+        process.env.ACCESS_TOKEN_SECRET,
+        async (err, decode) => {
+            if (err) return res.sendStatus(403)
 
-    req.user = verifyToken;
-
-    next();
+            req.user = decode;
+            next();
+        }
+    )
 };

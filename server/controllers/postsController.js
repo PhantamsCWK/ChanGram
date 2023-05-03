@@ -4,16 +4,16 @@ import User from "../models/User.js";
 import cloudinary from "../config/cloudinary.js";
 
 
-export const getAllPosts = async (req, res) => {
+export const getAllPosts = async (req, res, next) => {
     try {
         const posts = await Post.find();
         res.status(200).json({ posts });
     } catch (error) {
-        res.status(500).json({ message: error.message });
+        next(error);
     }
 };
 
-export const getUserPosts = async (req, res) => {
+export const getUserPosts = async (req, res, next) => {
     try {
         const { author } = req.params;
 
@@ -25,11 +25,11 @@ export const getUserPosts = async (req, res) => {
 
         res.status(200).json({ posts });
     } catch (error) {
-        res.status(500).json({ message: error.message });
+        next(error);
     }
 };
 
-export const getPostById = async (req, res) => {
+export const getPostById = async (req, res, next) => {
     try {
         const { id } = req.params;
 
@@ -37,26 +37,24 @@ export const getPostById = async (req, res) => {
 
         const post = await Post.findById(id);
 
-        if(post){
-            res.status(200).json({ post });
-        }
+        if(!post) return res.status(404).json({ message: "post not found" });
         
-        res.status(404).json({ message: "post not found" });
+        res.status(200).json({ post });
     } catch (error) {
-        res.status(500).json({ message: error.message });
+        next(error);
     }
 };
 
-export const createPost = async (req, res) => {
+export const createPost = async (req, res, next) => {
     try {
-        const { author, description } = req.body;
+        const { description } = req.body;
 
         if (!req.file) return res.status(400).json({ message: "response need file" });
 
         const picture = req.file;
 
         const newPost = new Post({ 
-            author, 
+            author: req.user.username, 
             description, 
             picture_url: picture.path, 
             picture_id: picture.filename,
@@ -68,13 +66,13 @@ export const createPost = async (req, res) => {
             post: result
         });
     } catch (error) {
-        res.status(500).json({ message: error.message });
+        next(error)
     }
 
 
 };
 
-export const deletePost = async (req, res) => {
+export const deletePost = async (req, res, next) => {
     try {
         const { id } = req.params;
         const post =  await Post.findById(id);
@@ -89,25 +87,25 @@ export const deletePost = async (req, res) => {
     
         res.status(200).json({ post: deletedPost });
     } catch (error) {
-        res.status(500).json({ message: error.message });
+        next(error);
     }
 };
 
-export const likePost = async (req, res) => {
+export const likePost = async (req, res, next) => {
     try {
         const { id: post_id } = req.params;
-        const user_id = req.user._id;
+        const username = req.user.username;
 
         const post =  await Post.findById(post_id);
         
         if (!post) return res.status(400).json({ message: "post not found"});
 
-        const isLiked = post.likes.has(user_id);
+        const isLiked = post.likes.has(username);
 
         if(isLiked){
-            post.likes.delete(user_id);
+            post.likes.delete(username);
         } else {
-            post.likes.set(user_id, true);
+            post.likes.set(username, true);
         }
 
         const updatedPost = await Post.findByIdAndUpdate(
@@ -118,6 +116,6 @@ export const likePost = async (req, res) => {
 
         res.status(200).json({ post: updatedPost });
     } catch (error) {
-        res.status(500).json({ message: error.message });
+        next(error);
     }
 };

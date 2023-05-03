@@ -5,7 +5,7 @@ import * as dotenv from "dotenv";
 
 dotenv.config();
 
-export const register = async (req, res) => {
+export const register = async (req, res, next) => {
     try {
         const { username, password, email } = req.body;
         
@@ -18,11 +18,11 @@ export const register = async (req, res) => {
 
         res.status(201).json({ userAccount });
     } catch (error) {
-        res.status(500).json({ message: error.message })
+        next(error);
     }
 };
 
-export const login = async (req, res) => {
+export const login = async (req, res, next) => {
     try {
         const { email, password } = req.body;
         
@@ -34,14 +34,67 @@ export const login = async (req, res) => {
 
         if(!isCorrect) return res.status(400).json({ message: "User or Password Wrong"});
 
-        const token = jwt.sign({ _id: user._id }, process.env.JWT_SECRET, { expiresIn: "1h" });
-        
+        const accessToken = jwt.sign(
+            { username: user.username },
+            process.env.ACCESS_TOKEN_SECRET,
+            { expiresIn: "12h" }
+        );
+
+        const refreshToken = jwt.sign(
+            { username: user.username },
+            process.env.REFRESH_TOKEN_SECRET,
+            { expiresIn: "7d" }
+        );
+
+        res.cookie("jwt", refreshToken, {
+            httpOnly: true, //accessible only by web server 
+            // secure: true, //https
+            sameSite: 'None', //cross-site cookie 
+            maxAge: 7 * 24 * 60 * 60 * 1000
+         });
+
         user.password = undefined;
 
-        res.status(202).json({ token, user });
+        res.status(202).json({ accessToken, user });
 
     } catch (error) {
-        res.status(400).json({ message: error.message });
+        res.status(400);
+        next(error);
     }
-
 };
+
+
+export const refreshToken = (req, res) => {
+    const cookies = req.cookies;
+
+    if (!cookies?.jwt) return res.status(401).json({ message: 'Unauthorized' })
+
+    const refreshToken = cookies?.jwt;
+
+    jwt.verify(
+        refreshToken,
+        process.env.REFRESH_TOKEN_SECRET, 
+        async (err, decode) => {
+            if (err) res.sendStatus(403);
+
+            const user = await User.findById(decode?._id);
+
+            if (!user) res.sendStatus(401);
+
+            const accessToken = jwt.sign(
+                { username: user.username },
+                process.env.ACCESS_TOKEN_SECRET,
+                { expiresIn: "30s" }
+            );
+
+            res.status(200).json({ accessToken });
+        }
+    )
+}
+
+export const logout = async (req, res) => {
+    const cookies = req.cookies
+    if (!cookies?.jwt) return res.sendStatus(204) //No content
+    res.clearCookie('jwt', { httpOnly: true, sameSite: 'None', secure: true })
+    res.json({ message: 'Cookie cleared' })
+}
