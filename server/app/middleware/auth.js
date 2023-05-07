@@ -17,7 +17,7 @@ export const verification = (req, res, next) => {
         token,
         process.env.ACCESS_TOKEN_SECRET,
         async (err, decode) => {
-            if (err) return res.sendStatus(403)
+            if (err) return res.status(403).json({ message: err });
 
             req.user = decode;
             next();

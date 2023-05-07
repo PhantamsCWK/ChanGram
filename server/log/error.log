@@ -1,9 +1,44 @@
-[05/03/2023, 15:24:45] myBackendAPI - ERROR: Error: Cannot set headers after they are sent to the client	GET /posts/643b9cdd7758ab9187dca666	undefined
-[05/03/2023, 15:35:07] myBackendAPI - ERROR: error not found
-[05/03/2023, 15:36:54] myBackendAPI - ERROR: error not found
-[05/03/2023, 15:39:26] myBackendAPI - ERROR: TypeError: Post.findByid is not a function	PATCH /posts/64521bff66849083f2ee295b/like	undefined
-[05/03/2023, 15:47:11] myBackendAPI - ERROR: error not found
-[05/03/2023, 15:48:07] myBackendAPI - ERROR: error not found
-[05/03/2023, 15:50:19] myBackendAPI - ERROR: CastError: Cast to ObjectId failed for value "test-test" (type string) at path "_id" for model "Users"	PATCH /user/test-test	undefined
-[05/03/2023, 15:55:07] myBackendAPI - ERROR: CastError: Cast to ObjectId failed for value "test-test" (type string) at path "_id" for model "Users"	GET /user/test-test/follower	undefined
-[05/03/2023, 15:55:27] myBackendAPI - ERROR: CastError: Cast to ObjectId failed for value "test-test" (type string) at path "_id" for model "Users"	GET /user/test-test/follower	undefined
+[05/06/2023, 13:19:50] myBackendAPI - ERROR: error not found
+[05/06/2023, 13:29:54] myBackendAPI - ERROR: error not found
+[05/06/2023, 13:30:05] myBackendAPI - ERROR: Error: data and hash arguments required	POST /auth/login	undefined
+[05/06/2023, 13:35:58] myBackendAPI - ERROR: error not found
+[05/06/2023, 13:36:10] myBackendAPI - ERROR: Error: data and hash arguments required	POST /auth/login	undefined
+[05/06/2023, 13:38:56] myBackendAPI - ERROR: error not found
+[05/06/2023, 13:39:08] myBackendAPI - ERROR: Error: data and hash arguments required	POST /auth/login	undefined
+[05/06/2023, 13:40:32] myBackendAPI - ERROR: error not found
+[05/06/2023, 13:40:43] myBackendAPI - ERROR: Error: data and hash arguments required	POST /auth/login	undefined
+[05/06/2023, 13:42:21] myBackendAPI - ERROR: error not found
+[05/06/2023, 13:43:44] myBackendAPI - ERROR: error not found
+[05/06/2023, 13:45:43] myBackendAPI - ERROR: error not found
+[05/06/2023, 14:23:25] myBackendAPI - ERROR: error not found
+[05/06/2023, 14:23:58] myBackendAPI - ERROR: Error: data must be a string or Buffer and hash must be a string	POST /auth/login	undefined
+[05/06/2023, 14:24:09] myBackendAPI - ERROR: Error: data must be a string or Buffer and hash must be a string	POST /auth/login	undefined
+[05/06/2023, 15:29:27] myBackendAPI - ERROR: error not found
+[05/06/2023, 15:30:11] myBackendAPI - ERROR: Error: data must be a string or Buffer and hash must be a string	POST /auth/login	undefined
+[05/06/2023, 15:37:00] myBackendAPI - ERROR: error not found
+[05/06/2023, 15:45:36] myBackendAPI - ERROR: error not found
+[05/06/2023, 15:51:49] myBackendAPI - ERROR: error not found
+[05/06/2023, 15:59:52] myBackendAPI - ERROR: error not found
+[05/06/2023, 16:14:12] myBackendAPI - ERROR: error not found
+[05/06/2023, 16:23:41] myBackendAPI - ERROR: error not found
+[05/06/2023, 16:32:06] myBackendAPI - ERROR: error not found
+[05/06/2023, 16:49:14] myBackendAPI - ERROR: error not found
+[05/06/2023, 16:59:23] myBackendAPI - ERROR: error not found
+[05/06/2023, 17:04:36] myBackendAPI - ERROR: error not found
+[05/06/2023, 17:17:53] myBackendAPI - ERROR: error not found
+[05/06/2023, 17:29:25] myBackendAPI - ERROR: error not found
+[05/06/2023, 20:07:17] myBackendAPI - ERROR: error not found
+[05/06/2023, 20:31:35] myBackendAPI - ERROR: error not found
+[05/06/2023, 20:40:26] myBackendAPI - ERROR: error not found
+[05/06/2023, 20:57:25] myBackendAPI - ERROR: error not found
+[05/06/2023, 21:03:11] myBackendAPI - ERROR: error not found
+[05/06/2023, 21:10:27] myBackendAPI - ERROR: error not found
+[05/06/2023, 21:20:15] myBackendAPI - ERROR: error not found
+[05/07/2023, 14:55:53] myBackendAPI - ERROR: error not found
+[05/07/2023, 15:13:51] myBackendAPI - ERROR: error not found
+[05/07/2023, 15:16:19] myBackendAPI - ERROR: TypeError: Cannot read properties of null (reading 'following')	GET /user/test%7D/following	undefined
+[05/07/2023, 15:20:36] myBackendAPI - ERROR: error not found
+[05/07/2023, 15:30:33] myBackendAPI - ERROR: error not found
+[05/07/2023, 15:40:28] myBackendAPI - ERROR: error not found
+[05/07/2023, 15:50:25] myBackendAPI - ERROR: error not found
+[05/07/2023, 15:56:13] myBackendAPI - ERROR: error not found

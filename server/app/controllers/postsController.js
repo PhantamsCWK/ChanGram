@@ -81,8 +81,6 @@ export const deletePost = async (req, res, next) => {
 
         const photoCloud = await cloudinary.uploader.destroy(post.picture_id);
 
-        console.log(photoCloud)
-
         const deletedPost = await Post.findByIdAndDelete(id);
     
         res.status(200).json({ post: deletedPost });

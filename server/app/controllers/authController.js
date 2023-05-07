@@ -25,11 +25,11 @@ export const register = async (req, res, next) => {
 export const login = async (req, res, next) => {
     try {
         const { email, password } = req.body;
-        
+
         const user = await User.findOne({ email });
 
         if(!user) return res.status(400).json({ message: "User or Password Wrong"});
-        
+
         const isCorrect = bcrypt.compareSync(password, user.password);
 
         if(!isCorrect) return res.status(400).json({ message: "User or Password Wrong"});
@@ -47,13 +47,13 @@ export const login = async (req, res, next) => {
         );
 
         res.cookie("jwt", refreshToken, {
-            httpOnly: true, //accessible only by web server 
-            // secure: true, //https
+            httpOnly: process.env.NODE_ENV !== "test", //accessible only by web server 
+            secure: process.env.NODE_ENV === "production", //https
             sameSite: 'None', //cross-site cookie 
             maxAge: 7 * 24 * 60 * 60 * 1000
          });
 
-        user.password = undefined;
+         user.password = undefined;
 
         res.status(202).json({ accessToken, user });
 
@@ -67,7 +67,7 @@ export const login = async (req, res, next) => {
 export const refreshToken = (req, res) => {
     const cookies = req.cookies;
 
-    if (!cookies?.jwt) return res.status(401).json({ message: 'Unauthorized' })
+    if (!cookies?.jwt) return res.status(401).json({ message: 'Unauthorized' });
 
     const refreshToken = cookies?.jwt;
 
@@ -75,16 +75,16 @@ export const refreshToken = (req, res) => {
         refreshToken,
         process.env.REFRESH_TOKEN_SECRET, 
         async (err, decode) => {
-            if (err) res.sendStatus(403);
+            if (err) return res.sendStatus(403);
 
-            const user = await User.findById(decode?._id);
+            const user = await User.findOne({ username: decode?.username });
 
-            if (!user) res.sendStatus(401);
+            if (!user) return res.sendStatus(401);
 
             const accessToken = jwt.sign(
                 { username: user.username },
                 process.env.ACCESS_TOKEN_SECRET,
-                { expiresIn: "30s" }
+                { expiresIn: "12h" }
             );
 
             res.status(200).json({ accessToken });
@@ -94,6 +94,7 @@ export const refreshToken = (req, res) => {
 
 export const logout = async (req, res) => {
     const cookies = req.cookies
+
     if (!cookies?.jwt) return res.sendStatus(204) //No content
     res.clearCookie('jwt', { httpOnly: true, sameSite: 'None', secure: true })
     res.json({ message: 'Cookie cleared' })
