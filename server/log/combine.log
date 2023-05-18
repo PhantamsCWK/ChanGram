@@ -442,3 +442,41 @@
 [05/07/2023, 15:59:22] myBackendAPI - INFO: GET /user/test/follower	undefined
 [05/07/2023, 15:59:34] myBackendAPI - INFO: DELETE /user/test	undefined
 [05/07/2023, 15:59:45] myBackendAPI - INFO: GET /auth/logout	undefined
+[05/09/2023, 21:20:22] myBackendAPI - INFO: PATCH /user/test-test	undefined
+[05/09/2023, 21:20:31] myBackendAPI - INFO: POST /auth/login	http://localhost:5173/
+[05/09/2023, 21:21:42] myBackendAPI - INFO: POST /auth/register	undefined
+[05/09/2023, 21:21:57] myBackendAPI - INFO: POST /auth/login	http://localhost:5173/
+[05/09/2023, 21:22:08] myBackendAPI - INFO: PATCH /user/test-test	undefined
+[05/09/2023, 21:22:08] myBackendAPI - ERROR: TypeError: Cannot read properties of null (reading '_id')	PATCH /user/test-test	undefined
+[05/09/2023, 21:22:20] myBackendAPI - INFO: PATCH /user/admin	undefined
+[05/09/2023, 21:22:22] myBackendAPI - INFO: PATCH /user/admin	undefined
+[05/09/2023, 21:22:22] myBackendAPI - INFO: PATCH /user/admin	undefined
+[05/09/2023, 21:22:22] myBackendAPI - INFO: PATCH /user/admin	undefined
+[05/09/2023, 21:22:23] myBackendAPI - INFO: PATCH /user/admin	undefined
+[05/09/2023, 21:22:23] myBackendAPI - INFO: PATCH /user/admin	undefined
+[05/09/2023, 21:22:23] myBackendAPI - INFO: PATCH /user/admin	undefined
+[05/09/2023, 21:22:23] myBackendAPI - INFO: PATCH /user/admin	undefined
+[05/09/2023, 21:22:24] myBackendAPI - INFO: PATCH /user/admin	undefined
+[05/09/2023, 21:22:24] myBackendAPI - INFO: PATCH /user/admin	undefined
+[05/09/2023, 21:22:24] myBackendAPI - INFO: PATCH /user/admin	undefined
+[05/09/2023, 21:22:24] myBackendAPI - INFO: PATCH /user/admin	undefined
+[05/09/2023, 21:22:24] myBackendAPI - INFO: PATCH /user/admin	undefined
+[05/09/2023, 21:22:25] myBackendAPI - INFO: PATCH /user/admin	undefined
+[05/09/2023, 21:22:25] myBackendAPI - INFO: PATCH /user/admin	undefined
+[05/09/2023, 21:22:25] myBackendAPI - INFO: PATCH /user/admin	undefined
+[05/09/2023, 21:24:57] myBackendAPI - INFO: PATCH /user/admin	undefined
+[05/09/2023, 21:25:20] myBackendAPI - INFO: PATCH /user/admin	undefined
+[05/09/2023, 21:25:20] myBackendAPI - INFO: PATCH /user/admin	undefined
+[05/09/2023, 21:25:25] myBackendAPI - INFO: PATCH /user/admin	undefined
+[05/09/2023, 21:25:26] myBackendAPI - INFO: PATCH /user/admin	undefined
+[05/09/2023, 21:25:34] myBackendAPI - INFO: PATCH /user/chanwk	undefined
+[05/09/2023, 21:25:34] myBackendAPI - ERROR: TypeError: Cannot read properties of null (reading '_id')	PATCH /user/chanwk	undefined
+[05/09/2023, 21:26:01] myBackendAPI - INFO: PATCH /user/chanwk	undefined
+[05/09/2023, 21:26:01] myBackendAPI - ERROR: TypeError: Cannot read properties of null (reading '_id')	PATCH /user/chanwk	undefined
+[05/09/2023, 21:26:02] myBackendAPI - INFO: PATCH /user/admin	undefined
+[05/09/2023, 21:26:15] myBackendAPI - INFO: PATCH /user/chanwk	undefined
+[05/09/2023, 21:26:15] myBackendAPI - ERROR: TypeError: Cannot read properties of null (reading '_id')	PATCH /user/chanwk	undefined
+[05/09/2023, 21:26:33] myBackendAPI - INFO: PATCH /user/chanwk	undefined
+[05/09/2023, 21:26:33] myBackendAPI - ERROR: TypeError: Cannot read properties of null (reading '_id')	PATCH /user/chanwk	undefined
+[05/09/2023, 21:26:33] myBackendAPI - INFO: PATCH /user/admin	undefined
+[05/09/2023, 21:26:36] myBackendAPI - INFO: PATCH /user/admin	undefined

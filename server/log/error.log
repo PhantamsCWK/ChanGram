@@ -42,3 +42,8 @@
 [05/07/2023, 15:40:28] myBackendAPI - ERROR: error not found
 [05/07/2023, 15:50:25] myBackendAPI - ERROR: error not found
 [05/07/2023, 15:56:13] myBackendAPI - ERROR: error not found
+[05/09/2023, 21:22:08] myBackendAPI - ERROR: TypeError: Cannot read properties of null (reading '_id')	PATCH /user/test-test	undefined
+[05/09/2023, 21:25:34] myBackendAPI - ERROR: TypeError: Cannot read properties of null (reading '_id')	PATCH /user/chanwk	undefined
+[05/09/2023, 21:26:01] myBackendAPI - ERROR: TypeError: Cannot read properties of null (reading '_id')	PATCH /user/chanwk	undefined
+[05/09/2023, 21:26:15] myBackendAPI - ERROR: TypeError: Cannot read properties of null (reading '_id')	PATCH /user/chanwk	undefined
+[05/09/2023, 21:26:33] myBackendAPI - ERROR: TypeError: Cannot read properties of null (reading '_id')	PATCH /user/chanwk	undefined
