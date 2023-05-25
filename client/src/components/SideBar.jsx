@@ -1,10 +1,26 @@
 import { BiCompass, BiHomeAlt2, BiListUl, BiPaperPlane, BiPlusCircle, BiSearchAlt2, BiUser } from 'react-icons/bi';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useMediaQuery } from '../hooks';
 import { BsOpticalAudio } from 'react-icons/bs';
+import { useSendLogoutMutation } from '../features/auth/authApiSlice';
+import { useDispatch } from 'react-redux';
+import { logOut } from '../features/auth/authSlice';
 
 const SideBar = () => {
   const isMatch = useMediaQuery("(min-width: 1024px )");
+  const [ sendLogout ] = useSendLogoutMutation();
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
+  const onLogout = async () => {
+    try {
+      await sendLogout().unwrap();
+      dispatch(logOut());
+      navigate("/account")
+    } catch (error) {
+      console.log(error);
+    }
+  }
 
   return (
     <>
@@ -26,7 +42,7 @@ const SideBar = () => {
               </Link>
             </div>
             <div className='py-[0.4rem]'>
-              <label htmlFor="search-modal" className="flex items-center justify-start gap-5 hover:cursor-pointer">
+              <label htmlFor="search-user" className="flex items-center justify-start gap-5 hover:cursor-pointer">
                 <BiSearchAlt2 size={25} />
                 { isMatch && <span>Search</span> }
               </label>
@@ -37,29 +53,43 @@ const SideBar = () => {
                 { isMatch && <span>Explore</span> }
               </Link>
             </div>
-            {/* <div className='py-[0.4rem]'>
-              <Link to="direct" className='flex items-center justify-start gap-5'>
+            <div className='py-[0.4rem]'>
+              <Link to="p/643b9cdd7758ab9187dca666" className='flex items-center justify-start gap-5'>
                 <BiPaperPlane size={25} />
                 { isMatch && <span>Direct</span> }
               </Link>
-            </div> */}
+            </div>
             <div className='py-[0.4rem]'>
-              <label htmlFor="create-modal" className="flex items-center justify-start gap-5 hover:cursor-pointer">
+              <label htmlFor="create-post" className="flex items-center justify-start gap-5 hover:cursor-pointer">
                 <BiPlusCircle size={25} />
                 { isMatch && <span>Create</span> }
               </label>
             </div>
             <div className='py-[0.4rem]'>
-              <Link to="chandrakusuma" className='flex items-center justify-start gap-5'>
+              <Link to="CWKChan" className='flex items-center justify-start gap-5'>
                 <BiUser size={25} />
                 { isMatch && <span>Profile</span> }
               </Link>
             </div>
             <div className='pt-[60px]'>
-              <Link to="others" className='flex items-center justify-start gap-5'>
-                <BiListUl size={25} />
-                { isMatch && <span>Others</span> }
-              </Link>
+              <div className="dropdown dropdown-top">
+                <label tabIndex={0} className='flex items-center justify-start gap-5 hover:cursor-pointer'>
+                  <BiListUl size={25} />
+                  { isMatch && <span>Others</span> }
+                </label>
+                <ul tabIndex={0} className="dropdown-content menu p-2 shadow-md bg-base-100 rounded-box w-52">
+                  <li>
+                    <label onClick={onLogout} >
+                      Logout
+                    </label>
+                  </li>
+                  <li>
+                    <label href="">
+                      Settings
+                    </label>
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
       </div>

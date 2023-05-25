@@ -34,7 +34,7 @@ const CreateModal = () => {
     <>
         {/* Put this part before </body> tag */}
         <input type="checkbox" id="create-modal" className="modal-toggle" />
-        <label htmlFor="create-modal" className="modal cursor-pointer">
+        <label htmlFor="create-modal" className="modal flex-col justify-normal pt-32 cursor-pointer">
           <label className="modal-box w-11/12 max-w-5xl relative sm:w-9/12 lg:w-7/12" htmlFor="">
             
             <form onSubmit={handleSubmit(onSubmit)} className='flex flex-col gap-5 w-full '>

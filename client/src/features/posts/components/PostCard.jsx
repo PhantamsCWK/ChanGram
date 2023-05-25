@@ -1,17 +1,43 @@
 import React from 'react';
-import Aurora from "../assets/aurora-borealis-moon-night-ce-3840x2400.jpg";
-import People from "../assets/giovanni-ilardi-p4CmBgJ7QcA-unsplash.jpg";
+import People from "../../../app/assets/giovanni-ilardi-p4CmBgJ7QcA-unsplash.jpg";
 import { BsDot, BsEmojiSmile, BsSend } from 'react-icons/bs';
 import { BiBookmark, BiDotsHorizontal, BiPaperPlane } from 'react-icons/bi';
-import { AiOutlineHeart, AiOutlineMessage } from 'react-icons/ai';
+import { AiFillHeart, AiOutlineHeart, AiOutlineMessage } from 'react-icons/ai';
+import { useGetPostQuery, useLikeAndDislikeMutation } from '../postsApiSlice';
+import { useParams } from 'react-router-dom';
 
 const PostCard = () => {
+  const { postId } = useParams();
+  const { data: post, isLoading, error } = useGetPostQuery(postId);
+  const [likeAndDislike ] = useLikeAndDislikeMutation();
+
+  const handleLikeAndDislike = async (postId) => {
+    await likeAndDislike(postId).unwrap();
+    return
+  }
+
+  if (error) {
+    return (
+      <h1>
+        Error
+      </h1>
+    )
+  }
+
+  if (isLoading) {
+    return (
+      <h1>
+        ....isLoading
+      </h1>
+    )
+  }
+
   return (
     <div className='container grid grid-cols-12 w-[900px] h-[650px] border border-gray-300'>
         <div className='col-span-7'>
             <div className='w-full h-full border-r border-gray-300 p-2 '>
-                <div className=' flex justify-center items-centerw-full h-[575px]'>
-                    <img src={ People } alt='' className='object-cover max-h-full max-w-full' />
+                <div className=' flex justify-center items-center w-full h-[575px]'>
+                    <img src={ post.picture_url } alt='' className='object-cover max-h-full max-w-full' />
                 </div>
             </div>
         </div>
@@ -25,7 +51,7 @@ const PostCard = () => {
                         </div>
 
                         <div className=''>
-                            <span className=' flex flex-row justify-start items-center text-sm'>ChandraWIjayaKusuma <BsDot /> <button className='text-blue-600'>Ikuti</button></span>
+                            <span className=' flex flex-row justify-start items-center text-sm'>{post.author}<BsDot /> <button className='text-blue-600'>Follow</button></span>
                             <span className='text-xs'>Jakarta</span>
                         </div>
                     </div>
@@ -44,8 +70,8 @@ const PostCard = () => {
 
                             <div className='flex flex-wrap w-[85%]'>
                                 <p>
-                                    <span className=' font-semibold'>ChandraWijayaKusuma</span>&nbsp;
-                                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Facere eos vero, eius praesentium dolorem architecto consequatur natus ipsum? Ipsam culpa corporis, repudiandae quae ratione totam ipsa odit deleniti dolor modi?
+                                    <span className=' font-semibold'>{post.author}</span>&nbsp;
+                                    {post.description}
                                 </p>
                             </div>
                         </div>
@@ -56,19 +82,25 @@ const PostCard = () => {
                     <div className='flex flex-col justify-center w-full h-full p-4 gap-1'>
                         <div className='flex flex-row justify-between items-center'>
                             <div className='flex flex-row justify-start items-center gap-2'>
-                            <button type='button' onClick={() => alert("report")}><AiOutlineHeart size="28px"/></button>
-                            <button type='button' onClick={() => alert("report")}><AiOutlineMessage size="28px"/></button>
-                            <button type='button' onClick={() => alert("report")}><BiPaperPlane size="28px"/></button>
+                                <button type='button' onClick={() => handleLikeAndDislike(post.id)}>
+                                {
+                                    post.likes.hasOwnProperty("CWKChan") 
+                                    ? <AiFillHeart size="28px" color='red' />
+                                    : <AiOutlineHeart size="28px" />
+                                }
+                                </button>
+                                <button type='button' onClick={() => alert("report")}><AiOutlineMessage size="28px"/></button>
+                                <button type='button' onClick={() => alert("report")}><BiPaperPlane size="28px"/></button>
                             </div>
                             <button type='button' onClick={() => alert("report")}><BiBookmark size="28px"/></button>
                         </div>
 
                         <div className='p-1 text-sm font-semibold'>
-                            <span className='inline'>177</span>
+                            <span className='inline'>{Object.keys(post.likes).length}</span>
                             &nbsp;
                             <h4 className=' inline'>like</h4>
                             <br />
-                            <span className='text-gray-400'>7 days ago</span>
+                            <span className='text-gray-400'>{post.createdAt}</span>
                         </div>
 
 

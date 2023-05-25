@@ -21,7 +21,7 @@ const Bottombar = () => {
         </Link>
       </button>
       <button className="text-primary">
-        <label htmlFor='my-modal-5' className='hover:cursor-pointer'>
+        <label htmlFor='create-modal' className='hover:cursor-pointer'>
           <BiPlusCircle size={25} />
         </label>
       </button>
