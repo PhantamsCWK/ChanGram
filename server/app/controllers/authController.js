@@ -28,20 +28,28 @@ export const login = async (req, res, next) => {
 
         const user = await User.findOne({ email });
 
-        if(!user) return res.status(400).json({ message: "User or Password Wrong"});
+        if(!user) {
+            res.status(400);
+            next({ message: "User or Password wrong" });
+            return;
+        }
 
         const isCorrect = bcrypt.compareSync(password, user.password);
 
-        if(!isCorrect) return res.status(400).json({ message: "User or Password Wrong"});
+        if(!isCorrect) {
+            res.status(400);
+            next({ message: "User or Password wrong" });
+            return;
+        }
 
         const accessToken = jwt.sign(
-            { username: user.username },
+            { id: user._id, username: user.username },
             process.env.ACCESS_TOKEN_SECRET,
             { expiresIn: "12h" }
         );
 
         const refreshToken = jwt.sign(
-            { username: user.username },
+            { id: user._id, username: user.username },
             process.env.REFRESH_TOKEN_SECRET,
             { expiresIn: "7d" }
         );
@@ -53,9 +61,7 @@ export const login = async (req, res, next) => {
             maxAge: 7 * 24 * 60 * 60 * 1000
          });
 
-         user.password = undefined;
-
-        res.status(202).json({ accessToken, user });
+        res.status(202).json({ accessToken });
 
     } catch (error) {
         res.status(400);
@@ -77,12 +83,12 @@ export const refreshToken = (req, res) => {
         async (err, decode) => {
             if (err) return res.sendStatus(403);
 
-            const user = await User.findOne({ username: decode?.username });
+            const user = await User.findById(decode.id);
 
             if (!user) return res.sendStatus(401);
 
             const accessToken = jwt.sign(
-                { username: user.username },
+                { id: user._id, username: user.username },
                 process.env.ACCESS_TOKEN_SECRET,
                 { expiresIn: "12h" }
             );

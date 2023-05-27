@@ -4,7 +4,7 @@ import User from "../../models/User.js";
 export const registerValidation = async (req, res, next) => {
     await body("username").isString().isLength({ min: 4 }).withMessage("username must be min 4 length")
     .customSanitizer(input => {
-        return input.replace(/\s/g, '');
+        return input.replace(/\s/g, '').toLowerCase();
     })
     .custom(async input => {
         const user = await User.findOne({ username: input });

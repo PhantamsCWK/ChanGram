@@ -37,13 +37,13 @@ const UserSchema = new mongoose.Schema({
         default: ""
     },
     following: {
-        type: Array,
+        type: [{ type: mongoose.Schema.Types.ObjectId, ref: "Users" }],
         default: []
     },
     follower: {
-        type: Array,
+        type: [{ type: mongoose.Schema.Types.ObjectId, ref: "Users" }],
         default: []
-    },
+    }
 }, { timestamps: true });
 
 const User = mongoose.model("Users", UserSchema);

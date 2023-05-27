@@ -51,7 +51,7 @@ describe("API end point", () => {
             const res = await request(app).post("/auth/login").send({ email: state.user.email, password: "12345678" });
 
             expect(res.status).toBe(400);
-            expect(res.body).toHaveProperty("message","User or Password Wrong");
+            expect(res.body).toHaveProperty("message","User or Password wrong");
         });
 
         it("it will success", async () => {
@@ -99,7 +99,8 @@ describe("API end point", () => {
             .set("authorization", `Bearer ${state.token}`);
 
             expect(res.status).toBe(200);
-            expect(res.body.post).toEqual(state.post);
+            expect(res.body.post._id).toEqual(state.post._id);
+            expect(res.body.post).toHaveProperty("author")
         });
     });
 
@@ -130,8 +131,8 @@ describe("API end point", () => {
             .set("authorization", `Bearer ${state.token}`);
     
             expect(res.status).toBe(200);
-            expect(res.body).toHaveProperty("post");
-            expect(res.body.post._id).toEqual(state.post._id);
+            expect(res.body).toHaveProperty("author");
+            expect(res.body._id).toEqual(state.post._id);
         });
     });
 
@@ -160,7 +161,7 @@ describe("API end point", () => {
 
     describe("PATCH user/:unique", () => {
         it("it will success", async () => {
-            const res = await request(app).patch(`/user/${state.user.username}`)
+            const res = await request(app).patch("/user/admin")
             .set("authorization", `Bearer ${state.token}`)
             .set("Cookie", state.cookies);
 
