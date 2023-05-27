@@ -1,13 +1,16 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { BsCollectionPlay, BsGrid3X3, BsPersonVideo } from 'react-icons/bs'
 import { FeedsGrid } from '../../../components'
 import { useGetUserPostsQuery } from '../postsApiSlice'
-import { useParams } from 'react-router-dom'
 
-const UserPosts = () => {
-  const { username } = useParams();
-
+const UserPosts = ({ username, setPostsCount }) => {
   const { data: posts, error, isLoading } = useGetUserPostsQuery(username);
+
+  useEffect(() => {
+    if(posts){
+      setPostsCount(posts.length)
+    }
+  }, [posts])
 
   if (error) {
     return (

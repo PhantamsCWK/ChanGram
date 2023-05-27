@@ -1,16 +1,18 @@
 import { BiCompass, BiHomeAlt2, BiListUl, BiPaperPlane, BiPlusCircle, BiSearchAlt2, BiUser } from 'react-icons/bi';
 import { Link, useNavigate } from 'react-router-dom';
-import { useMediaQuery } from '../hooks';
+import { useAuth, useMediaQuery } from '../hooks';
 import { BsOpticalAudio } from 'react-icons/bs';
 import { useSendLogoutMutation } from '../features/auth/authApiSlice';
 import { useDispatch } from 'react-redux';
 import { logOut } from '../features/auth/authSlice';
 
 const SideBar = () => {
-  const isMatch = useMediaQuery("(min-width: 1024px )");
-  const [ sendLogout ] = useSendLogoutMutation();
   const dispatch = useDispatch();
   const navigate = useNavigate();
+
+  const isMatch = useMediaQuery("(min-width: 1024px )");
+  const [ sendLogout ] = useSendLogoutMutation();
+  const { username, picturePath } = useAuth();
 
   const onLogout = async () => {
     try {
@@ -66,8 +68,14 @@ const SideBar = () => {
               </label>
             </div>
             <div className='py-[0.4rem]'>
-              <Link to="CWKChan" className='flex items-center justify-start gap-5'>
-                <BiUser size={25} />
+              <Link to={username && username } className='flex items-center justify-start gap-5'>
+                <div className='border border-black rounded-full w-[26px] h-[26px] overflow-hidden'>
+                  {
+                    picturePath 
+                    ? <img src={picturePath} alt={username} className=' object-cover' />
+                    : <BiUser size={25} />
+                  }
+                </div>
                 { isMatch && <span>Profile</span> }
               </Link>
             </div>

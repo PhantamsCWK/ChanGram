@@ -1,0 +1,8 @@
+[05/26/2023, 21:00:10] myBackendAPI - ERROR: TypeError: Cannot read properties of null (reading 'follower')	GET /user/undefined/follower	http://localhost:5173
+[05/26/2023, 21:00:10] myBackendAPI - ERROR: TypeError: Cannot read properties of null (reading 'following')	GET /user/undefined/following	http://localhost:5173
+[05/26/2023, 21:00:16] myBackendAPI - ERROR: TypeError: Cannot read properties of null (reading 'follower')	GET /user/undefined/follower	http://localhost:5173
+[05/26/2023, 21:00:16] myBackendAPI - ERROR: TypeError: Cannot read properties of null (reading 'following')	GET /user/undefined/following	http://localhost:5173
+[05/26/2023, 21:01:14] myBackendAPI - ERROR: TypeError: Cannot read properties of null (reading 'following')	GET /user/undefined/following	http://localhost:5173
+[05/26/2023, 21:01:14] myBackendAPI - ERROR: TypeError: Cannot read properties of null (reading 'follower')	GET /user/undefined/follower	http://localhost:5173
+[05/26/2023, 21:02:39] myBackendAPI - ERROR: TypeError: Cannot read properties of null (reading 'follower')	GET /user/undefined/follower	http://localhost:5173
+[05/26/2023, 21:02:39] myBackendAPI - ERROR: TypeError: Cannot read properties of null (reading 'following')	GET /user/undefined/following	http://localhost:5173

@@ -6,7 +6,7 @@ import { useDispatch } from 'react-redux';
 import { BsEye, BsEyeSlash } from "react-icons/bs";
 import { BeatLoader } from 'react-spinners';
 
-import { useLoginMutation } from '../authApiSlice';
+import { useLoginMutation, useRegisterMutation } from '../authApiSlice';
 import { setCredentials } from '../authSlice';
 
 const LoginForm = () => {
@@ -19,12 +19,42 @@ const LoginForm = () => {
     const [isPasswordConfirmVisible, setIsPasswordConfirmVisible] = useState(false);
 
     const [ login, { isLoading, isError } ] = useLoginMutation();
+    const [ signin ] = useRegisterMutation();
 
-    const onSubmit = async (data) => {
+    const changeForm = () => {
+        setSignIn(prev => !prev)
+        reset();
+        return true;
+    }
+
+    const onSubmit = (data) => {
+        if(isSignIn) {
+            handleSignin(data)
+        } else {
+            handelLogin(data)
+        }
+        return reset()
+    }
+
+    const handelLogin = async (data) => {
         try {
             const { accessToken } = await login({ email: data.email, password: data.password }).unwrap();
             dispatch(setCredentials(accessToken));
             navigate("/")
+        } catch (error) {
+            console.log(error)
+        }
+    }
+
+    const handleSignin = async (data) => {
+        if (data.password !== data.confirm) {
+            console.log("error")
+            return false
+        }
+        console.log("register")
+        try {
+            await signin({ email: data.email, username: data.username, password: data.password })
+            setSignIn(false)
         } catch (error) {
             console.log(error)
         }
@@ -78,7 +108,7 @@ const LoginForm = () => {
                 {
                 isSignIn ? "Already have " : "Doesnt have an "
                 }
-                <span onClick={() => setSignIn((prev) => !prev )} className='text-purple-800 font-semibold hover:cursor-pointer'>
+                <span onClick={changeForm} className='text-purple-800 font-semibold hover:cursor-pointer'>
                 account ?
                 </span>
             </span>

@@ -1,30 +1,40 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { BsChevronLeft } from "react-icons/bs";
 import { FollowBar, ProfileUser } from '../features/users';
 import { UserPosts } from '../features/posts';
+import { useParams } from 'react-router-dom';
+import FollowModal from '../features/users/components/FollowModal';
 
 const Profile = () => {
-
+  const { username } = useParams();
+  const [ postsCount, setPostsCount ] = useState(0);
+  const [ followerCount, setFollowerCount ] = useState(0);
+  const [ followingCount, setFollowingCount ] = useState(0);
+  
   return (
-    <section className='flex flex-col-reverse'>
-      <main className='flex flex-col align items-center mt-10 md:px-7 md:mx-16'>
+    <>
 
-        {/* Profile User */}
-        <ProfileUser />
+      <section className='flex flex-col-reverse'>
+        <main className='flex flex-col align items-center mt-10 md:px-7 md:mx-16'>
 
-        {/* Follower */}
-        <FollowBar />
+          {/* Profile User */}
+          <ProfileUser />
 
-        {/* User Post */}
-        <UserPosts />
+          {/* Follower */}
+          <FollowBar postsCount={postsCount} followerCount={ followerCount } followingCount={ followingCount } />
 
-      </main>
+          {/* User Post */}
+          <UserPosts username={username} setPostsCount={setPostsCount} />
 
-      <div className='flex flex-row justify-start items-center p-2 border-b border-gray-300'>
-        <BsChevronLeft size={30} />
-        <span className='w-full text-center'>Chandra WIjaya Kusuma</span>
-      </div>
-    </section>
+        </main>
+
+        <div className='flex flex-row justify-start items-center p-2 border-b border-gray-300'>
+          <BsChevronLeft size={30} />
+          <span className='w-full text-center'>{username}</span>
+        </div>
+      </section>
+      <FollowModal username={username} setFollowerCount={setFollowerCount} setFollowingCount={setFollowingCount} />
+    </>
   )
 }
 

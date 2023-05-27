@@ -4,6 +4,7 @@ import { BiBookmark, BiDotsHorizontalRounded, BiPaperPlane } from "react-icons/b
 import { AiFillHeart, AiOutlineHeart, AiOutlineMessage } from "react-icons/ai"
 import { BsDot } from "react-icons/bs"
 import { useGetAllPostQuery, useLikeAndDislikeMutation } from '../postsApiSlice';
+import { PropagateLoader } from 'react-spinners';
 
 const PostsSection = () => {
   const { data: posts, error, isLoading } = useGetAllPostQuery();
@@ -24,9 +25,9 @@ const PostsSection = () => {
 
   if (isLoading) {
     return (
-      <h1>
-        ....isLoading
-      </h1>
+      <div className='flex flex-col justify-start items-center gap-5 py-3 h-96'>
+        <PropagateLoader className='mt-36' size={30} color='#570DF8' />
+      </div>
     )
   }
 

@@ -1,6 +1,7 @@
 import React from 'react'
 import People from "../../../app/assets/giovanni-ilardi-p4CmBgJ7QcA-unsplash.jpg";
 import { BsDot } from "react-icons/bs"
+import { UserListBar } from '../../../components';
 
 const SugestionFollower = () => {
   return (
@@ -22,48 +23,7 @@ const SugestionFollower = () => {
                     <button type='button' className='text-sm font-bold'>See all</button>
                   </div>
 
-                  <div className='flex flex-row justify-start items-center gap-3 p-2'>
-                    <div className='w-[35px] h-[35px] rounded-[50%] aspect-square overflow-hidden'>
-                      <img src={People} alt="" className='object-cover w-full h-full '/>
-                    </div>
-
-                    <div className='flex flex-col w-44'>
-                      <h2 className='text-sm font-semibold'>ChanChan</h2>
-                      <p className='text-xs'>@Chandra</p>
-                    </div>
-
-                    <div>
-                      <button type='button' className='text-xs text-blue-600 font-medium'>Follow</button>
-                    </div>
-                  </div>
-                  <div className='flex flex-row justify-start items-center gap-3 p-2'>
-                    <div className='w-[35px] h-[35px] rounded-[50%] aspect-square overflow-hidden'>
-                      <img src={People} alt="" className='object-cover w-full h-full '/>
-                    </div>
-
-                    <div className='flex flex-col w-44'>
-                      <h2 className='text-sm font-semibold'>ChanChan</h2>
-                      <p className='text-xs'>@Chandra</p>
-                    </div>
-
-                    <div>
-                      <button type='button' className='text-xs text-blue-600 font-medium'>Follow</button>
-                    </div>
-                  </div>
-                  <div className='flex flex-row justify-start items-center gap-3 p-2'>
-                    <div className='w-[35px] h-[35px] rounded-[50%] aspect-square overflow-hidden'>
-                      <img src={People} alt="" className='object-cover w-full h-full '/>
-                    </div>
-
-                    <div className='flex flex-col w-44'>
-                      <h2 className='text-sm font-semibold'>ChanChan</h2>
-                      <p className='text-xs'>@Chandra</p>
-                    </div>
-
-                    <div>
-                      <button type='button' className='text-xs text-blue-600 font-medium'>Follow</button>
-                    </div>
-                  </div>
+                  <UserListBar />
 
                 </div>
 
