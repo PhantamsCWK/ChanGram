@@ -1,12 +1,13 @@
 import mongoose from "mongoose";
-import Post from "../models/Post.js";
 import User from "../models/User.js";
+import Post from "../models/Post.js";
 import cloudinary from "../config/cloudinary.js";
 
 
 export const getAllPosts = async (req, res, next) => {
     try {
-        const posts = await Post.find();
+        const posts = await Post.find().populate("author");
+
         res.status(200).json({ posts });
     } catch (error) {
         next(error);
@@ -19,9 +20,13 @@ export const getUserPosts = async (req, res, next) => {
 
         const user = await User.findOne({ username: author })
 
-        if(!user) return res.status(404).json({ message: "user not found" });
+        if(!user) {
+            res.status(404)
+            next({ type: "notFound", message: "User Not Found" })
+            return;
+        }
 
-        const posts = await Post.find({ author });
+        const posts = await Post.find({ author: user._id });
 
         res.status(200).json({ posts });
     } catch (error) {
@@ -33,11 +38,23 @@ export const getPostById = async (req, res, next) => {
     try {
         const { id } = req.params;
 
-        if(!mongoose.Types.ObjectId.isValid(id)) return res.status(400).json({ message: "bad request" });
+        if(!mongoose.Types.ObjectId.isValid(id)) {
+            res.status(400);
+            next({ message: "Bad Request" });
+            return
+        }
 
-        const post = await Post.findById(id);
+        const post = await Post.findById(id).populate("author", { 
+            _id: 1, 
+            username: 1, 
+            firstName: 1, 
+            lastName: 1, 
+            picturePath: 1 
+        });
 
         if(!post) return res.status(404).json({ message: "post not found" });
+
+        console.log(post)
         
         res.status(200).json({ post });
     } catch (error) {
@@ -54,11 +71,12 @@ export const createPost = async (req, res, next) => {
         const picture = req.file;
 
         const newPost = new Post({ 
-            author: req.user.username, 
+            author: req.user.id, 
             description, 
-            picture_url: picture.path, 
-            picture_id: picture.filename,
-            likes: {} })
+            pictureUrl: picture.path, 
+            pictureId: picture.filename,
+            likes: {}
+        })
 
         const result = await newPost.save();
 
@@ -79,11 +97,11 @@ export const deletePost = async (req, res, next) => {
     
         if (!post) return res.status(400).json({ message: "post not found"});
 
-        const photoCloud = await cloudinary.uploader.destroy(post.picture_id);
+        const photoCloud = await cloudinary.uploader.destroy(post.pictureId);
 
         const deletedPost = await Post.findByIdAndDelete(id);
     
-        res.status(200).json({ post: deletedPost });
+        res.status(200).json(deletedPost);
     } catch (error) {
         next(error);
     }
@@ -91,23 +109,23 @@ export const deletePost = async (req, res, next) => {
 
 export const likePost = async (req, res, next) => {
     try {
-        const { id: post_id } = req.params;
-        const username = req.user.username;
+        const { id: postId } = req.params;
+        const userId = req.user.id;
 
-        const post =  await Post.findById(post_id);
+        const post =  await Post.findById(postId);
         
         if (!post) return res.status(400).json({ message: "post not found"});
 
-        const isLiked = post.likes.has(username);
+        const isLiked = post.likes?.has(userId);
 
         if(isLiked){
-            post.likes.delete(username);
+            post.likes.delete(userId);
         } else {
-            post.likes.set(username, true);
+            post.likes.set(userId, true);
         }
 
-        const updatedPost = await Post.findByIdAndUpdate(
-            post_id,
+        const updatedPost = await Post.findOneAndUpdate(
+            { _id: postId, updatedAt: post.updatedAt },
             { likes: post.likes },
             { new: true }
         );

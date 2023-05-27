@@ -6,3 +6,75 @@
 [05/26/2023, 21:01:14] myBackendAPI - ERROR: TypeError: Cannot read properties of null (reading 'follower')	GET /user/undefined/follower	http://localhost:5173
 [05/26/2023, 21:02:39] myBackendAPI - ERROR: TypeError: Cannot read properties of null (reading 'follower')	GET /user/undefined/follower	http://localhost:5173
 [05/26/2023, 21:02:39] myBackendAPI - ERROR: TypeError: Cannot read properties of null (reading 'following')	GET /user/undefined/following	http://localhost:5173
+[05/27/2023, 12:11:32] myBackendAPI - ERROR: undefined: Too many login attempts from this IP, please try again after a 1 hour	POST /auth/login	http://localhost:5173
+[05/27/2023, 12:14:59] myBackendAPI - ERROR: undefined: Too many request from this IP, please try again after a 5 minutes	GET /posts	undefined
+[05/27/2023, 12:14:59] myBackendAPI - ERROR: undefined: Too many request from this IP, please try again after a 5 minutes	GET /posts	undefined
+[05/27/2023, 12:14:59] myBackendAPI - ERROR: undefined: Too many request from this IP, please try again after a 5 minutes	GET /posts	undefined
+[05/27/2023, 12:15:05] myBackendAPI - ERROR: undefined: Too many request from this IP, please try again after a 5 minutes	GET /posts	undefined
+[05/27/2023, 12:18:18] myBackendAPI - ERROR: TypeError: Cannot read properties of null (reading 'following')	PATCH /user/admin	undefined
+[05/27/2023, 12:18:28] myBackendAPI - ERROR: TypeError: Cannot read properties of null (reading 'following')	PATCH /user/admin	undefined
+[05/27/2023, 12:19:57] myBackendAPI - ERROR: TypeError: Cannot read properties of null (reading 'following')	PATCH /user/admin	undefined
+[05/27/2023, 12:21:39] myBackendAPI - ERROR: TypeError: Cannot read properties of null (reading 'following')	PATCH /user/admin	undefined
+[05/27/2023, 12:22:53] myBackendAPI - ERROR: TypeError: Cannot read properties of null (reading 'following')	PATCH /user/admin	undefined
+[05/27/2023, 12:23:25] myBackendAPI - ERROR: TypeError: Cannot read properties of null (reading 'following')	PATCH /user/admin	undefined
+[05/27/2023, 12:23:26] myBackendAPI - ERROR: TypeError: Cannot read properties of null (reading 'following')	PATCH /user/admin	undefined
+[05/27/2023, 12:23:27] myBackendAPI - ERROR: TypeError: Cannot read properties of null (reading 'following')	PATCH /user/admin	undefined
+[05/27/2023, 12:30:11] myBackendAPI - ERROR: TypeError: Cannot read properties of null (reading 'following')	PATCH /user/admin	undefined
+[05/27/2023, 12:30:21] myBackendAPI - ERROR: TypeError: Cannot read properties of null (reading 'following')	PATCH /user/admin	undefined
+[05/27/2023, 12:30:37] myBackendAPI - ERROR: TypeError: Cannot read properties of null (reading 'following')	PATCH /user/admin	undefined
+[05/27/2023, 12:40:44] myBackendAPI - ERROR: BadRequest: can't follow own account	PATCH /user/admin	undefined
+[05/27/2023, 12:46:12] myBackendAPI - ERROR: BadRequest: can't follow own account	PATCH /user/admin	undefined
+[05/27/2023, 13:38:07] myBackendAPI - ERROR: TypeError: Converting circular structure to JSON
+    --> starting at object with constructor 'MongoClient'
+    |     property 's' -> object with constructor 'Object'
+    |     property 'sessionPool' -> object with constructor 'ServerSessionPool'
+    --- property 'client' closes the circle	GET /posts	undefined
+[05/27/2023, 13:39:36] myBackendAPI - ERROR: TypeError: Converting circular structure to JSON
+    --> starting at object with constructor 'MongoClient'
+    |     property 's' -> object with constructor 'Object'
+    |     property 'sessionPool' -> object with constructor 'ServerSessionPool'
+    --- property 'client' closes the circle	GET /posts	undefined
+[05/27/2023, 13:44:35] myBackendAPI - ERROR: TypeError: Converting circular structure to JSON
+    --> starting at object with constructor 'MongoClient'
+    |     property 's' -> object with constructor 'Object'
+    |     property 'sessionPool' -> object with constructor 'ServerSessionPool'
+    --- property 'client' closes the circle	GET /posts	undefined
+[05/27/2023, 14:01:42] myBackendAPI - ERROR: MissingSchemaError: Schema hasn't been registered for model "User".
+Use mongoose.model(name, schema)	GET /posts	undefined
+[05/27/2023, 14:16:08] myBackendAPI - ERROR: MissingSchemaError: Schema hasn't been registered for model "Users.username".
+Use mongoose.model(name, schema)	GET /posts	undefined
+[05/27/2023, 14:18:38] myBackendAPI - ERROR: CastError: Cast to ObjectId failed for value "CWKChan" (type string) at path "_id" for model "Users"	GET /posts	undefined
+[05/27/2023, 14:22:02] myBackendAPI - ERROR: CastError: Cast to ObjectId failed for value "CWKChan" (type string) at path "_id" for model "Users"	GET /posts	undefined
+[05/27/2023, 14:24:46] myBackendAPI - ERROR: MissingSchemaError: Schema hasn't been registered for model "Users.username".
+Use mongoose.model(name, schema)	GET /posts	undefined
+[05/27/2023, 14:26:46] myBackendAPI - ERROR: MissingSchemaError: Schema hasn't been registered for model "Users.username".
+Use mongoose.model(name, schema)	GET /posts	undefined
+[05/27/2023, 14:27:18] myBackendAPI - ERROR: MissingSchemaError: Schema hasn't been registered for model "users.username".
+Use mongoose.model(name, schema)	GET /posts	undefined
+[05/27/2023, 14:27:59] myBackendAPI - ERROR: MissingSchemaError: Schema hasn't been registered for model "Users.username".
+Use mongoose.model(name, schema)	GET /posts	undefined
+[05/27/2023, 14:39:27] myBackendAPI - ERROR: CastError: Cast to ObjectId failed for value "CWKChan" (type string) at path "_id" for model "Users"	GET /posts	undefined
+[05/27/2023, 14:40:12] myBackendAPI - ERROR: MissingSchemaError: Schema hasn't been registered for model "Users.username".
+Use mongoose.model(name, schema)	GET /posts	undefined
+[05/27/2023, 14:41:49] myBackendAPI - ERROR: MissingSchemaError: Schema hasn't been registered for model "Users.username".
+Use mongoose.model(name, schema)	GET /posts	undefined
+[05/27/2023, 14:46:01] myBackendAPI - ERROR: MissingSchemaError: Schema hasn't been registered for model "Users.username".
+Use mongoose.model(name, schema)	GET /posts	undefined
+[05/27/2023, 19:14:53] myBackendAPI - ERROR: error not found
+[05/27/2023, 19:15:26] myBackendAPI - ERROR: 400: User or Password wrong	POST /auth/login	undefined
+[05/27/2023, 19:16:33] myBackendAPI - ERROR: CastError: Cast to ObjectId failed for value "test" (type string) at path "author" for model "Posts"	GET /posts/test/user	undefined
+[05/27/2023, 19:16:44] myBackendAPI - ERROR: TypeError: Cannot read properties of undefined (reading 'has')	PATCH /posts/6471f48c0f7e351aa9f3e384/like	undefined
+[05/27/2023, 19:17:29] myBackendAPI - ERROR: BadRequest: can't follow own account	PATCH /user/test	undefined
+[05/27/2023, 19:32:46] myBackendAPI - ERROR: 400: User or Password wrong	POST /auth/login	http://localhost:5173
+[05/27/2023, 19:34:32] myBackendAPI - ERROR: error not found
+[05/27/2023, 19:35:05] myBackendAPI - ERROR: 400: User or Password wrong	POST /auth/login	undefined
+[05/27/2023, 19:36:24] myBackendAPI - ERROR: TypeError: Cannot read properties of undefined (reading 'has')	PATCH /posts/6471f927f33ab76e23feea5d/like	undefined
+[05/27/2023, 19:48:11] myBackendAPI - ERROR: error not found
+[05/27/2023, 19:48:44] myBackendAPI - ERROR: 400: User or Password wrong	POST /auth/login	undefined
+[05/27/2023, 19:50:04] myBackendAPI - ERROR: TypeError: Cannot read properties of undefined (reading 'set')	PATCH /posts/6471fc5a60f23068965b26e5/like	undefined
+[05/27/2023, 19:59:10] myBackendAPI - ERROR: error not found
+[05/27/2023, 19:59:44] myBackendAPI - ERROR: 400: User or Password wrong	POST /auth/login	undefined
+[05/27/2023, 20:12:16] myBackendAPI - ERROR: error not found
+[05/27/2023, 20:12:50] myBackendAPI - ERROR: 400: User or Password wrong	POST /auth/login	undefined
+[05/27/2023, 20:18:22] myBackendAPI - ERROR: error not found
+[05/27/2023, 20:18:56] myBackendAPI - ERROR: 400: User or Password wrong	POST /auth/login	undefined

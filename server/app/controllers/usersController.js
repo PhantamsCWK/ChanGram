@@ -50,8 +50,6 @@ export const deleteUser = async (req, res, next) => {
     try {
         const { unique } = req.params;
 
-        console.log(unique)
-
         const deletedUser = await User.deleteOne({ username: unique });
 
         res.status(200).json({ deletedUser })
@@ -66,6 +64,12 @@ export const addRemoveFollow = async (req, res, next) => {
         const { unique } = req.params;
         const username = req.user.username;
 
+        if(unique === username) {
+            res.status(400)
+            next({ name: "BadRequest", message: "can't follow own account" })
+            return
+        }
+
         const followUser = await User.findOne({ username: unique });
         const currentUser = await User.findOne({ username });
 
@@ -77,9 +81,9 @@ export const addRemoveFollow = async (req, res, next) => {
             followUser.follower.push(currentUser._id.toString());
         }
 
-
-        await User.findOneAndUpdate({ username: unique}, { follower: followUser.follower });
-        const updatedCurrentUser = await User.findOneAndUpdate({ username }, { following: currentUser.following }, { new: true });
+        await User.findOneAndUpdate({ username: unique, updatedAt: followUser.updatedAt }, { follower: followUser.follower });
+        
+        const updatedCurrentUser = await User.findOneAndUpdate({ username, updatedAt: currentUser.updatedAt }, { following: currentUser.following }, { new: true });
 
         res.status(202).json({ following: updatedCurrentUser.following, follower: updatedCurrentUser.follower });
     } catch (error) {
