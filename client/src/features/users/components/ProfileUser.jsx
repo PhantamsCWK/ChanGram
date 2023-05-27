@@ -1,47 +1,28 @@
 import React from 'react'
-import People from '../../../app/assets/giovanni-ilardi-p4CmBgJ7QcA-unsplash.jpg';
-import { useAuth, useMediaQuery } from '../../../hooks';
-import { useGetUserQuery } from '../usersApiSlice';
-import { useParams } from 'react-router-dom';
 import { BsGearWide } from 'react-icons/bs';
 
-const ProfileUser = () => {
+import { useAuth, useMediaQuery } from '../../../hooks';
+import People from '../../../app/assets/giovanni-ilardi-p4CmBgJ7QcA-unsplash.jpg';
+
+const ProfileUser = ({ user }) => {
   const isMobile = useMediaQuery("(max-width: 750px)");
-  const { username } = useParams();
-
-  const { data: post, isLoading, error } = useGetUserQuery(username);
-  const { username: userAuthName } = useAuth();
   
-  if (isLoading) {
-    return (
-      <h1>
-        ....isLoading
-      </h1>
-    )
-  }
-
-  if (error) {
-    return (
-      <h1>
-        Error
-      </h1>
-    )
-  }
+  const { username: userAuthName } = useAuth();
 
   return (
     <header className='flex flex-col gap-5 w-full p-3 md:gap-10'>
     <div className='flex flex-row justify-between items-center gap-10'>
       <div className='avatar'>
         <div className='w-[80px] rounded-full ring ring-purple-700 ring-offset-2 sm:w-32 md:w-40'>
-          <img src={post.picturePath ? post.picturePath : People} alt={post.username} />
+          <img src={user.picturePath ? user.picturePath : People} alt={user.username} />
         </div>
       </div>
 
       <div className='flex flex-col gap-5 w-full h-fit'>
-        <div className="text-xl sm:text-2xl">{post.username}</div>
+        <div className="text-xl sm:text-2xl">{user.username}</div>
         <div className='flex flex-row gap-5'>
           {
-            username === userAuthName 
+            user.username === userAuthName 
             ? (
               <>
                 <button className="btn btn-ghost btn-sm bg-gray-200">Edit Profile</button>
@@ -60,7 +41,7 @@ const ProfileUser = () => {
         {
           !isMobile && (
             <div className=''>
-              {post.bio}
+              {user.bio}
             </div>
           )
         }
@@ -71,7 +52,7 @@ const ProfileUser = () => {
     {
       isMobile && (
         <div className='w-full'>
-          {post.bio}
+          {user.bio}
         </div>
       )
     }

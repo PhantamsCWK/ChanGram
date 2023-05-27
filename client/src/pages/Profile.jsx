@@ -1,24 +1,45 @@
 import React, { useState } from 'react'
-import { BsChevronLeft } from "react-icons/bs";
-import { FollowBar, ProfileUser } from '../features/users';
-import { UserPosts } from '../features/posts';
 import { useParams } from 'react-router-dom';
-import FollowModal from '../features/users/components/FollowModal';
+
+import { BsChevronLeft } from "react-icons/bs";
+import { PropagateLoader } from 'react-spinners';
+
+import { useGetUserQuery } from '../features/users/usersApiSlice';
+import { FollowBar, ProfileUser, FollowModal } from '../features/users';
+import { UserPosts } from '../features/posts';
 
 const Profile = () => {
-  const { username } = useParams();
   const [ postsCount, setPostsCount ] = useState(0);
   const [ followerCount, setFollowerCount ] = useState(0);
   const [ followingCount, setFollowingCount ] = useState(0);
+
+
+  const { username } = useParams();
+  const { data: user, isLoading, error } = useGetUserQuery(username);
+
+  if (error) {
+    return (
+        <div className='flex flex-col justify-center items-center gap-5 py-3 h-[75vh]'>
+            <h1 className='text-3xl text-[#570DF8] capitalize'>Page not found</h1>
+        </div>
+    )
+  }
+
+  if (isLoading) {
+    return (
+        <div className='flex flex-col justify-center items-center gap-5 py-3 h-[75vh]'>
+            <PropagateLoader className='mt-36' size={30} color='#570DF8' />
+        </div>
+    )
+  }
   
   return (
     <>
-
       <section className='flex flex-col-reverse'>
         <main className='flex flex-col align items-center mt-10 md:px-7 md:mx-16'>
 
           {/* Profile User */}
-          <ProfileUser />
+          <ProfileUser user={user} />
 
           {/* Follower */}
           <FollowBar postsCount={postsCount} followerCount={ followerCount } followingCount={ followingCount } />

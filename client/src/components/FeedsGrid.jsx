@@ -6,7 +6,7 @@ const FeedsGrid = ({ posts }) => {
         {
             posts && posts.map((posts, i) => (
                 <div className='overflow-hidden bg-slate-500 h-44 sm:h-56 lg:h-64 xl:h-80' key={i}>
-                    <img className=' object-cover w-full h-full' src={posts.picture_url} alt="" />
+                    <img className=' object-cover w-full h-full' src={posts.pictureUrl} alt="" />
                 </div>
             ))
         }

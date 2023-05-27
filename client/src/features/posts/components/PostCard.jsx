@@ -1,10 +1,13 @@
 import React from 'react';
-import People from "../../../app/assets/giovanni-ilardi-p4CmBgJ7QcA-unsplash.jpg";
+import { useParams } from 'react-router-dom';
+
 import { BsDot, BsEmojiSmile, BsSend } from 'react-icons/bs';
 import { BiBookmark, BiDotsHorizontal, BiPaperPlane } from 'react-icons/bi';
 import { AiFillHeart, AiOutlineHeart, AiOutlineMessage } from 'react-icons/ai';
+import { PropagateLoader } from 'react-spinners';
+
 import { useGetPostQuery, useLikeAndDislikeMutation } from '../postsApiSlice';
-import { useParams } from 'react-router-dom';
+import People from "../../../app/assets/giovanni-ilardi-p4CmBgJ7QcA-unsplash.jpg";
 
 const PostCard = () => {
   const { postId } = useParams();
@@ -18,17 +21,17 @@ const PostCard = () => {
 
   if (error) {
     return (
-      <h1>
-        Error
-      </h1>
+        <div className='flex flex-col justify-center items-center gap-5 py-3 h-[75vh]'>
+            <h1 className='text-3xl text-[#570DF8] capitalize'>{error.data.message}</h1>
+        </div>
     )
   }
 
   if (isLoading) {
     return (
-      <h1>
-        ....isLoading
-      </h1>
+        <div className='flex flex-col justify-start items-center gap-5 py-3 h-96'>
+            <PropagateLoader className='mt-36' size={30} color='#570DF8' />
+        </div>
     )
   }
 
@@ -37,7 +40,7 @@ const PostCard = () => {
         <div className='col-span-7'>
             <div className='w-full h-full border-r border-gray-300 p-2 '>
                 <div className=' flex justify-center items-center w-full h-[575px]'>
-                    <img src={ post.picture_url } alt='' className='object-cover max-h-full max-w-full' />
+                    <img src={ post.pictureUrl } alt='' className='object-cover max-h-full max-w-full' />
                 </div>
             </div>
         </div>

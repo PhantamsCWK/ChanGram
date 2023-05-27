@@ -10,7 +10,7 @@ const useAuth = () => {
   const { data } = useGetUserQuery(decodedToken.username);
 
   if (data) {
-    return { username: data.username, picturePath: data.picturePath }
+    return { id: data.id, username: data.username, picturePath: data.picturePath }
   }
 
   return { username: "", picturePath: "" }

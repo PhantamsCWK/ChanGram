@@ -78,3 +78,7 @@ Use mongoose.model(name, schema)	GET /posts	undefined
 [05/27/2023, 20:12:50] myBackendAPI - ERROR: 400: User or Password wrong	POST /auth/login	undefined
 [05/27/2023, 20:18:22] myBackendAPI - ERROR: error not found
 [05/27/2023, 20:18:56] myBackendAPI - ERROR: 400: User or Password wrong	POST /auth/login	undefined
+[05/27/2023, 20:28:54] myBackendAPI - ERROR: 400: User or Password wrong	POST /auth/login	http://localhost:5173
+[05/27/2023, 20:34:44] myBackendAPI - ERROR: 400: User or Password wrong	POST /auth/login	http://localhost:5173
+[05/27/2023, 20:46:10] myBackendAPI - ERROR: 400: User or Password wrong	POST /auth/login	http://localhost:5173
+[05/27/2023, 20:46:20] myBackendAPI - ERROR: rateLimit: Too many login attempts from this IP, please try again after a 1 hour	POST /auth/login	http://localhost:5173

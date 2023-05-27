@@ -6,7 +6,13 @@ import cloudinary from "../config/cloudinary.js";
 
 export const getAllPosts = async (req, res, next) => {
     try {
-        const posts = await Post.find().populate("author");
+        const posts = await Post.find().populate("author", { 
+            _id: 1, 
+            username: 1, 
+            firstName: 1, 
+            lastName: 1, 
+            picturePath: 1 
+        });
 
         res.status(200).json({ posts });
     } catch (error) {

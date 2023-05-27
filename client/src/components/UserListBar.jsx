@@ -5,7 +5,7 @@ import { ClipLoader } from 'react-spinners'
 
 const UserListBar = ({ isButton=false, users=[], isLoading=false, isError=false }) => {
 
-    if(isLoading && isError){
+    if(isLoading || isError){
         return (
             <div className='flex justify-center items-center h-full'>
                 <ClipLoader size={50} color='#570DF8'/>
@@ -16,6 +16,7 @@ const UserListBar = ({ isButton=false, users=[], isLoading=false, isError=false 
     if(users.length === 0) {
         return <h1>no context</h1>
     }
+    
     return (
         <>
         {

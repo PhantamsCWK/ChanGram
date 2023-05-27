@@ -1,14 +1,18 @@
 import React from 'react'
-import People from "../../../app/assets/giovanni-ilardi-p4CmBgJ7QcA-unsplash.jpg";
+
 import { BiBookmark, BiDotsHorizontalRounded, BiPaperPlane } from "react-icons/bi";
 import { AiFillHeart, AiOutlineHeart, AiOutlineMessage } from "react-icons/ai"
 import { BsDot } from "react-icons/bs"
-import { useGetAllPostQuery, useLikeAndDislikeMutation } from '../postsApiSlice';
 import { PropagateLoader } from 'react-spinners';
+
+import { useGetAllPostQuery, useLikeAndDislikeMutation } from '../postsApiSlice';
+import { useAuth } from '../../../hooks';
+import People from "../../../app/assets/giovanni-ilardi-p4CmBgJ7QcA-unsplash.jpg";
 
 const PostsSection = () => {
   const { data: posts, error, isLoading } = useGetAllPostQuery();
   const [likeAndDislike ] = useLikeAndDislikeMutation();
+  const { id: authId } = useAuth();
 
   const handleLikeAndDislike = async (postId) => {
     await likeAndDislike(postId).unwrap();
@@ -17,9 +21,9 @@ const PostsSection = () => {
 
   if (error) {
     return (
-      <h1>
-        Error
-      </h1>
+      <div className='flex flex-col justify-center items-center gap-5 py-3 h-[75vh]'>
+        <h1 className='text-3xl text-[#570DF8] capitalize'>{error.data.message}</h1>
+      </div>
     )
   }
 
@@ -30,11 +34,12 @@ const PostsSection = () => {
       </div>
     )
   }
-
+  
+  
   return (
     <div className='flex flex-col justify-start items-center gap-5 py-3'>
       {
-        posts && posts.map((post, i) => (
+        posts.map((post, i) => (
           <article className=' flex flex-col gap-3 w-[470px]' key={i}>
             <div className='flex flex-row justify-between items-center'>
               <div className='flex flex-row justify-start items-center gap-2 px-2 text-sm '>
@@ -43,7 +48,7 @@ const PostsSection = () => {
                     <img src={People} alt="" className=''/>
                   </div>
                 </div>
-                <h1>{post.author}</h1>
+                <h1>{post.author.username}</h1>
                 <BsDot/>
                 <h5>{post.createdAt}</h5>
               </div>
@@ -51,14 +56,14 @@ const PostsSection = () => {
             </div>
 
             <div className='flex justify-center items-center w-full'>
-              <img src={post.picture_url} alt="" className='object-cover max-h-full max-w-full rounded-md' />
+              <img src={post.pictureUrl} alt="" className='object-cover max-h-full max-w-full rounded-md' />
             </div>
 
             <div className='flex flex-row justify-between items-center'>
               <div className='flex flex-row justify-start items-center gap-2'>
                 <button type='button' onClick={() => handleLikeAndDislike(post.id)}>
                   {
-                    post.likes.hasOwnProperty("CWKChan") 
+                    post.likes.hasOwnProperty(authId) 
                     ? <AiFillHeart size="28px" color='red' />
                     : <AiOutlineHeart size="28px" />
                   }
