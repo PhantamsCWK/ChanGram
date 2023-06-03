@@ -2,7 +2,7 @@ import React from 'react'
 import { BiCompass, BiHomeAlt2, BiListUl, BiPaperPlane, BiPlusCircle, BiSearchAlt2, BiUser } from 'react-icons/bi';
 import { Link } from 'react-router-dom';
 
-const Bottombar = () => {
+const Bottombar = ({ user }) => {
   return (
     <div className="btm-nav">
       <button className="text-primary">
@@ -26,8 +26,14 @@ const Bottombar = () => {
         </label>
       </button>
       <button className="text-primary">
-        <Link to="chandra wijaya kusuma">
-          <BiUser size={25} />
+        <Link to={user.username}>
+          <div className='rounded-full w-[26px] h-[26px] overflow-hidden'>
+            {
+              user.picturePath 
+              ? <img src={user.picturePath} alt={user.username} className=' object-cover' />
+              : <BiUser size={25} />
+            }
+          </div>
         </Link>
       </button>
     </div>

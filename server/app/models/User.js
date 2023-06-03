@@ -37,11 +37,11 @@ const UserSchema = new mongoose.Schema({
         default: ""
     },
     following: {
-        type: [{ type: mongoose.Schema.Types.ObjectId, ref: "Users" }],
+        type: [{ type: mongoose.Schema.Types.String }],
         default: []
     },
     follower: {
-        type: [{ type: mongoose.Schema.Types.ObjectId, ref: "Users" }],
+        type: [{ type: mongoose.Schema.Types.String }],
         default: []
     }
 }, { timestamps: true });

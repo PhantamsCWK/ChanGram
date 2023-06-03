@@ -55,10 +55,10 @@ export const login = async (req, res, next) => {
         );
 
         res.cookie("jwt", refreshToken, {
-            httpOnly: process.env.NODE_ENV !== "test", //accessible only by web server 
-            secure: process.env.NODE_ENV === "production", //https
+            httpOnly: true, //accessible only by web server 
+            secure: true, //https
             sameSite: 'None', //cross-site cookie 
-            maxAge: 7 * 24 * 60 * 60 * 1000
+            maxAge: 7 * 24 * 60 * 60 * 1000,
          });
 
         res.status(202).json({ accessToken });
@@ -72,8 +72,9 @@ export const login = async (req, res, next) => {
 
 export const refreshToken = (req, res) => {
     const cookies = req.cookies;
-
+    
     if (!cookies?.jwt) return res.status(401).json({ message: 'Unauthorized' });
+    
 
     const refreshToken = cookies?.jwt;
 

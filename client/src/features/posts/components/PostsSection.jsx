@@ -8,6 +8,7 @@ import { PropagateLoader } from 'react-spinners';
 import { useGetAllPostQuery, useLikeAndDislikeMutation } from '../postsApiSlice';
 import { useAuth } from '../../../hooks';
 import People from "../../../app/assets/giovanni-ilardi-p4CmBgJ7QcA-unsplash.jpg";
+import { Link } from 'react-router-dom';
 
 const PostsSection = () => {
   const { data: posts, error, isLoading } = useGetAllPostQuery();
@@ -42,7 +43,7 @@ const PostsSection = () => {
         posts.map((post, i) => (
           <article className=' flex flex-col gap-3 w-[470px]' key={i}>
             <div className='flex flex-row justify-between items-center'>
-              <div className='flex flex-row justify-start items-center gap-2 px-2 text-sm '>
+              <Link to={`/${post.author.username}`} className='flex flex-row justify-start items-center gap-2 px-2 text-sm '>
                 <div className='avatar'>
                   <div className='w-[30px] rounded-full ring-[1.5px] ring-primary ring-offset-base-100 ring-offset-2'>
                     <img src={People} alt="" className=''/>
@@ -51,7 +52,7 @@ const PostsSection = () => {
                 <h1>{post.author.username}</h1>
                 <BsDot/>
                 <h5>{post.createdAt}</h5>
-              </div>
+              </Link>
               <button type='button' onClick={() => alert("report")}><BiDotsHorizontalRounded size="25px"/></button>
             </div>
 

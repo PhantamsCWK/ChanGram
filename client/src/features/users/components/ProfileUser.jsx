@@ -3,11 +3,20 @@ import { BsGearWide } from 'react-icons/bs';
 
 import { useAuth, useMediaQuery } from '../../../hooks';
 import People from '../../../app/assets/giovanni-ilardi-p4CmBgJ7QcA-unsplash.jpg';
+import { useAddRemoveFollowMutation } from '../usersApiSlice';
+import { ClipLoader } from 'react-spinners';
 
 const ProfileUser = ({ user }) => {
+  const [ followUser, {isLoading, error} ] = useAddRemoveFollowMutation();
+
   const isMobile = useMediaQuery("(max-width: 750px)");
-  
-  const { username: userAuthName } = useAuth();
+  const { username: userAuthName, id } = useAuth();
+
+  const isFollowed = user.follower.includes(id)
+
+  const handleFollow = () => {
+    followUser(user.username)
+  }
 
   return (
     <header className='flex flex-col gap-5 w-full p-3 md:gap-10'>
@@ -32,7 +41,13 @@ const ProfileUser = ({ user }) => {
             )
             : (
               <>
-                <button className="btn btn-ghost btn-sm bg-gray-200">Follow</button>
+                <button onClick={handleFollow} className={`btn btn-sm ${ isFollowed ? "btn-primary" : "btn-ghost bg-gray-200" }`}>
+                  {
+                    isLoading
+                    ? <ClipLoader size={20} />
+                    : isFollowed ? "Unfollow" : "Follow"
+                  }
+                </button>
                 <button className="btn btn-ghost btn-sm bg-gray-200">Send Message</button>
               </>
             )

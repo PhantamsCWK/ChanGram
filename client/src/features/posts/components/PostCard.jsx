@@ -54,7 +54,7 @@ const PostCard = () => {
                         </div>
 
                         <div className=''>
-                            <span className=' flex flex-row justify-start items-center text-sm'>{post.author}<BsDot /> <button className='text-blue-600'>Follow</button></span>
+                            <span className=' flex flex-row justify-start items-center text-sm'>{post.author.username}<BsDot /> <button className='text-blue-600'>Follow</button></span>
                             <span className='text-xs'>Jakarta</span>
                         </div>
                     </div>
@@ -68,12 +68,12 @@ const PostCard = () => {
                         <div className='flex flex-row justify-between text-sm'>
 
                             <div className='w-[35px] h-[35px] rounded-[50%] aspect-square overflow-hidden'>
-                                <img src={People} alt="" className='object-cover w-full h-full '/>
+                                <img src={post.author.picturePath ? post.author.picturePath : People} alt="" className='object-cover w-full h-full '/>
                             </div>
 
                             <div className='flex flex-wrap w-[85%]'>
                                 <p>
-                                    <span className=' font-semibold'>{post.author}</span>&nbsp;
+                                    <span className=' font-semibold'>{post.author.username}</span>&nbsp;
                                     {post.description}
                                 </p>
                             </div>

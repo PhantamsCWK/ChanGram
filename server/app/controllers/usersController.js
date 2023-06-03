@@ -85,6 +85,7 @@ export const addRemoveFollow = async (req, res, next) => {
         
         const updatedCurrentUser = await User.findOneAndUpdate({ username, updatedAt: currentUser.updatedAt }, { following: currentUser.following }, { new: true });
 
+
         res.status(202).json({ following: updatedCurrentUser.following, follower: updatedCurrentUser.follower });
     } catch (error) {
         next(error);

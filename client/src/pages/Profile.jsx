@@ -12,7 +12,7 @@ const Profile = () => {
   const [ postsCount, setPostsCount ] = useState(0);
   const [ followerCount, setFollowerCount ] = useState(0);
   const [ followingCount, setFollowingCount ] = useState(0);
-
+  const [ followModalType, setFollowModalType ] = useState("follower");
 
   const { username } = useParams();
   const { data: user, isLoading, error } = useGetUserQuery(username);
@@ -42,7 +42,7 @@ const Profile = () => {
           <ProfileUser user={user} />
 
           {/* Follower */}
-          <FollowBar postsCount={postsCount} followerCount={ followerCount } followingCount={ followingCount } />
+          <FollowBar postsCount={postsCount} followerCount={ followerCount } followingCount={ followingCount } setFollowModalType={setFollowModalType} />
 
           {/* User Post */}
           <UserPosts username={username} setPostsCount={setPostsCount} />
@@ -54,7 +54,7 @@ const Profile = () => {
           <span className='w-full text-center'>{username}</span>
         </div>
       </section>
-      <FollowModal username={username} setFollowerCount={setFollowerCount} setFollowingCount={setFollowingCount} />
+      <FollowModal username={username} setFollowerCount={setFollowerCount} setFollowingCount={setFollowingCount} followModalType={followModalType} />
     </>
   )
 }

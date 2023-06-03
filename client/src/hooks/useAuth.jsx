@@ -1,19 +1,16 @@
 import jwtDecode from 'jwt-decode';
 import { useSelector } from 'react-redux';
-import { useGetUserQuery } from "../features/users/usersApiSlice"
 
 const useAuth = () => {
-  const accesstoken = useSelector(state => state.auth.token)
+  const accesstoken = useSelector(state => state.auth.token);
 
-  const decodedToken = jwtDecode(accesstoken);
-
-  const { data } = useGetUserQuery(decodedToken.username);
+  const data = jwtDecode(accesstoken)
 
   if (data) {
-    return { id: data.id, username: data.username, picturePath: data.picturePath }
+    return { id: data.id, username: data.username }
   }
 
-  return { username: "", picturePath: "" }
+  return { id: "", username: "" }
 }
 
 export default useAuth

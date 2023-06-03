@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { Modal, UserListBar } from "../../../components"
 import { useGetFollowerUserQuery, useGetFollowingUserQuery } from '../usersApiSlice';
 
-const FollowModal = ({ username, setFollowingCount, setFollowerCount }) => {
+const FollowModal = ({ username, setFollowingCount, setFollowerCount, followModalType }) => {
   const [follow, setFollow] = useState("follower");
   const { 
     data: follower, 
@@ -16,10 +16,14 @@ const FollowModal = ({ username, setFollowingCount, setFollowerCount }) => {
   useEffect(() => {
     if(follower && following) {
       setFollowerCount(follower.length);
-      setFollowingCount(follower.length);
+      setFollowingCount(following.length);
     }
 
   }, [follower, following])
+
+  useEffect(() => {
+    setFollow(followModalType);
+  }, [followModalType])
   
   return (
     <Modal idModal="follow-modal" width="">

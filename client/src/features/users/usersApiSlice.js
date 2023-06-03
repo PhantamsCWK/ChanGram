@@ -30,7 +30,10 @@ const usersApiSlice = apiSlice.injectEndpoints({
             query: username => ({
                 url: `/user/${username}`,
                 method: "PATCH"
-            })
+            }),
+            providesTags: (result, error, arg) => [
+                { type: "Post", id: arg }
+            ]
 
         }),
 
@@ -38,7 +41,10 @@ const usersApiSlice = apiSlice.injectEndpoints({
             query: username => ({
                 url: `/user/${username}`,
                 method: "DELETE"
-            })
+            }),
+            providesTags: (result, error, arg) => [
+                { type: "Post", id: arg }
+            ]
         })
 
     })

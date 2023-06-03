@@ -1,18 +1,17 @@
 import { BiCompass, BiHomeAlt2, BiListUl, BiPaperPlane, BiPlusCircle, BiSearchAlt2, BiUser } from 'react-icons/bi';
 import { Link, useNavigate } from 'react-router-dom';
-import { useAuth, useMediaQuery } from '../hooks';
+import { useAuth, useMediaQuery } from '../../../hooks';
 import { BsOpticalAudio } from 'react-icons/bs';
-import { useSendLogoutMutation } from '../features/auth/authApiSlice';
+import { useSendLogoutMutation } from '../../auth/authApiSlice';
 import { useDispatch } from 'react-redux';
-import { logOut } from '../features/auth/authSlice';
+import { logOut } from '../../auth/authSlice';
 
-const SideBar = () => {
+const SideBar = ({ user }) => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
   const isMatch = useMediaQuery("(min-width: 1024px )");
   const [ sendLogout ] = useSendLogoutMutation();
-  const { username, picturePath } = useAuth();
 
   const onLogout = async () => {
     try {
@@ -55,12 +54,12 @@ const SideBar = () => {
                 { isMatch && <span>Explore</span> }
               </Link>
             </div>
-            <div className='py-[0.4rem]'>
+            {/* <div className='py-[0.4rem]'>
               <Link to="p/643b9cdd7758ab9187dca666" className='flex items-center justify-start gap-5'>
                 <BiPaperPlane size={25} />
                 { isMatch && <span>Direct</span> }
               </Link>
-            </div>
+            </div> */}
             <div className='py-[0.4rem]'>
               <label htmlFor="create-post" className="flex items-center justify-start gap-5 hover:cursor-pointer">
                 <BiPlusCircle size={25} />
@@ -68,15 +67,15 @@ const SideBar = () => {
               </label>
             </div>
             <div className='py-[0.4rem]'>
-              <Link to={username && username } className='flex items-center justify-start gap-5'>
+              <Link to={user.username } className='flex items-center justify-start gap-5'>
                 <div className='border border-black rounded-full w-[26px] h-[26px] overflow-hidden'>
                   {
-                    picturePath 
-                    ? <img src={picturePath} alt={username} className=' object-cover' />
+                    user.picturePath 
+                    ? <img src={user.picturePath} alt={user.username} className=' object-cover' />
                     : <BiUser size={25} />
                   }
                 </div>
-                { isMatch && <span>Profile</span> }
+                { isMatch && <span>{user.username}</span> }
               </Link>
             </div>
             <div className='pt-[60px]'>

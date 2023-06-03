@@ -59,8 +59,6 @@ export const getPostById = async (req, res, next) => {
         });
 
         if(!post) return res.status(404).json({ message: "post not found" });
-
-        console.log(post)
         
         res.status(200).json({ post });
     } catch (error) {
