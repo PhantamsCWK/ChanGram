@@ -24,7 +24,7 @@ const UserSchema = new mongoose.Schema({
         required: true,
         unique: true
     },
-    picturePath: {
+    photoPath: {
         type: String,
         default: ""
     },
@@ -37,12 +37,24 @@ const UserSchema = new mongoose.Schema({
         default: ""
     },
     following: {
-        type: [{ type: mongoose.Schema.Types.String }],
+        type: [{ type: mongoose.Schema.Types.ObjectId, ref: "Users" }],
         default: []
     },
     follower: {
-        type: [{ type: mongoose.Schema.Types.String }],
+        type: [{ type: mongoose.Schema.Types.ObjectId, ref: "Users"  }],
         default: []
+    },
+    followingCount: {
+        type: mongoose.Schema.Types.Number,
+        default: 0
+    },
+    followerCount: {
+        type: mongoose.Schema.Types.Number,
+        default: 0
+    },
+    postsCount: {
+        type: mongoose.Schema.Types.Number,
+        default: 0
     }
 }, { timestamps: true });
 

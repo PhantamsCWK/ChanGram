@@ -73,20 +73,60 @@ export const addRemoveFollow = async (req, res, next) => {
         const followUser = await User.findOne({ username: unique });
         const currentUser = await User.findOne({ username });
 
-        if (currentUser.following.includes(followUser._id.toString())) {
-            currentUser.following = currentUser.following.filter(follow => follow !== followUser._id.toString());
-            followUser.follower = followUser.follower.filter(follow => follow !== currentUser._id.toString());
+        let updatedFollowUser;
+        let updatedCurrentUser;
+
+        if (currentUser.following.includes(followUser._id)) {
+            // Delete currentUser Id in Follower followUser
+            updatedFollowUser = await User.findOneAndUpdate(
+                { username: unique, updatedAt: followUser.updatedAt }, 
+                { 
+                    $pull: { follower: currentUser._id },
+                    $inc: { followerCount: -1 }
+                },
+                { new: true }
+            );
+            
+            // Delete followUser Id in Following currentUser
+            updatedCurrentUser = await User.findOneAndUpdate(
+                { username: username, updatedAt: currentUser.updatedAt }, 
+                {
+                    $pull: { following: followUser._id },
+                    $inc: { followingCount: -1 }
+                },
+                { new: true }
+            );
+
         } else {
-            currentUser.following.push(followUser._id.toString());
-            followUser.follower.push(currentUser._id.toString());
+            // Add currentUser Id in Follower followUser
+            updatedFollowUser = await User.findOneAndUpdate(
+                { username: unique, updatedAt: followUser.updatedAt }, 
+                { 
+                    $addToSet: { follower: currentUser._id },
+                    $inc: { followerCount: 1 }
+                },
+                { new: true }
+            );
+            
+            // Add followUser Id in Following currentUser
+            updatedCurrentUser = await User.findOneAndUpdate(
+                { username: username, updatedAt: currentUser.updatedAt }, 
+                { 
+                    $addToSet: { following: followUser._id },
+                    $inc: { followingCount: 1 }
+                },
+                { new: true }
+            );
         }
 
-        await User.findOneAndUpdate({ username: unique, updatedAt: followUser.updatedAt }, { follower: followUser.follower });
-        
-        const updatedCurrentUser = await User.findOneAndUpdate({ username, updatedAt: currentUser.updatedAt }, { following: currentUser.following }, { new: true });
 
 
-        res.status(202).json({ following: updatedCurrentUser.following, follower: updatedCurrentUser.follower });
+        res.status(202).json({ 
+            users: [ 
+                updatedCurrentUser, 
+                updatedFollowUser 
+            ] 
+        });
     } catch (error) {
         next(error);
     }

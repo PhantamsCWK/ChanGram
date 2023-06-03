@@ -89,3 +89,4 @@ Use mongoose.model(name, schema)	GET /posts	undefined
 [06/03/2023, 13:49:11] myBackendAPI - ERROR: 400: User or Password wrong	POST /auth/login	http://localhost:5173
 [06/03/2023, 15:40:14] myBackendAPI - ERROR: 400: User or Password wrong	POST /auth/login	http://localhost:5173
 [06/03/2023, 15:44:19] myBackendAPI - ERROR: BadRequest: can't follow own account	PATCH /user/admin	undefined
+[06/03/2023, 15:53:35] myBackendAPI - ERROR: TypeError: Cannot read properties of null (reading '_id')	PATCH /user/chandra	undefined

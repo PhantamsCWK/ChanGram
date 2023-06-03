@@ -122,17 +122,28 @@ export const likePost = async (req, res, next) => {
 
         const isLiked = post.likes?.has(userId);
 
+        let updatedPost ;
+
         if(isLiked){
-            post.likes.delete(userId);
+            updatedPost = await Post.findOneAndUpdate(
+                { _id: postId, updatedAt: post.updatedAt },
+                { 
+                    $unset: { [`likes.${userId}`]: null },
+                    $inc: { likesCount: -1 }
+                },
+                { new: true }
+            );
         } else {
-            post.likes.set(userId, true);
+            updatedPost = await Post.findOneAndUpdate(
+                { _id: postId, updatedAt: post.updatedAt },
+                { 
+                    $set: { [`likes.${userId}`]: true },
+                    $inc: { likesCount: 1 }
+                },
+                { new: true }
+            );
         }
 
-        const updatedPost = await Post.findOneAndUpdate(
-            { _id: postId, updatedAt: post.updatedAt },
-            { likes: post.likes },
-            { new: true }
-        );
 
         res.status(200).json({ post: updatedPost });
     } catch (error) {
