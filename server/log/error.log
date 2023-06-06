@@ -90,3 +90,23 @@ Use mongoose.model(name, schema)	GET /posts	undefined
 [06/03/2023, 15:40:14] myBackendAPI - ERROR: 400: User or Password wrong	POST /auth/login	http://localhost:5173
 [06/03/2023, 15:44:19] myBackendAPI - ERROR: BadRequest: can't follow own account	PATCH /user/admin	undefined
 [06/03/2023, 15:53:35] myBackendAPI - ERROR: TypeError: Cannot read properties of null (reading '_id')	PATCH /user/chandra	undefined
+[06/04/2023, 13:00:24] myBackendAPI - ERROR: MongoNetworkError: getaddrinfo ENOTFOUND ac-glcokiv-shard-00-01.09fouly.mongodb.net	POST /auth/login	http://localhost:5173
+[06/04/2023, 13:06:50] myBackendAPI - ERROR: 400: User or Password wrong	POST /auth/login	http://localhost:5173
+[06/04/2023, 13:17:49] myBackendAPI - ERROR: MongoServerSelectionError: getaddrinfo ENOTFOUND ac-glcokiv-shard-00-00.09fouly.mongodb.net	GET /user/admin	http://localhost:5173
+[06/04/2023, 13:17:49] myBackendAPI - ERROR: MongoServerSelectionError: getaddrinfo ENOTFOUND ac-glcokiv-shard-00-00.09fouly.mongodb.net	GET /user/chandra	http://localhost:5173
+[06/04/2023, 13:19:05] myBackendAPI - ERROR: MongoServerSelectionError: getaddrinfo ENOTFOUND ac-glcokiv-shard-00-00.09fouly.mongodb.net	GET /user/chandra	http://localhost:5173
+[06/04/2023, 13:19:06] myBackendAPI - ERROR: MongoServerSelectionError: getaddrinfo ENOTFOUND ac-glcokiv-shard-00-00.09fouly.mongodb.net	GET /user/admin	http://localhost:5173
+[06/04/2023, 13:21:08] myBackendAPI - ERROR: MongoServerSelectionError: getaddrinfo ENOTFOUND ac-glcokiv-shard-00-00.09fouly.mongodb.net	PATCH /user/admin	http://localhost:5173
+[06/04/2023, 20:15:58] myBackendAPI - ERROR: 400: User or Password wrong	POST /auth/login	http://localhost:5173
+[06/05/2023, 20:27:11] myBackendAPI - ERROR: 400: Bad Request	GET /posts/undefined	http://localhost:5173
+[06/05/2023, 20:27:34] myBackendAPI - ERROR: 400: Bad Request	GET /posts/undefined	http://localhost:5173
+[06/05/2023, 20:28:49] myBackendAPI - ERROR: 400: Bad Request	GET /posts/undefined	http://localhost:5173
+[06/05/2023, 20:29:18] myBackendAPI - ERROR: 400: Bad Request	GET /posts/undefined	http://localhost:5173
+[06/05/2023, 20:29:56] myBackendAPI - ERROR: 400: Bad Request	GET /posts/undefined	http://localhost:5173
+[06/05/2023, 20:33:48] myBackendAPI - ERROR: 400: Bad Request	GET /posts/undefined	http://localhost:5173
+[06/05/2023, 20:34:38] myBackendAPI - ERROR: 400: Bad Request	GET /posts/undefined	http://localhost:5173
+[06/05/2023, 20:34:50] myBackendAPI - ERROR: 400: Bad Request	GET /posts/undefined	http://localhost:5173
+[06/05/2023, 20:35:06] myBackendAPI - ERROR: 400: Bad Request	GET /posts/undefined	http://localhost:5173
+[06/05/2023, 20:40:53] myBackendAPI - ERROR: 400: Bad Request	GET /posts/undefined	http://localhost:5173
+[06/05/2023, 20:41:04] myBackendAPI - ERROR: 400: Bad Request	GET /posts/undefined	http://localhost:5173
+[06/05/2023, 20:41:54] myBackendAPI - ERROR: 400: Bad Request	GET /posts/undefined	http://localhost:5173

@@ -9,7 +9,7 @@ const CreatePost = () => {
     const [isImageExist, setImageExist] = useState(false);
     const [previewImage, setPreviewImage] = useState();
 
-    const [createPost, { isLoading, error } ] = useCreatePostMutation()
+    const [createPost, { isLoading, error, isSuccess } ] = useCreatePostMutation()
     const { register, handleSubmit, reset } = useForm({
         defaultValues: { 
             file: "",
@@ -52,8 +52,8 @@ const CreatePost = () => {
     };
 
     return (
-    <Modal idModal="create-post">
-        <label className="modal-box w-11/12 max-w-5xl relative sm:w-9/12 lg:w-7/12" htmlFor="">
+    <Modal idModal="create_post">
+        <div className="modal-box w-11/12 max-w-5xl sm:w-9/12 lg:w-7/12">
         {
             isLoading
             ? (
@@ -80,7 +80,7 @@ const CreatePost = () => {
                 </form>
             )
         }
-        </label>
+        </div>
         
     </Modal>
   )

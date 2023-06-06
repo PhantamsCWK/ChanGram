@@ -1,12 +1,17 @@
-import { LoginForm } from "../features/auth"
+import React from 'react'
+import { RegisterForm, LoginForm } from "../features/auth"
 
-const Account = () => {
+const Account = ({ isRegister }) => {
   return (
-    <section className='flex justify-center items-center w-[100%] h-[100vh]'>
-      <div className='border border-gray-300 rounded-lg w-96 p-10'>
-        <LoginForm />
+    <div className=' flex justify-center items-center h-[100vh] bg-gradient-to-tr from-[#570DF8] to-white'>
+      <div className=' py-10 px-8 rounded-xl bg-slate-200 bg-opacity-40'>
+        {
+          isRegister
+          ? <RegisterForm />
+          : <LoginForm />
+        }
       </div>
-    </section>
+    </div>
   )
 }
 

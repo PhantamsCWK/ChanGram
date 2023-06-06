@@ -2,8 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { Modal, UserListBar } from "../../../components"
 import { useGetFollowerUserQuery, useGetFollowingUserQuery } from '../usersApiSlice';
 
-const FollowModal = ({ username, setFollowingCount, setFollowerCount, followModalType }) => {
-  const [follow, setFollow] = useState("follower");
+const FollowModal = ({ username, followModalType, setFollowModalType }) => {
   const { 
     data: follower, 
     isLoading: isFollowerLoading, 
@@ -13,31 +12,19 @@ const FollowModal = ({ username, setFollowingCount, setFollowerCount, followModa
     isLoading: isFollowingLoading, 
     isError: isFollowingError } = useGetFollowingUserQuery(username);
 
-  useEffect(() => {
-    if(follower && following) {
-      setFollowerCount(follower.length);
-      setFollowingCount(following.length);
-    }
-
-  }, [follower, following])
-
-  useEffect(() => {
-    setFollow(followModalType);
-  }, [followModalType])
-  
   return (
-    <Modal idModal="follow-modal" width="">
-      <label className="modal-box w-[375px]" htmlFor="">
+    <Modal idModal="follow_modal" width="">
+      <div className="modal-box w-[375px]">
         <section className='w-full'>
 
           <div className='flex flex-row justify-center items-center h-full border-b border-gray-300'>
-            <button className={`btn btn-${follow === "follower" ? "primary" : "ghost" } rounded-none w-1/2 h-full`} onClick={() => setFollow("follower")}>Follower</button>
-            <button className={`btn btn-${follow === "following" ? "primary" : "ghost" } rounded-none w-1/2 h-full`} onClick={() => setFollow("following")}>Following</button>
+            <button className={`btn btn-${followModalType === "follower" ? "primary" : "ghost" } rounded-none w-1/2 h-full outline-none`} onClick={() => setFollowModalType("follower")}>Follower</button>
+            <button className={`btn btn-${followModalType === "following" ? "primary" : "ghost" } rounded-none w-1/2 h-full outline-none`} onClick={() => setFollowModalType("following")}>Following</button>
           </div>
 
           <div className='flex flex-col justify-start items-center w-full gap-3 py-2 h-[350px] overflow-y-auto'>
             <UserListBar 
-              users={ follow === "follower" ? follower : following } 
+              users={ followModalType === "follower" ? follower : following } 
               isLoading={isFollowerLoading || isFollowingLoading} 
               isError={isFollowerError || isFollowingError}
               isButton 
@@ -45,7 +32,7 @@ const FollowModal = ({ username, setFollowingCount, setFollowerCount, followModa
           </div>
 
         </section>
-      </label>
+      </div>
     </Modal>
   )
 }

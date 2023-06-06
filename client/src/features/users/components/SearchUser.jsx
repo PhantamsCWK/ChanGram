@@ -13,8 +13,8 @@ const SearchUser = () => {
     }, [SearchQuery])
 
     return (
-    <Modal idModal="search-user">
-        <label className="modal-box w-11/12 max-w-5xl relative sm:w-9/12 lg:w-7/12" htmlFor="">
+    <Modal idModal="search_user">
+        <div method='dialog' className="modal-box w-11/12 max-w-5xl relative sm:w-9/12 lg:w-7/12">
             <div className="form-control">
                 <label className="input-group input-group-md w-full">
                     {
@@ -34,7 +34,7 @@ const SearchUser = () => {
                     }
                 </label>
             </div>
-        </label>
+        </div>
     </Modal>
   )
 }

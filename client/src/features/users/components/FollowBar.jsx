@@ -7,11 +7,11 @@ const FollowBar = ({ postsCount, followingCount, followerCount, setFollowModalTy
             <span className='text-sm font-semibold'>{postsCount}</span>
             <span className='text-sm capitalize text-gray-600'>Post</span> 
         </div>
-        <label htmlFor='follow-modal' onClick={() => setFollowModalType("follower")} className="flex flex-col items-center justify-center p-2 w-20 hover:cursor-pointer">
+        <label onClick={() => { window.follow_modal.showModal(); setFollowModalType("follower")}} className="flex flex-col items-center justify-center p-2 w-20 hover:cursor-pointer">
             <span className='text-sm font-semibold'>{followerCount}</span>
             <span className='text-sm capitalize text-gray-600'>Follower</span> 
         </label>
-        <label htmlFor='follow-modal' onClick={() => setFollowModalType("following")} className="flex flex-col items-center justify-center p-2 w-20 hover:cursor-pointer">
+        <label onClick={() => { window.follow_modal.showModal(); setFollowModalType("following");}} className="flex flex-col items-center justify-center p-2 w-20 hover:cursor-pointer">
             <span className='text-sm font-semibold'>{followingCount}</span>
             <span className='text-sm capitalize text-gray-600'>Following</span> 
         </label>

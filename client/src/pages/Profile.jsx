@@ -9,9 +9,6 @@ import { FollowBar, ProfileUser, FollowModal } from '../features/users';
 import { UserPosts } from '../features/posts';
 
 const Profile = () => {
-  const [ postsCount, setPostsCount ] = useState(0);
-  const [ followerCount, setFollowerCount ] = useState(0);
-  const [ followingCount, setFollowingCount ] = useState(0);
   const [ followModalType, setFollowModalType ] = useState("follower");
 
   const { username } = useParams();
@@ -42,10 +39,10 @@ const Profile = () => {
           <ProfileUser user={user} />
 
           {/* Follower */}
-          <FollowBar postsCount={postsCount} followerCount={ followerCount } followingCount={ followingCount } setFollowModalType={setFollowModalType} />
+          <FollowBar setFollowModalType={setFollowModalType} postsCount={user.postsCount} followingCount={user.followingCount} followerCount={user.followerCount} />
 
           {/* User Post */}
-          <UserPosts username={username} setPostsCount={setPostsCount} />
+          <UserPosts username={username} />
 
         </main>
 
@@ -54,7 +51,7 @@ const Profile = () => {
           <span className='w-full text-center'>{username}</span>
         </div>
       </section>
-      <FollowModal username={username} setFollowerCount={setFollowerCount} setFollowingCount={setFollowingCount} followModalType={followModalType} />
+      <FollowModal username={username} followModalType={followModalType} setFollowModalType={setFollowModalType} />
     </>
   )
 }

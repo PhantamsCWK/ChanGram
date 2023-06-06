@@ -1,8 +1,9 @@
 import PostsSection from "./components/PostsSection";
-import PostCard from './components/PostCard';
+import PostDetail from './components/PostDetail';
 import StoryBar from './components/StoryBar';
 import ExploreFeed from "./components/ExploreFeed";
 import UserPosts from "./components/UserPosts";
 import CreatePost from "./components/CreatePost";
+import PostModal from "./components/PostModal";
 
-export { PostsSection, PostCard, StoryBar, ExploreFeed, UserPosts, CreatePost};
+export { PostsSection, PostDetail, StoryBar, ExploreFeed, UserPosts, CreatePost, PostModal};

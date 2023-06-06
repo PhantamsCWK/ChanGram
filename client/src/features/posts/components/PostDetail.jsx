@@ -8,32 +8,35 @@ import { PropagateLoader } from 'react-spinners';
 
 import { useGetPostQuery, useLikeAndDislikeMutation } from '../postsApiSlice';
 import People from "../../../app/assets/giovanni-ilardi-p4CmBgJ7QcA-unsplash.jpg";
+import { useAuth } from '../../../hooks';
 
-const PostCard = () => {
+const PostDetail = () => {
   const { postId } = useParams();
+  const { id: authUserId } = useAuth();
   const { data: post, isLoading, error } = useGetPostQuery(postId);
-  const [likeAndDislike ] = useLikeAndDislikeMutation();
 
+  const [likeAndDislike ] = useLikeAndDislikeMutation();
+  
   const handleLikeAndDislike = async (postId) => {
     await likeAndDislike(postId).unwrap();
     return
   }
 
   if (error) {
-    return (
-        <div className='flex flex-col justify-center items-center gap-5 py-3 h-[75vh]'>
-            <h1 className='text-3xl text-[#570DF8] capitalize'>{error.data.message}</h1>
-        </div>
+      return (
+      <div className='flex flex-col justify-center items-center gap-5 py-3 h-[75vh]'>
+        <h1 className='text-3xl text-[#570DF8] capitalize'>{error.data.message}</h1>
+      </div>
     )
-  }
+}
 
-  if (isLoading) {
+if (isLoading) {
     return (
         <div className='flex flex-col justify-start items-center gap-5 py-3 h-96'>
-            <PropagateLoader className='mt-36' size={30} color='#570DF8' />
-        </div>
+        <PropagateLoader className='mt-36' size={30} color='#570DF8' />
+      </div>
     )
-  }
+}
 
   return (
     <div className='container grid grid-cols-12 w-[900px] h-[650px] border border-gray-300'>
@@ -87,7 +90,7 @@ const PostCard = () => {
                             <div className='flex flex-row justify-start items-center gap-2'>
                                 <button type='button' onClick={() => handleLikeAndDislike(post.id)}>
                                 {
-                                    post.likes.hasOwnProperty("CWKChan") 
+                                    post.likes.hasOwnProperty(authUserId) 
                                     ? <AiFillHeart size="28px" color='red' />
                                     : <AiOutlineHeart size="28px" />
                                 }
@@ -99,7 +102,7 @@ const PostCard = () => {
                         </div>
 
                         <div className='p-1 text-sm font-semibold'>
-                            <span className='inline'>{Object.keys(post.likes).length}</span>
+                            <span className='inline'>{post.likesCount}</span>
                             &nbsp;
                             <h4 className=' inline'>like</h4>
                             <br />
@@ -123,4 +126,4 @@ const PostCard = () => {
   )
 }
 
-export default PostCard
+export default PostDetail

@@ -1,6 +1,6 @@
 import { BiCompass, BiHomeAlt2, BiListUl, BiPaperPlane, BiPlusCircle, BiSearchAlt2, BiUser } from 'react-icons/bi';
-import { Link, useNavigate } from 'react-router-dom';
-import { useAuth, useMediaQuery } from '../../../hooks';
+import { Link, redirect } from 'react-router-dom';
+import { useMediaQuery } from '../../../hooks';
 import { BsOpticalAudio } from 'react-icons/bs';
 import { useSendLogoutMutation } from '../../auth/authApiSlice';
 import { useDispatch } from 'react-redux';
@@ -8,7 +8,6 @@ import { logOut } from '../../auth/authSlice';
 
 const SideBar = ({ user }) => {
   const dispatch = useDispatch();
-  const navigate = useNavigate();
 
   const isMatch = useMediaQuery("(min-width: 1024px )");
   const [ sendLogout ] = useSendLogoutMutation();
@@ -17,7 +16,7 @@ const SideBar = ({ user }) => {
     try {
       await sendLogout().unwrap();
       dispatch(logOut());
-      navigate("/account")
+      redirect("/account")
     } catch (error) {
       console.log(error);
     }
@@ -43,10 +42,10 @@ const SideBar = ({ user }) => {
               </Link>
             </div>
             <div className='py-[0.4rem]'>
-              <label htmlFor="search-user" className="flex items-center justify-start gap-5 hover:cursor-pointer">
+              <button onClick={() => window.search_user.showModal()} className="flex items-center justify-start gap-5 hover:cursor-pointer">
                 <BiSearchAlt2 size={25} />
                 { isMatch && <span>Search</span> }
-              </label>
+              </button>
             </div>
             <div className='py-[0.4rem]'>
               <Link to="explore" className='flex items-center justify-start gap-5'>
@@ -61,10 +60,10 @@ const SideBar = ({ user }) => {
               </Link>
             </div> */}
             <div className='py-[0.4rem]'>
-              <label htmlFor="create-post" className="flex items-center justify-start gap-5 hover:cursor-pointer">
+              <button onClick={ () => window.create_post.showModal()} className="flex items-center justify-start gap-5 hover:cursor-pointer">
                 <BiPlusCircle size={25} />
                 { isMatch && <span>Create</span> }
-              </label>
+              </button>
             </div>
             <div className='py-[0.4rem]'>
               <Link to={user.username } className='flex items-center justify-start gap-5'>

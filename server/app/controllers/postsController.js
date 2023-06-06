@@ -84,6 +84,11 @@ export const createPost = async (req, res, next) => {
 
         const result = await newPost.save();
 
+        await User.updateOne(
+            { _id: req.user.id , username: req.user.username },
+            { $inc: { postsCount: 1 } }
+        );
+
         res.status(201).json({
             post: result
         });

@@ -21,7 +21,7 @@ const postsApiSlice = apiSlice.injectEndpoints({
                 if (result) {
                     return [
                         { type: 'Post', id: 'LIST' },
-                        ...result.map(id => ({ type: 'Post', id }))
+                        ...result.map(post => ({ type: 'Post', id: post.id }))
                     ]
                 } else {
                     return [{ type: 'Post', id: 'LIST' }]
@@ -67,7 +67,7 @@ const postsApiSlice = apiSlice.injectEndpoints({
                 if (result) {
                     return [
                         { type: 'Post', id: 'LIST' },
-                        ...result.map(id => ({ type: 'Post', id }))
+                        ...result.map(post => ({ type: 'Post', id: post.id }))
                     ]
                 } else {
                     return [{ type: 'Post', id: 'LIST' }]
@@ -82,9 +82,19 @@ const postsApiSlice = apiSlice.injectEndpoints({
                 method: "POST",
                 body: formData
             }),
-            invalidatesTags: () =>[
-                { type: "Post", id: "LIST" }
-            ]
+            transformResponse: responseData => responseData.post,
+            invalidatesTags: (result) => {
+                if (result) {
+                    return [
+                        { type: "Post", id: "LIST" },
+                        { type: "User", id: result.username }
+                    ]
+                } else {
+                    return [
+                        { type: "Post", id: "LIST" },
+                    ]
+                }
+            }
         }),
 
         deletePost: builder.mutation({
@@ -124,6 +134,6 @@ const postsApiSlice = apiSlice.injectEndpoints({
 })
 
 
-export const { useGetAllPostQuery, useGetPostQuery, useGetUserPostsQuery, useCreatePostMutation, useDeletePostMutation, useLikeAndDislikeMutation } = postsApiSlice
+export const { useGetAllPostQuery, useGetPostQuery, useLazyGetPostQuery , useGetUserPostsQuery, useCreatePostMutation, useDeletePostMutation, useLikeAndDislikeMutation } = postsApiSlice
 
 // export const selectPostResult = postsApiSlice.endpoints.getAllPost.select();

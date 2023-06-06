@@ -6,12 +6,10 @@ const usersApiSlice = apiSlice.injectEndpoints({
             query: username => `/user/${username}`,
             transformResponse: responseData => {
                 const user = responseData.user;
-                user.id = user._id
-                delete user._id
                 return user
             },
             providesTags: (result, error, arg) => [
-                { type: "Post", id: arg }
+                { type: "User", id: arg }
             ]
         }),
 
@@ -31,10 +29,20 @@ const usersApiSlice = apiSlice.injectEndpoints({
                 url: `/user/${username}`,
                 method: "PATCH"
             }),
-            providesTags: (result, error, arg) => [
-                { type: "Post", id: arg }
-            ]
-
+            transformResponse: responseData => {
+                const users = responseData.users;
+                return users
+            },
+            invalidatesTags: (result, error, arg) => {
+                if(result) {
+                    return [
+                        "User",
+                        ...result.map(user => ({ type: "User", id: user.username }))
+                    ]
+                } else {
+                    return ["User"]
+                }
+            }
         }),
 
         deleteUser: builder.mutation({
@@ -42,8 +50,8 @@ const usersApiSlice = apiSlice.injectEndpoints({
                 url: `/user/${username}`,
                 method: "DELETE"
             }),
-            providesTags: (result, error, arg) => [
-                { type: "Post", id: arg }
+            invalidatesTags: (result, error, arg) => [
+                { type: "User", id: arg }
             ]
         })
 
