@@ -55,7 +55,7 @@ export const getPostById = async (req, res, next) => {
             username: 1, 
             firstName: 1, 
             lastName: 1, 
-            picturePath: 1 
+            picturePath: 1,
         });
 
         if(!post) return res.status(404).json({ message: "post not found" });

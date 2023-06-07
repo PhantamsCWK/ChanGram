@@ -26,7 +26,7 @@ const usersApiSlice = apiSlice.injectEndpoints({
 
         addRemoveFollow: builder.mutation({
             query: username => ({
-                url: `/user/${username}`,
+                url: `/user/${username}/follow`,
                 method: "PATCH"
             }),
             transformResponse: responseData => {

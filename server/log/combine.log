@@ -2302,3 +2302,108 @@ Use mongoose.model(name, schema)	GET /posts	undefined
 [06/06/2023, 14:20:23] myBackendAPI - INFO: GET /posts/647ed0568585ca19c69ec7b6	http://localhost:5173
 [06/06/2023, 14:25:11] myBackendAPI - INFO: GET /posts	http://localhost:5173
 [06/06/2023, 14:25:30] myBackendAPI - INFO: GET /auth/logout	http://localhost:5173
+[06/06/2023, 20:51:27] myBackendAPI - INFO: GET /user	undefined
+[06/06/2023, 20:51:27] myBackendAPI - ERROR: error not found
+[06/06/2023, 20:51:41] myBackendAPI - INFO: GET /user/search	undefined
+[06/06/2023, 20:52:08] myBackendAPI - INFO: DELETE /user	undefined
+[06/06/2023, 20:52:12] myBackendAPI - INFO: DELETE /user/dwdaw	undefined
+[06/06/2023, 20:52:18] myBackendAPI - INFO: POST /auth/login	http://localhost:5173
+[06/06/2023, 20:52:41] myBackendAPI - INFO: GET /user/search	undefined
+[06/06/2023, 20:52:59] myBackendAPI - INFO: GET /user/search&username=ad	undefined
+[06/06/2023, 20:53:01] myBackendAPI - INFO: GET /user/search&username=ad	undefined
+[06/06/2023, 20:53:18] myBackendAPI - INFO: GET /user/search?username=ad	undefined
+[06/06/2023, 20:53:29] myBackendAPI - INFO: GET /user/search?username=ad	undefined
+[06/06/2023, 20:55:15] myBackendAPI - INFO: GET /user/search?username=ad	undefined
+[06/06/2023, 20:56:06] myBackendAPI - INFO: GET /user/search?username=ad	undefined
+[06/06/2023, 20:56:08] myBackendAPI - INFO: GET /user/search?username=ad	undefined
+[06/06/2023, 20:56:32] myBackendAPI - INFO: GET /user/search	undefined
+[06/06/2023, 20:56:33] myBackendAPI - INFO: GET /user/search	undefined
+[06/06/2023, 20:56:34] myBackendAPI - INFO: GET /user/search	undefined
+[06/06/2023, 20:56:35] myBackendAPI - INFO: GET /user/search	undefined
+[06/06/2023, 20:56:35] myBackendAPI - INFO: GET /user/search	undefined
+[06/06/2023, 20:56:36] myBackendAPI - INFO: GET /user/search	undefined
+[06/06/2023, 20:56:36] myBackendAPI - INFO: GET /user/search	undefined
+[06/06/2023, 20:57:03] myBackendAPI - INFO: GET /user/search	undefined
+[06/06/2023, 20:57:04] myBackendAPI - INFO: GET /user/search	undefined
+[06/06/2023, 20:58:33] myBackendAPI - INFO: GET /user/search	undefined
+[06/06/2023, 20:59:51] myBackendAPI - INFO: GET /user/search	undefined
+[06/06/2023, 21:07:16] myBackendAPI - INFO: DELETE /user/dwdaw	undefined
+[06/06/2023, 21:07:27] myBackendAPI - ERROR: SyntaxError: Unexpected number in JSON at position 94	PATCH /user/	undefined
+[06/06/2023, 21:09:46] myBackendAPI - ERROR: SyntaxError: Unexpected number in JSON at position 94	PATCH /user/	undefined
+[06/06/2023, 21:10:09] myBackendAPI - ERROR: SyntaxError: Unexpected number in JSON at position 94	PATCH /user	undefined
+[06/06/2023, 21:17:09] myBackendAPI - ERROR: SyntaxError: Unexpected number in JSON at position 94	PATCH /user	undefined
+[06/06/2023, 21:17:18] myBackendAPI - INFO: PATCH /user	undefined
+[06/06/2023, 21:17:29] myBackendAPI - INFO: GET /user/search	undefined
+[06/06/2023, 21:20:23] myBackendAPI - INFO: PATCH /user	undefined
+[06/06/2023, 21:20:30] myBackendAPI - INFO: GET /user/search	undefined
+[06/06/2023, 21:20:30] myBackendAPI - ERROR: BadRequest: can't follow own account	GET /user/search	undefined
+[06/06/2023, 21:21:51] myBackendAPI - INFO: GET /user/search?username=abcd	undefined
+[06/06/2023, 21:21:58] myBackendAPI - INFO: GET /user/search?username=adm	undefined
+[06/06/2023, 21:22:04] myBackendAPI - INFO: GET /user/search?username=a	undefined
+[06/06/2023, 21:25:35] myBackendAPI - INFO: DELETE /user/admin	undefined
+[06/06/2023, 21:25:44] myBackendAPI - INFO: DELETE /user/chandra	undefined
+[06/06/2023, 21:25:50] myBackendAPI - INFO: POST /auth/register	undefined
+[06/06/2023, 21:25:54] myBackendAPI - INFO: POST /auth/login	http://localhost:5173
+[06/06/2023, 21:26:08] myBackendAPI - INFO: PATCH /user	undefined
+[06/06/2023, 21:26:16] myBackendAPI - INFO: GET /user/search?username=a	undefined
+[06/06/2023, 21:26:42] myBackendAPI - INFO: GET /user/admin	undefined
+[06/06/2023, 21:26:51] myBackendAPI - INFO: GET /user/admin	undefined
+[06/06/2023, 21:27:10] myBackendAPI - INFO: GET /posts	undefined
+[06/06/2023, 21:27:14] myBackendAPI - INFO: GET /posts	undefined
+[06/06/2023, 21:27:22] myBackendAPI - INFO: DELETE /posts/647c33fc9b648f403b36619f	undefined
+[06/06/2023, 21:27:58] myBackendAPI - INFO: DELETE /posts/647c33fc9b648f403b36619f	undefined
+[06/06/2023, 21:28:13] myBackendAPI - INFO: DELETE /posts/647c34ec9b648f403b3661aa	undefined
+[06/06/2023, 21:28:24] myBackendAPI - INFO: DELETE /posts/647c35ed9b648f403b3661bc	undefined
+[06/06/2023, 21:28:37] myBackendAPI - INFO: DELETE /posts/647c363d9b648f403b3661cd	undefined
+[06/06/2023, 21:28:47] myBackendAPI - INFO: DELETE /posts/647ed0568585ca19c69ec7b6	undefined
+[06/06/2023, 21:28:52] myBackendAPI - INFO: GET /posts	undefined
+[06/06/2023, 21:28:58] myBackendAPI - INFO: GET /user/search?username=a	undefined
+[06/06/2023, 21:29:47] myBackendAPI - INFO: PATCH /user	undefined
+[06/06/2023, 21:29:47] myBackendAPI - ERROR: TypeError: Converting circular structure to JSON
+    --> starting at object with constructor 'MongoClient'
+    |     property 's' -> object with constructor 'Object'
+    |     property 'sessionPool' -> object with constructor 'ServerSessionPool'
+    --- property 'client' closes the circle	PATCH /user	undefined
+[06/06/2023, 21:32:08] myBackendAPI - INFO: PATCH /user	undefined
+[06/06/2023, 21:32:08] myBackendAPI - ERROR: TypeError: Converting circular structure to JSON
+    --> starting at object with constructor 'MongoClient'
+    |     property 's' -> object with constructor 'Object'
+    |     property 'sessionPool' -> object with constructor 'ServerSessionPool'
+    --- property 'client' closes the circle	PATCH /user	undefined
+[06/06/2023, 21:34:40] myBackendAPI - INFO: PATCH /user	undefined
+[06/06/2023, 21:36:06] myBackendAPI - INFO: PATCH /user	undefined
+[06/06/2023, 21:36:06] myBackendAPI - ERROR: TypeError: Converting circular structure to JSON
+    --> starting at object with constructor 'MongoClient'
+    |     property 's' -> object with constructor 'Object'
+    |     property 'sessionPool' -> object with constructor 'ServerSessionPool'
+    --- property 'client' closes the circle	PATCH /user	undefined
+[06/06/2023, 21:39:31] myBackendAPI - INFO: PATCH /user	undefined
+[06/06/2023, 21:39:31] myBackendAPI - ERROR: TypeError: Converting circular structure to JSON
+    --> starting at object with constructor 'MongoClient'
+    |     property 's' -> object with constructor 'Object'
+    |     property 'sessionPool' -> object with constructor 'ServerSessionPool'
+    --- property 'client' closes the circle	PATCH /user	undefined
+[06/06/2023, 21:46:15] myBackendAPI - INFO: PATCH /user	undefined
+[06/06/2023, 21:46:15] myBackendAPI - ERROR: TypeError: Converting circular structure to JSON
+    --> starting at object with constructor 'MongoClient'
+    |     property 's' -> object with constructor 'Object'
+    |     property 'sessionPool' -> object with constructor 'ServerSessionPool'
+    --- property 'client' closes the circle	PATCH /user	undefined
+[06/06/2023, 21:51:21] myBackendAPI - INFO: PATCH /user	undefined
+[06/06/2023, 21:51:21] myBackendAPI - ERROR: TypeError: Converting circular structure to JSON
+    --> starting at object with constructor 'MongoClient'
+    |     property 's' -> object with constructor 'Object'
+    |     property 'sessionPool' -> object with constructor 'ServerSessionPool'
+    --- property 'client' closes the circle	PATCH /user	undefined
+[06/06/2023, 21:53:17] myBackendAPI - INFO: GET /user/admin	undefined
+[06/06/2023, 21:53:25] myBackendAPI - INFO: PATCH /user	undefined
+[06/06/2023, 21:53:34] myBackendAPI - INFO: GET /user/admin	undefined
+[06/06/2023, 21:53:40] myBackendAPI - INFO: GET /user/cwk	undefined
+[06/07/2023, 12:52:10] myBackendAPI - INFO: PATCH /user	undefined
+[06/07/2023, 12:52:20] myBackendAPI - INFO: POST /auth/login	http://localhost:5173
+[06/07/2023, 12:52:31] myBackendAPI - INFO: PATCH /user	undefined
+[06/07/2023, 12:52:35] myBackendAPI - INFO: POST /auth/login	http://localhost:5173
+[06/07/2023, 12:52:35] myBackendAPI - ERROR: 400: User or Password wrong	POST /auth/login	http://localhost:5173
+[06/07/2023, 12:52:42] myBackendAPI - INFO: POST /auth/login	http://localhost:5173
+[06/07/2023, 13:50:08] myBackendAPI - INFO: PATCH /user	undefined
+[06/07/2023, 13:50:57] myBackendAPI - ERROR: MongoServerSelectionError: connection <monitor> to 52.220.201.167:27017 timed out	PATCH /user	undefined

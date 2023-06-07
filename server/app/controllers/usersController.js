@@ -14,6 +14,24 @@ export const getUser = async (req, res, next) => {
     }
 }
 
+export const searchUser = async (req, res, next) => {
+    try {
+        const username = req.query.username;
+
+        if(!username){
+            res.status(404)
+            next({ name: "BadRequest", message: "invalid query params" })
+            return
+        }
+
+        const users = await User.find({ username: { $regex: new RegExp(username, "i") }}, { username: 1, name: 1, photoPath: 1,  }).limit(15);
+
+        res.status(200).json({ users });
+    } catch (error) {
+        next(error);
+    }
+}
+
 export const getFollowingUser = async (req, res, next) => {
     try {
         const { unique } = req.params;
@@ -132,3 +150,21 @@ export const addRemoveFollow = async (req, res, next) => {
     }
 }
 
+export const editUser = async (req, res, next) => {
+    const { username, name, bio } = req.body;
+    const usernameAuth = req.user.username;
+
+    try {
+        const updatedUser = await User.updateOne(
+            { username: usernameAuth }, 
+            { $set: { username, name, bio }} , 
+            { new: true }
+            );
+        res.status(200).json({ user: updatedUser });
+    } catch (error) {
+        res.status(400);
+        next(error);
+    }
+
+
+}

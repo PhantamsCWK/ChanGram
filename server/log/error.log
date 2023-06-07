@@ -110,3 +110,41 @@ Use mongoose.model(name, schema)	GET /posts	undefined
 [06/05/2023, 20:40:53] myBackendAPI - ERROR: 400: Bad Request	GET /posts/undefined	http://localhost:5173
 [06/05/2023, 20:41:04] myBackendAPI - ERROR: 400: Bad Request	GET /posts/undefined	http://localhost:5173
 [06/05/2023, 20:41:54] myBackendAPI - ERROR: 400: Bad Request	GET /posts/undefined	http://localhost:5173
+[06/06/2023, 20:51:27] myBackendAPI - ERROR: error not found
+[06/06/2023, 21:07:27] myBackendAPI - ERROR: SyntaxError: Unexpected number in JSON at position 94	PATCH /user/	undefined
+[06/06/2023, 21:09:46] myBackendAPI - ERROR: SyntaxError: Unexpected number in JSON at position 94	PATCH /user/	undefined
+[06/06/2023, 21:10:09] myBackendAPI - ERROR: SyntaxError: Unexpected number in JSON at position 94	PATCH /user	undefined
+[06/06/2023, 21:17:09] myBackendAPI - ERROR: SyntaxError: Unexpected number in JSON at position 94	PATCH /user	undefined
+[06/06/2023, 21:20:30] myBackendAPI - ERROR: BadRequest: can't follow own account	GET /user/search	undefined
+[06/06/2023, 21:29:47] myBackendAPI - ERROR: TypeError: Converting circular structure to JSON
+    --> starting at object with constructor 'MongoClient'
+    |     property 's' -> object with constructor 'Object'
+    |     property 'sessionPool' -> object with constructor 'ServerSessionPool'
+    --- property 'client' closes the circle	PATCH /user	undefined
+[06/06/2023, 21:32:08] myBackendAPI - ERROR: TypeError: Converting circular structure to JSON
+    --> starting at object with constructor 'MongoClient'
+    |     property 's' -> object with constructor 'Object'
+    |     property 'sessionPool' -> object with constructor 'ServerSessionPool'
+    --- property 'client' closes the circle	PATCH /user	undefined
+[06/06/2023, 21:36:06] myBackendAPI - ERROR: TypeError: Converting circular structure to JSON
+    --> starting at object with constructor 'MongoClient'
+    |     property 's' -> object with constructor 'Object'
+    |     property 'sessionPool' -> object with constructor 'ServerSessionPool'
+    --- property 'client' closes the circle	PATCH /user	undefined
+[06/06/2023, 21:39:31] myBackendAPI - ERROR: TypeError: Converting circular structure to JSON
+    --> starting at object with constructor 'MongoClient'
+    |     property 's' -> object with constructor 'Object'
+    |     property 'sessionPool' -> object with constructor 'ServerSessionPool'
+    --- property 'client' closes the circle	PATCH /user	undefined
+[06/06/2023, 21:46:15] myBackendAPI - ERROR: TypeError: Converting circular structure to JSON
+    --> starting at object with constructor 'MongoClient'
+    |     property 's' -> object with constructor 'Object'
+    |     property 'sessionPool' -> object with constructor 'ServerSessionPool'
+    --- property 'client' closes the circle	PATCH /user	undefined
+[06/06/2023, 21:51:21] myBackendAPI - ERROR: TypeError: Converting circular structure to JSON
+    --> starting at object with constructor 'MongoClient'
+    |     property 's' -> object with constructor 'Object'
+    |     property 'sessionPool' -> object with constructor 'ServerSessionPool'
+    --- property 'client' closes the circle	PATCH /user	undefined
+[06/07/2023, 12:52:35] myBackendAPI - ERROR: 400: User or Password wrong	POST /auth/login	http://localhost:5173
+[06/07/2023, 13:50:57] myBackendAPI - ERROR: MongoServerSelectionError: connection <monitor> to 52.220.201.167:27017 timed out	PATCH /user	undefined
