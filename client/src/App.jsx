@@ -4,9 +4,11 @@ import { useSelector } from 'react-redux';
 
 import Loading from './pages/Loading';
 
+const AuthLayout = lazy(() => import('./layouts/AuthLayout'))
 const MainLayout = lazy(() => import('./layouts/MainLayout'));
 const Home = lazy(() => import("./pages/Home"));
-const Account = lazy(() => import("./pages/Account"));
+const Login = lazy(() => import("./pages/Login"));
+const Register = lazy(() => import("./pages/Register"));
 const Error = lazy(() => import("./pages/Error"));
 const Explore = lazy(() => import("./pages/Explore"));
 const Post = lazy(() => import("./pages/Post"));
@@ -21,16 +23,18 @@ const App = () => {
     <Suspense fallback={<Loading />}>
       <BrowserRouter>
         <Routes>
-            <Route path='login' element={ accessToken ? <Navigate to="/home" /> : <Account /> }/>
-            <Route path='register' element={ accessToken ? <Navigate to="/home" /> : <Account isRegister /> }/>
+          <Route element={accessToken ? <Navigate to="/" /> : <AuthLayout />}>
+            <Route path='login' element={ <Login /> }/>
+            <Route path='register' element={ <Register /> }/>
+          </Route>
 
-            <Route element={ accessToken ? <MainLayout /> : <Navigate to="login"/> } >
-              <Route path='/' element={<Home />} />
-              <Route path='explore' element={<Explore />}/>
-              <Route path="p/:postId" element={<Post />} />
-              <Route path=':username' element={<Profile />}/>
-              <Route path='*' element={<Error />}/>
-            </Route>
+          <Route element={ accessToken ? <MainLayout /> : <Navigate to="login"/> } >
+            <Route path='/' element={<Home />} />
+            <Route path='explore' element={<Explore />}/>
+            <Route path="p/:postId" element={<Post />} />
+            <Route path=':username' element={<Profile />}/>
+            <Route path='*' element={<Error />}/>
+          </Route>
         </Routes>
       </BrowserRouter>
     </Suspense>

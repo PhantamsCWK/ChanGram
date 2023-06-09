@@ -22,7 +22,7 @@ const FollowModal = ({ username, followModalType, setFollowModalType }) => {
             <button className={`btn btn-${followModalType === "following" ? "primary" : "ghost" } rounded-none w-1/2 h-full outline-none`} onClick={() => setFollowModalType("following")}>Following</button>
           </div>
 
-          <div className='flex flex-col justify-start items-center w-full gap-3 py-2 h-[350px] overflow-y-auto'>
+          <div className='flex flex-col justify-start w-full gap-3 py-2 h-[350px] overflow-y-auto'>
             <UserListBar 
               users={ followModalType === "follower" ? follower : following } 
               isLoading={isFollowerLoading || isFollowingLoading} 

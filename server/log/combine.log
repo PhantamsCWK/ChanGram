@@ -2407,3 +2407,465 @@ Use mongoose.model(name, schema)	GET /posts	undefined
 [06/07/2023, 12:52:42] myBackendAPI - INFO: POST /auth/login	http://localhost:5173
 [06/07/2023, 13:50:08] myBackendAPI - INFO: PATCH /user	undefined
 [06/07/2023, 13:50:57] myBackendAPI - ERROR: MongoServerSelectionError: connection <monitor> to 52.220.201.167:27017 timed out	PATCH /user	undefined
+[06/07/2023, 13:53:27] myBackendAPI - INFO: PATCH /user	undefined
+[06/07/2023, 13:53:38] myBackendAPI - INFO: GET /user/cwk	undefined
+[06/07/2023, 13:53:50] myBackendAPI - INFO: GET /user/cwk	undefined
+[06/07/2023, 13:54:03] myBackendAPI - INFO: GET /user/cwk	undefined
+[06/07/2023, 14:46:05] myBackendAPI - INFO: POST /auth/login	http://localhost:5173
+[06/07/2023, 14:46:05] myBackendAPI - ERROR: 400: User or Password wrong	POST /auth/login	http://localhost:5173
+[06/07/2023, 14:53:28] myBackendAPI - INFO: POST /auth/login	http://localhost:5173
+[06/07/2023, 14:53:29] myBackendAPI - ERROR: 400: User or Password wrong	POST /auth/login	http://localhost:5173
+[06/07/2023, 14:55:04] myBackendAPI - INFO: POST /auth/login	http://localhost:5173
+[06/07/2023, 14:55:04] myBackendAPI - ERROR: 400: User or Password wrong	POST /auth/login	http://localhost:5173
+[06/07/2023, 14:56:26] myBackendAPI - INFO: POST /auth/login	http://localhost:5173
+[06/07/2023, 14:56:26] myBackendAPI - ERROR: 400: User or Password wrong	POST /auth/login	http://localhost:5173
+[06/07/2023, 14:57:14] myBackendAPI - INFO: POST /auth/login	http://localhost:5173
+[06/07/2023, 14:57:14] myBackendAPI - ERROR: 400: User or Password wrong	POST /auth/login	http://localhost:5173
+[06/07/2023, 15:00:11] myBackendAPI - INFO: POST /auth/login	http://localhost:5173
+[06/07/2023, 15:00:11] myBackendAPI - ERROR: 400: User or Password wrong	POST /auth/login	http://localhost:5173
+[06/07/2023, 15:09:04] myBackendAPI - INFO: POST /auth/login	http://localhost:5173
+[06/07/2023, 15:09:04] myBackendAPI - ERROR: rateLimit: Too many login attempts from this IP, please try again after a 1 hour	POST /auth/login	http://localhost:5173
+[06/07/2023, 15:09:36] myBackendAPI - INFO: POST /auth/login	http://localhost:5173
+[06/07/2023, 15:09:36] myBackendAPI - ERROR: 400: User or Password wrong	POST /auth/login	http://localhost:5173
+[06/07/2023, 15:17:45] myBackendAPI - INFO: POST /auth/login	http://localhost:5173
+[06/07/2023, 15:17:45] myBackendAPI - ERROR: 400: User or Password wrong	POST /auth/login	http://localhost:5173
+[06/07/2023, 15:19:08] myBackendAPI - INFO: POST /auth/login	http://localhost:5173
+[06/07/2023, 15:19:08] myBackendAPI - ERROR: 400: User or Password wrong	POST /auth/login	http://localhost:5173
+[06/07/2023, 15:19:12] myBackendAPI - INFO: POST /auth/login	http://localhost:5173
+[06/07/2023, 15:19:12] myBackendAPI - ERROR: 400: User or Password wrong	POST /auth/login	http://localhost:5173
+[06/07/2023, 15:28:25] myBackendAPI - INFO: POST /auth/login	http://localhost:5173
+[06/07/2023, 15:28:25] myBackendAPI - ERROR: 400: User or Password wrong	POST /auth/login	http://localhost:5173
+[06/07/2023, 15:29:53] myBackendAPI - INFO: POST /auth/login	http://localhost:5173
+[06/07/2023, 15:29:53] myBackendAPI - ERROR: rateLimit: Too many login attempts from this IP, please try again after a 1 hour	POST /auth/login	http://localhost:5173
+[06/07/2023, 15:34:39] myBackendAPI - INFO: POST /auth/login	http://localhost:5173
+[06/07/2023, 15:34:39] myBackendAPI - ERROR: rateLimit: Too many login attempts from this IP, please try again after a 1 hour	POST /auth/login	http://localhost:5173
+[06/07/2023, 15:38:19] myBackendAPI - INFO: POST /auth/login	http://localhost:5173
+[06/07/2023, 15:38:19] myBackendAPI - ERROR: rateLimit: Too many login attempts from this IP, please try again after a 1 hour	POST /auth/login	http://localhost:5173
+[06/07/2023, 15:58:46] myBackendAPI - INFO: POST /auth/login	http://localhost:5173
+[06/07/2023, 15:58:46] myBackendAPI - ERROR: 400: User or Password wrong	POST /auth/login	http://localhost:5173
+[06/07/2023, 15:59:07] myBackendAPI - INFO: POST /auth/login	http://localhost:5173
+[06/07/2023, 15:59:08] myBackendAPI - ERROR: 400: User or Password wrong	POST /auth/login	http://localhost:5173
+[06/07/2023, 15:59:29] myBackendAPI - INFO: POST /auth/login	http://localhost:5173
+[06/07/2023, 15:59:51] myBackendAPI - INFO: POST /auth/login	http://localhost:5173
+[06/07/2023, 15:59:52] myBackendAPI - INFO: GET /user/cwk	http://localhost:5173
+[06/07/2023, 15:59:52] myBackendAPI - INFO: GET /user/home	http://localhost:5173
+[06/07/2023, 15:59:56] myBackendAPI - INFO: GET /posts	http://localhost:5173
+[06/07/2023, 16:00:00] myBackendAPI - INFO: GET /user/home	http://localhost:5173
+[06/07/2023, 16:00:03] myBackendAPI - INFO: GET /user/home	http://localhost:5173
+[06/07/2023, 16:00:39] myBackendAPI - INFO: GET /user/account	http://localhost:5173
+[06/07/2023, 16:00:39] myBackendAPI - INFO: GET /user/cwk	http://localhost:5173
+[06/07/2023, 16:01:02] myBackendAPI - INFO: GET /user/cwk	http://localhost:5173
+[06/07/2023, 16:01:02] myBackendAPI - INFO: GET /posts	http://localhost:5173
+[06/07/2023, 16:01:10] myBackendAPI - INFO: GET /auth/logout	http://localhost:5173
+[06/07/2023, 16:01:14] myBackendAPI - INFO: POST /auth/login	http://localhost:5173
+[06/07/2023, 16:01:14] myBackendAPI - ERROR: 400: User or Password wrong	POST /auth/login	http://localhost:5173
+[06/07/2023, 16:01:17] myBackendAPI - INFO: POST /auth/login	http://localhost:5173
+[06/07/2023, 16:01:17] myBackendAPI - ERROR: 400: User or Password wrong	POST /auth/login	http://localhost:5173
+[06/07/2023, 16:01:18] myBackendAPI - INFO: POST /auth/login	http://localhost:5173
+[06/07/2023, 16:01:18] myBackendAPI - ERROR: rateLimit: Too many login attempts from this IP, please try again after a 1 hour	POST /auth/login	http://localhost:5173
+[06/07/2023, 16:02:01] myBackendAPI - INFO: POST /auth/login	http://localhost:5173
+[06/07/2023, 16:02:01] myBackendAPI - ERROR: rateLimit: Too many login attempts from this IP, please try again after a 1 hour	POST /auth/login	http://localhost:5173
+[06/07/2023, 16:11:06] myBackendAPI - INFO: POST /auth/login	http://localhost:5173
+[06/07/2023, 16:11:06] myBackendAPI - ERROR: rateLimit: Too many login attempts from this IP, please try again after a 1 hour	POST /auth/login	http://localhost:5173
+[06/07/2023, 16:13:55] myBackendAPI - INFO: POST /auth/login	http://localhost:5173
+[06/07/2023, 16:13:55] myBackendAPI - ERROR: rateLimit: Too many login attempts from this IP, please try again after a 1 hour	POST /auth/login	http://localhost:5173
+[06/07/2023, 16:13:59] myBackendAPI - INFO: POST /auth/login	http://localhost:5173
+[06/07/2023, 16:13:59] myBackendAPI - ERROR: rateLimit: Too many login attempts from this IP, please try again after a 1 hour	POST /auth/login	http://localhost:5173
+[06/07/2023, 16:14:00] myBackendAPI - INFO: POST /auth/login	http://localhost:5173
+[06/07/2023, 16:14:00] myBackendAPI - ERROR: rateLimit: Too many login attempts from this IP, please try again after a 1 hour	POST /auth/login	http://localhost:5173
+[06/07/2023, 16:14:34] myBackendAPI - INFO: POST /auth/login	http://localhost:5173
+[06/07/2023, 16:14:34] myBackendAPI - ERROR: rateLimit: Too many login attempts from this IP, please try again after a 1 hour	POST /auth/login	http://localhost:5173
+[06/07/2023, 16:14:35] myBackendAPI - INFO: POST /auth/login	http://localhost:5173
+[06/07/2023, 16:14:35] myBackendAPI - ERROR: rateLimit: Too many login attempts from this IP, please try again after a 1 hour	POST /auth/login	http://localhost:5173
+[06/07/2023, 16:14:36] myBackendAPI - INFO: POST /auth/login	http://localhost:5173
+[06/07/2023, 16:14:36] myBackendAPI - ERROR: rateLimit: Too many login attempts from this IP, please try again after a 1 hour	POST /auth/login	http://localhost:5173
+[06/07/2023, 16:14:41] myBackendAPI - INFO: POST /auth/login	http://localhost:5173
+[06/07/2023, 16:14:41] myBackendAPI - ERROR: rateLimit: Too many login attempts from this IP, please try again after a 1 hour	POST /auth/login	http://localhost:5173
+[06/07/2023, 16:16:41] myBackendAPI - INFO: POST /auth/login	http://localhost:5173
+[06/07/2023, 16:16:41] myBackendAPI - ERROR: rateLimit: Too many login attempts from this IP, please try again after a 1 hour	POST /auth/login	http://localhost:5173
+[06/07/2023, 16:16:44] myBackendAPI - INFO: POST /auth/login	http://localhost:5173
+[06/07/2023, 16:16:44] myBackendAPI - ERROR: rateLimit: Too many login attempts from this IP, please try again after a 1 hour	POST /auth/login	http://localhost:5173
+[06/07/2023, 16:16:45] myBackendAPI - INFO: POST /auth/login	http://localhost:5173
+[06/07/2023, 16:16:45] myBackendAPI - ERROR: rateLimit: Too many login attempts from this IP, please try again after a 1 hour	POST /auth/login	http://localhost:5173
+[06/07/2023, 16:17:00] myBackendAPI - INFO: POST /auth/login	http://localhost:5173
+[06/07/2023, 16:17:00] myBackendAPI - ERROR: rateLimit: Too many login attempts from this IP, please try again after a 1 hour	POST /auth/login	http://localhost:5173
+[06/07/2023, 20:01:25] myBackendAPI - INFO: POST /auth/login	http://localhost:5173
+[06/07/2023, 20:01:26] myBackendAPI - ERROR: 400: User or Password wrong	POST /auth/login	http://localhost:5173
+[06/07/2023, 20:39:33] myBackendAPI - INFO: POST /auth/login	http://localhost:5173
+[06/07/2023, 20:39:33] myBackendAPI - ERROR: 400: User or Password wrong	POST /auth/login	http://localhost:5173
+[06/07/2023, 20:39:44] myBackendAPI - INFO: POST /auth/login	http://localhost:5173
+[06/07/2023, 20:39:44] myBackendAPI - ERROR: 400: User or Password wrong	POST /auth/login	http://localhost:5173
+[06/07/2023, 20:40:37] myBackendAPI - INFO: POST /auth/login	http://localhost:5173
+[06/07/2023, 20:40:45] myBackendAPI - INFO: POST /auth/login	http://localhost:5173
+[06/07/2023, 20:40:46] myBackendAPI - INFO: GET /user/cwk	http://localhost:5173
+[06/07/2023, 20:40:46] myBackendAPI - INFO: GET /posts	http://localhost:5173
+[06/07/2023, 20:40:50] myBackendAPI - INFO: GET /auth/logout	http://localhost:5173
+[06/07/2023, 20:41:01] myBackendAPI - INFO: POST /auth/login	http://localhost:5173
+[06/07/2023, 20:41:01] myBackendAPI - ERROR: 400: User or Password wrong	POST /auth/login	http://localhost:5173
+[06/07/2023, 20:41:04] myBackendAPI - INFO: POST /auth/login	http://localhost:5173
+[06/07/2023, 20:41:04] myBackendAPI - ERROR: rateLimit: Too many login attempts from this IP, please try again after a 1 hour	POST /auth/login	http://localhost:5173
+[06/07/2023, 20:41:12] myBackendAPI - INFO: POST /auth/login	http://localhost:5173
+[06/07/2023, 20:41:12] myBackendAPI - ERROR: rateLimit: Too many login attempts from this IP, please try again after a 1 hour	POST /auth/login	http://localhost:5173
+[06/07/2023, 20:41:42] myBackendAPI - INFO: POST /auth/login	http://localhost:5173
+[06/07/2023, 20:41:47] myBackendAPI - INFO: GET /posts/cwk/user	http://localhost:5173
+[06/07/2023, 20:41:47] myBackendAPI - INFO: GET /user/cwk/follower	http://localhost:5173
+[06/07/2023, 20:41:47] myBackendAPI - INFO: GET /user/cwk/following	http://localhost:5173
+[06/07/2023, 20:42:07] myBackendAPI - INFO: POST /posts	http://localhost:5173
+[06/07/2023, 20:42:10] myBackendAPI - INFO: GET /posts	http://localhost:5173
+[06/07/2023, 20:42:10] myBackendAPI - INFO: GET /user/cwk	http://localhost:5173
+[06/07/2023, 20:42:21] myBackendAPI - INFO: PATCH /posts/648089328d8b20c56111f7f7/like	http://localhost:5173
+[06/07/2023, 20:42:21] myBackendAPI - INFO: GET /posts	http://localhost:5173
+[06/07/2023, 20:42:25] myBackendAPI - INFO: GET /posts/648089328d8b20c56111f7f7	http://localhost:5173
+[06/07/2023, 20:42:25] myBackendAPI - INFO: GET /posts/648089328d8b20c56111f7f7	http://localhost:5173
+[06/07/2023, 20:42:33] myBackendAPI - INFO: GET /posts/cwk/user	http://localhost:5173
+[06/07/2023, 20:42:36] myBackendAPI - INFO: GET /posts/648089328d8b20c56111f7f7	http://localhost:5173
+[06/07/2023, 20:43:16] myBackendAPI - INFO: GET /posts/648089328d8b20c56111f7f7	http://localhost:5173
+[06/07/2023, 20:46:55] myBackendAPI - INFO: GET /posts/648089328d8b20c56111f7f7	http://localhost:5173
+[06/07/2023, 20:47:05] myBackendAPI - INFO: GET /posts/648089328d8b20c56111f7f7	http://localhost:5173
+[06/07/2023, 20:48:56] myBackendAPI - INFO: GET /auth/logout	http://localhost:5173
+[06/08/2023, 13:49:47] myBackendAPI - INFO: POST /auth/register	undefined
+[06/08/2023, 13:50:43] myBackendAPI - INFO: POST /auth/register	undefined
+[06/08/2023, 13:55:13] myBackendAPI - INFO: POST /auth/register	http://localhost:5173
+[06/08/2023, 13:55:55] myBackendAPI - INFO: POST /auth/register	http://localhost:5173
+[06/08/2023, 13:58:29] myBackendAPI - INFO: POST /auth/register	http://localhost:5173
+[06/08/2023, 13:59:46] myBackendAPI - INFO: POST /auth/register	http://localhost:5173
+[06/08/2023, 14:00:55] myBackendAPI - INFO: POST /auth/register	http://localhost:5173
+[06/08/2023, 14:03:22] myBackendAPI - INFO: POST /auth/register	http://localhost:5173
+[06/08/2023, 14:06:41] myBackendAPI - INFO: POST /auth/register	http://localhost:5173
+[06/08/2023, 14:07:42] myBackendAPI - INFO: POST /auth/register	http://localhost:5173
+[06/08/2023, 14:09:33] myBackendAPI - INFO: POST /auth/register	http://localhost:5173
+[06/08/2023, 14:10:10] myBackendAPI - INFO: POST /auth/register	http://localhost:5173
+[06/08/2023, 14:10:16] myBackendAPI - INFO: POST /auth/register	http://localhost:5173
+[06/08/2023, 14:10:43] myBackendAPI - INFO: POST /auth/register	http://localhost:5173
+[06/08/2023, 14:11:54] myBackendAPI - INFO: POST /auth/register	http://localhost:5173
+[06/08/2023, 14:14:04] myBackendAPI - INFO: POST /auth/login	http://localhost:5173
+[06/08/2023, 14:14:05] myBackendAPI - INFO: GET /user/cwk	http://localhost:5173
+[06/08/2023, 14:14:05] myBackendAPI - INFO: GET /posts	http://localhost:5173
+[06/08/2023, 14:14:13] myBackendAPI - INFO: GET /auth/logout	http://localhost:5173
+[06/08/2023, 14:15:30] myBackendAPI - INFO: POST /auth/login	http://localhost:5173
+[06/08/2023, 14:16:10] myBackendAPI - INFO: POST /auth/login	http://localhost:5173
+[06/08/2023, 14:16:11] myBackendAPI - INFO: POST /auth/login	http://localhost:5173
+[06/08/2023, 14:18:40] myBackendAPI - INFO: POST /auth/login	http://localhost:5173
+[06/08/2023, 14:18:40] myBackendAPI - ERROR: 400: User or Password wrong	POST /auth/login	http://localhost:5173
+[06/08/2023, 14:18:58] myBackendAPI - INFO: POST /auth/login	http://localhost:5173
+[06/08/2023, 14:18:58] myBackendAPI - ERROR: rateLimit: Too many login attempts from this IP, please try again after a 1 hour	POST /auth/login	http://localhost:5173
+[06/08/2023, 14:19:18] myBackendAPI - INFO: POST /auth/login	http://localhost:5173
+[06/08/2023, 14:19:18] myBackendAPI - ERROR: rateLimit: Too many login attempts from this IP, please try again after a 1 hour	POST /auth/login	http://localhost:5173
+[06/08/2023, 14:19:19] myBackendAPI - INFO: POST /auth/login	http://localhost:5173
+[06/08/2023, 14:19:19] myBackendAPI - ERROR: rateLimit: Too many login attempts from this IP, please try again after a 1 hour	POST /auth/login	http://localhost:5173
+[06/08/2023, 14:19:21] myBackendAPI - INFO: POST /auth/login	http://localhost:5173
+[06/08/2023, 14:19:21] myBackendAPI - ERROR: rateLimit: Too many login attempts from this IP, please try again after a 1 hour	POST /auth/login	http://localhost:5173
+[06/08/2023, 14:19:22] myBackendAPI - INFO: POST /auth/login	http://localhost:5173
+[06/08/2023, 14:19:22] myBackendAPI - ERROR: rateLimit: Too many login attempts from this IP, please try again after a 1 hour	POST /auth/login	http://localhost:5173
+[06/08/2023, 14:22:20] myBackendAPI - INFO: POST /auth/login	http://localhost:5173
+[06/08/2023, 14:22:20] myBackendAPI - ERROR: rateLimit: Too many login attempts from this IP, please try again after a 1 hour	POST /auth/login	http://localhost:5173
+[06/08/2023, 14:22:25] myBackendAPI - INFO: POST /auth/login	http://localhost:5173
+[06/08/2023, 14:22:25] myBackendAPI - ERROR: rateLimit: Too many login attempts from this IP, please try again after a 1 hour	POST /auth/login	http://localhost:5173
+[06/08/2023, 14:22:43] myBackendAPI - INFO: POST /auth/login	http://localhost:5173
+[06/08/2023, 14:22:43] myBackendAPI - ERROR: rateLimit: Too many login attempts from this IP, please try again after a 1 hour	POST /auth/login	http://localhost:5173
+[06/08/2023, 14:26:53] myBackendAPI - INFO: POST /auth/login	http://localhost:5173
+[06/08/2023, 14:27:00] myBackendAPI - INFO: POST /auth/login	http://localhost:5173
+[06/08/2023, 14:27:01] myBackendAPI - INFO: GET /user/chandra	http://localhost:5173
+[06/08/2023, 14:27:01] myBackendAPI - INFO: GET /posts	http://localhost:5173
+[06/08/2023, 14:27:05] myBackendAPI - INFO: PATCH /posts/648089328d8b20c56111f7f7/like	http://localhost:5173
+[06/08/2023, 14:27:06] myBackendAPI - INFO: GET /posts	http://localhost:5173
+[06/08/2023, 14:27:09] myBackendAPI - INFO: GET /user/chandra/follower	http://localhost:5173
+[06/08/2023, 14:27:09] myBackendAPI - INFO: GET /posts/chandra/user	http://localhost:5173
+[06/08/2023, 14:27:09] myBackendAPI - INFO: GET /user/chandra/following	http://localhost:5173
+[06/08/2023, 14:29:01] myBackendAPI - INFO: GET /user/chandra	http://localhost:5173
+[06/08/2023, 14:29:01] myBackendAPI - INFO: GET /posts/chandra/user	http://localhost:5173
+[06/08/2023, 14:29:01] myBackendAPI - INFO: GET /user/chandra/follower	http://localhost:5173
+[06/08/2023, 14:29:01] myBackendAPI - INFO: GET /user/chandra/following	http://localhost:5173
+[06/08/2023, 14:29:17] myBackendAPI - INFO: GET /posts	http://localhost:5173
+[06/08/2023, 14:35:21] myBackendAPI - INFO: GET /posts/648089328d8b20c56111f7f7	http://localhost:5173
+[06/08/2023, 14:35:21] myBackendAPI - INFO: GET /posts/648089328d8b20c56111f7f7	http://localhost:5173
+[06/08/2023, 14:35:32] myBackendAPI - INFO: GET /posts/648089328d8b20c56111f7f7	http://localhost:5173
+[06/08/2023, 14:36:17] myBackendAPI - INFO: GET /posts/648089328d8b20c56111f7f7	http://localhost:5173
+[06/08/2023, 14:36:31] myBackendAPI - INFO: GET /posts/648089328d8b20c56111f7f7	http://localhost:5173
+[06/08/2023, 14:40:59] myBackendAPI - INFO: GET /posts/648089328d8b20c56111f7f7	http://localhost:5173
+[06/08/2023, 14:49:39] myBackendAPI - INFO: GET /posts/648089328d8b20c56111f7f7	http://localhost:5173
+[06/08/2023, 14:49:57] myBackendAPI - INFO: GET /posts/648089328d8b20c56111f7f7	http://localhost:5173
+[06/08/2023, 14:50:05] myBackendAPI - INFO: GET /posts/648089328d8b20c56111f7f7	http://localhost:5173
+[06/08/2023, 14:50:17] myBackendAPI - INFO: GET /posts/648089328d8b20c56111f7f7	http://localhost:5173
+[06/08/2023, 14:53:43] myBackendAPI - INFO: GET /posts/648089328d8b20c56111f7f7	http://localhost:5173
+[06/08/2023, 14:53:57] myBackendAPI - INFO: GET /posts/648089328d8b20c56111f7f7	http://localhost:5173
+[06/08/2023, 14:54:09] myBackendAPI - INFO: GET /posts/648089328d8b20c56111f7f7	http://localhost:5173
+[06/08/2023, 14:54:16] myBackendAPI - INFO: GET /posts/648089328d8b20c56111f7f7	http://localhost:5173
+[06/08/2023, 14:54:27] myBackendAPI - INFO: GET /posts/648089328d8b20c56111f7f7	http://localhost:5173
+[06/08/2023, 14:54:52] myBackendAPI - INFO: POST /posts	http://localhost:5173
+[06/08/2023, 14:54:54] myBackendAPI - INFO: GET /posts	http://localhost:5173
+[06/08/2023, 14:54:54] myBackendAPI - INFO: GET /user/chandra	http://localhost:5173
+[06/08/2023, 15:02:11] myBackendAPI - INFO: GET /posts/648089328d8b20c56111f7f7	http://localhost:5173
+[06/08/2023, 15:02:57] myBackendAPI - INFO: GET /posts/648089328d8b20c56111f7f7	http://localhost:5173
+[06/08/2023, 15:03:01] myBackendAPI - INFO: GET /posts/6481894ed62b11b91fcab368	http://localhost:5173
+[06/08/2023, 15:03:01] myBackendAPI - INFO: GET /posts/6481894ed62b11b91fcab368	http://localhost:5173
+[06/08/2023, 15:03:03] myBackendAPI - INFO: PATCH /posts/6481894ed62b11b91fcab368/like	http://localhost:5173
+[06/08/2023, 15:03:03] myBackendAPI - INFO: GET /posts/6481894ed62b11b91fcab368	http://localhost:5173
+[06/08/2023, 15:03:03] myBackendAPI - INFO: GET /posts	http://localhost:5173
+[06/08/2023, 15:03:03] myBackendAPI - INFO: GET /posts/6481894ed62b11b91fcab368	http://localhost:5173
+[06/08/2023, 15:03:41] myBackendAPI - INFO: GET /posts/6481894ed62b11b91fcab368	http://localhost:5173
+[06/08/2023, 15:04:26] myBackendAPI - INFO: GET /posts/6481894ed62b11b91fcab368	http://localhost:5173
+[06/08/2023, 15:06:17] myBackendAPI - INFO: GET /posts/6481894ed62b11b91fcab368	http://localhost:5173
+[06/08/2023, 15:06:42] myBackendAPI - INFO: POST /posts	http://localhost:5173
+[06/08/2023, 15:06:44] myBackendAPI - INFO: GET /posts	http://localhost:5173
+[06/08/2023, 15:06:44] myBackendAPI - INFO: GET /user/chandra	http://localhost:5173
+[06/08/2023, 15:07:04] myBackendAPI - INFO: GET /posts/64818c14d62b11b91fcab384	http://localhost:5173
+[06/08/2023, 15:07:04] myBackendAPI - INFO: GET /posts/64818c14d62b11b91fcab384	http://localhost:5173
+[06/08/2023, 15:07:09] myBackendAPI - INFO: GET /posts/6481894ed62b11b91fcab368	http://localhost:5173
+[06/08/2023, 15:07:09] myBackendAPI - INFO: GET /posts/6481894ed62b11b91fcab368	http://localhost:5173
+[06/08/2023, 15:07:19] myBackendAPI - INFO: GET /posts/648089328d8b20c56111f7f7	http://localhost:5173
+[06/08/2023, 15:07:20] myBackendAPI - INFO: GET /posts/648089328d8b20c56111f7f7	http://localhost:5173
+[06/08/2023, 15:21:55] myBackendAPI - INFO: POST /auth/login	http://localhost:5173
+[06/08/2023, 15:22:08] myBackendAPI - INFO: GET /user/search?username=a	undefined
+[06/08/2023, 15:32:20] myBackendAPI - INFO: GET /posts	http://localhost:5173
+[06/08/2023, 15:32:20] myBackendAPI - INFO: GET /user/chandra	http://localhost:5173
+[06/08/2023, 15:32:22] myBackendAPI - INFO: GET /user/chandra/follower	http://localhost:5173
+[06/08/2023, 15:32:22] myBackendAPI - INFO: GET /posts/chandra/user	http://localhost:5173
+[06/08/2023, 15:32:22] myBackendAPI - INFO: GET /user/chandra/following	http://localhost:5173
+[06/08/2023, 15:32:37] myBackendAPI - INFO: GET /user/search?username=dawdd	http://localhost:5173
+[06/08/2023, 15:32:37] myBackendAPI - INFO: GET /user/search?username=dawdda	http://localhost:5173
+[06/08/2023, 15:32:37] myBackendAPI - INFO: GET /user/search?username=dawddaw	http://localhost:5173
+[06/08/2023, 15:32:41] myBackendAPI - INFO: GET /user/search?username=dawddaww	http://localhost:5173
+[06/08/2023, 15:32:48] myBackendAPI - INFO: GET /user/search?username=dawddaw	http://localhost:5173
+[06/08/2023, 15:32:48] myBackendAPI - INFO: GET /user/search?username=dawdda	http://localhost:5173
+[06/08/2023, 15:32:48] myBackendAPI - INFO: GET /user/search?username=dawdd	http://localhost:5173
+[06/08/2023, 15:32:48] myBackendAPI - INFO: GET /user/search?username=dawd	http://localhost:5173
+[06/08/2023, 15:32:48] myBackendAPI - INFO: GET /user/search?username=daw	http://localhost:5173
+[06/08/2023, 15:33:29] myBackendAPI - INFO: GET /user/search?username=chand	http://localhost:5173
+[06/08/2023, 15:33:30] myBackendAPI - INFO: GET /user/search?username=chandr	http://localhost:5173
+[06/08/2023, 15:33:30] myBackendAPI - INFO: GET /user/search?username=chandra	http://localhost:5173
+[06/08/2023, 15:33:38] myBackendAPI - INFO: GET /user/search?username=chandr	http://localhost:5173
+[06/08/2023, 15:33:39] myBackendAPI - INFO: GET /user/search?username=chand	http://localhost:5173
+[06/08/2023, 15:33:39] myBackendAPI - INFO: GET /user/search?username=chan	http://localhost:5173
+[06/08/2023, 15:33:39] myBackendAPI - INFO: GET /user/search?username=cha	http://localhost:5173
+[06/08/2023, 15:34:40] myBackendAPI - INFO: GET /user/search?username=cw	http://localhost:5173
+[06/08/2023, 15:34:47] myBackendAPI - INFO: GET /user/search?username=cw	http://localhost:5173
+[06/08/2023, 15:34:49] myBackendAPI - INFO: GET /user/search?username=chan	http://localhost:5173
+[06/08/2023, 15:34:49] myBackendAPI - INFO: GET /user/search?username=chand	http://localhost:5173
+[06/08/2023, 15:34:50] myBackendAPI - INFO: GET /user/search?username=chandr	http://localhost:5173
+[06/08/2023, 15:34:51] myBackendAPI - INFO: GET /user/search?username=chand	http://localhost:5173
+[06/08/2023, 15:34:51] myBackendAPI - INFO: GET /user/search?username=chan	http://localhost:5173
+[06/08/2023, 15:34:51] myBackendAPI - INFO: GET /user/search?username=cha	http://localhost:5173
+[06/08/2023, 15:34:51] myBackendAPI - INFO: GET /user/search?username=ch	http://localhost:5173
+[06/08/2023, 15:34:53] myBackendAPI - INFO: GET /user/search?username=cwkk	http://localhost:5173
+[06/08/2023, 15:34:54] myBackendAPI - INFO: GET /user/search?username=cwk	http://localhost:5173
+[06/08/2023, 15:34:56] myBackendAPI - INFO: GET /user/search?username=cw	http://localhost:5173
+[06/08/2023, 15:34:57] myBackendAPI - INFO: GET /user/search?username=cw	http://localhost:5173
+[06/08/2023, 15:34:58] myBackendAPI - INFO: GET /user/search?username=chan	http://localhost:5173
+[06/08/2023, 15:34:59] myBackendAPI - INFO: GET /user/search?username=chand	http://localhost:5173
+[06/08/2023, 15:34:59] myBackendAPI - INFO: GET /user/search?username=chandr	http://localhost:5173
+[06/08/2023, 15:34:59] myBackendAPI - INFO: GET /user/search?username=chandra	http://localhost:5173
+[06/08/2023, 15:35:01] myBackendAPI - INFO: GET /user/search?username=chandr	http://localhost:5173
+[06/08/2023, 15:35:01] myBackendAPI - INFO: GET /user/search?username=chand	http://localhost:5173
+[06/08/2023, 15:35:01] myBackendAPI - INFO: GET /user/search?username=chan	http://localhost:5173
+[06/08/2023, 15:35:01] myBackendAPI - INFO: GET /user/search?username=cha	http://localhost:5173
+[06/08/2023, 15:35:01] myBackendAPI - INFO: GET /user/search?username=ch	http://localhost:5173
+[06/08/2023, 15:35:20] myBackendAPI - INFO: GET /user/search?username=cw	http://localhost:5173
+[06/08/2023, 15:35:23] myBackendAPI - INFO: GET /user/search?username=ravi	http://localhost:5173
+[06/08/2023, 15:35:23] myBackendAPI - INFO: GET /user/search?username=ravie	http://localhost:5173
+[06/08/2023, 15:35:23] myBackendAPI - INFO: GET /user/search?username=raviel	http://localhost:5173
+[06/08/2023, 15:35:24] myBackendAPI - INFO: GET /user/search?username=ravie	http://localhost:5173
+[06/08/2023, 15:35:27] myBackendAPI - INFO: GET /user/search?username=ravi	http://localhost:5173
+[06/08/2023, 15:35:27] myBackendAPI - INFO: GET /user/search?username=rav	http://localhost:5173
+[06/08/2023, 15:36:24] myBackendAPI - INFO: GET /user/search?username=ravi	http://localhost:5173
+[06/08/2023, 15:36:24] myBackendAPI - INFO: GET /user/search?username=ravie	http://localhost:5173
+[06/08/2023, 15:36:24] myBackendAPI - INFO: GET /user/search?username=raviel	http://localhost:5173
+[06/08/2023, 15:36:25] myBackendAPI - INFO: GET /user/search?username=ravie	http://localhost:5173
+[06/08/2023, 15:36:25] myBackendAPI - INFO: GET /user/search?username=ravi	http://localhost:5173
+[06/08/2023, 15:36:25] myBackendAPI - INFO: GET /user/search?username=rav	http://localhost:5173
+[06/08/2023, 15:36:26] myBackendAPI - INFO: GET /user/search?username=ra	http://localhost:5173
+[06/08/2023, 15:36:51] myBackendAPI - INFO: GET /user/search?username=cw	http://localhost:5173
+[06/08/2023, 15:36:53] myBackendAPI - INFO: GET /user/search?username=cwkk	http://localhost:5173
+[06/08/2023, 15:36:54] myBackendAPI - INFO: GET /user/search?username=cwk	http://localhost:5173
+[06/08/2023, 15:36:56] myBackendAPI - INFO: GET /user/search?username=cw	http://localhost:5173
+[06/08/2023, 15:36:58] myBackendAPI - INFO: GET /user/search?username=cw	http://localhost:5173
+[06/08/2023, 15:37:01] myBackendAPI - INFO: GET /user/search?username=cw	http://localhost:5173
+[06/08/2023, 15:37:03] myBackendAPI - INFO: GET /user/search?username=cw	http://localhost:5173
+[06/08/2023, 15:37:05] myBackendAPI - INFO: GET /user/search?username=chan	http://localhost:5173
+[06/08/2023, 15:37:06] myBackendAPI - INFO: GET /user/search?username=chand	http://localhost:5173
+[06/08/2023, 15:37:06] myBackendAPI - INFO: GET /user/search?username=chandr	http://localhost:5173
+[06/08/2023, 15:37:06] myBackendAPI - INFO: GET /user/search?username=chand	http://localhost:5173
+[06/08/2023, 15:37:07] myBackendAPI - INFO: GET /user/search?username=chan	http://localhost:5173
+[06/08/2023, 15:37:08] myBackendAPI - INFO: GET /user/search?username=cha	http://localhost:5173
+[06/08/2023, 15:37:08] myBackendAPI - INFO: GET /user/search?username=ch	http://localhost:5173
+[06/08/2023, 15:37:09] myBackendAPI - INFO: GET /user/search?username=ande	http://localhost:5173
+[06/08/2023, 15:37:10] myBackendAPI - INFO: GET /user/search?username=and	http://localhost:5173
+[06/08/2023, 15:37:11] myBackendAPI - INFO: GET /user/search?username=andr	http://localhost:5173
+[06/08/2023, 15:37:11] myBackendAPI - INFO: GET /user/search?username=andra	http://localhost:5173
+[06/08/2023, 15:37:15] myBackendAPI - INFO: GET /user/search?username=andr	http://localhost:5173
+[06/08/2023, 15:37:15] myBackendAPI - INFO: GET /user/search?username=and	http://localhost:5173
+[06/08/2023, 15:37:15] myBackendAPI - INFO: GET /user/search?username=an	http://localhost:5173
+[06/08/2023, 15:37:20] myBackendAPI - INFO: GET /user/search?username=dr	http://localhost:5173
+[06/08/2023, 15:37:22] myBackendAPI - INFO: GET /user/search?username=ndra	http://localhost:5173
+[06/08/2023, 15:37:23] myBackendAPI - INFO: GET /user/search?username=ndr	http://localhost:5173
+[06/08/2023, 15:37:24] myBackendAPI - INFO: GET /user/search?username=ndra	http://localhost:5173
+[06/08/2023, 15:37:39] myBackendAPI - INFO: GET /user/search?username=nra	http://localhost:5173
+[06/08/2023, 15:37:40] myBackendAPI - INFO: GET /user/search?username=ra	http://localhost:5173
+[06/08/2023, 15:37:51] myBackendAPI - INFO: GET /user/search?username=chan	http://localhost:5173
+[06/08/2023, 15:37:51] myBackendAPI - INFO: GET /user/search?username=chand	http://localhost:5173
+[06/08/2023, 15:37:52] myBackendAPI - INFO: GET /user/search?username=chandr	http://localhost:5173
+[06/08/2023, 15:37:52] myBackendAPI - INFO: GET /user/search?username=chandra	http://localhost:5173
+[06/08/2023, 15:39:29] myBackendAPI - INFO: GET /user/search?username=chandrad	http://localhost:5173
+[06/08/2023, 15:39:30] myBackendAPI - INFO: GET /user/search?username=chandra	http://localhost:5173
+[06/08/2023, 15:39:31] myBackendAPI - INFO: GET /user/search?username=chandr	http://localhost:5173
+[06/08/2023, 15:39:31] myBackendAPI - INFO: GET /user/search?username=chand	http://localhost:5173
+[06/08/2023, 15:39:31] myBackendAPI - INFO: GET /user/search?username=chan	http://localhost:5173
+[06/08/2023, 15:39:31] myBackendAPI - INFO: GET /user/search?username=cha	http://localhost:5173
+[06/08/2023, 15:39:32] myBackendAPI - INFO: GET /user/search?username=ch	http://localhost:5173
+[06/08/2023, 15:39:33] myBackendAPI - INFO: GET /user/search?username=cwkk	http://localhost:5173
+[06/08/2023, 15:39:34] myBackendAPI - INFO: GET /user/search?username=cwk	http://localhost:5173
+[06/08/2023, 15:40:20] myBackendAPI - INFO: GET /user/search?username=chan	http://localhost:5173
+[06/08/2023, 15:40:20] myBackendAPI - INFO: GET /user/search?username=chand	http://localhost:5173
+[06/08/2023, 15:40:20] myBackendAPI - INFO: GET /user/search?username=chandr	http://localhost:5173
+[06/08/2023, 15:40:21] myBackendAPI - INFO: GET /user/search?username=chandra	http://localhost:5173
+[06/08/2023, 15:40:21] myBackendAPI - INFO: GET /user/search?username=chandr	http://localhost:5173
+[06/08/2023, 15:40:21] myBackendAPI - INFO: GET /user/search?username=chand	http://localhost:5173
+[06/08/2023, 15:40:21] myBackendAPI - INFO: GET /user/search?username=chan	http://localhost:5173
+[06/08/2023, 15:40:22] myBackendAPI - INFO: GET /user/search?username=cha	http://localhost:5173
+[06/08/2023, 15:40:22] myBackendAPI - INFO: GET /user/search?username=ch	http://localhost:5173
+[06/08/2023, 15:40:24] myBackendAPI - INFO: GET /user/search?username=raaa	http://localhost:5173
+[06/08/2023, 15:40:25] myBackendAPI - INFO: GET /user/search?username=raa	http://localhost:5173
+[06/08/2023, 15:40:25] myBackendAPI - INFO: GET /user/search?username=ra	http://localhost:5173
+[06/08/2023, 15:40:28] myBackendAPI - INFO: GET /user/search?username=ra	http://localhost:5173
+[06/08/2023, 15:40:29] myBackendAPI - INFO: GET /user/search?username=ra	http://localhost:5173
+[06/08/2023, 15:40:34] myBackendAPI - INFO: GET /user/search?username=ccwk	http://localhost:5173
+[06/08/2023, 15:40:34] myBackendAPI - INFO: GET /user/search?username=cwk	http://localhost:5173
+[06/08/2023, 20:48:15] myBackendAPI - INFO: GET /user/chandra	http://localhost:5173
+[06/08/2023, 20:48:15] myBackendAPI - INFO: GET /posts	http://localhost:5173
+[06/08/2023, 20:48:29] myBackendAPI - INFO: PATCH /posts/64818c14d62b11b91fcab384/like	http://localhost:5173
+[06/08/2023, 20:48:30] myBackendAPI - INFO: GET /posts	http://localhost:5173
+[06/08/2023, 20:48:36] myBackendAPI - INFO: PATCH /posts/64818c14d62b11b91fcab384/like	http://localhost:5173
+[06/08/2023, 20:48:37] myBackendAPI - INFO: GET /posts	http://localhost:5173
+[06/08/2023, 20:48:38] myBackendAPI - INFO: PATCH /posts/64818c14d62b11b91fcab384/like	http://localhost:5173
+[06/08/2023, 20:48:38] myBackendAPI - INFO: GET /posts	http://localhost:5173
+[06/08/2023, 20:48:51] myBackendAPI - INFO: GET /user/search?username=dadd	http://localhost:5173
+[06/08/2023, 20:48:52] myBackendAPI - INFO: GET /user/search?username=dadda	http://localhost:5173
+[06/08/2023, 20:48:52] myBackendAPI - INFO: GET /user/search?username=daddaw	http://localhost:5173
+[06/08/2023, 20:48:52] myBackendAPI - INFO: GET /user/search?username=daddawd	http://localhost:5173
+[06/08/2023, 20:48:52] myBackendAPI - INFO: GET /user/search?username=daddawda	http://localhost:5173
+[06/08/2023, 20:48:53] myBackendAPI - INFO: GET /user/search?username=daddawd	http://localhost:5173
+[06/08/2023, 20:48:54] myBackendAPI - INFO: GET /user/search?username=daddaw	http://localhost:5173
+[06/08/2023, 20:48:54] myBackendAPI - INFO: GET /user/search?username=dadda	http://localhost:5173
+[06/08/2023, 20:48:54] myBackendAPI - INFO: GET /user/search?username=dadd	http://localhost:5173
+[06/08/2023, 20:48:54] myBackendAPI - INFO: GET /user/search?username=dad	http://localhost:5173
+[06/08/2023, 20:48:54] myBackendAPI - INFO: GET /user/search?username=da	http://localhost:5173
+[06/08/2023, 20:48:55] myBackendAPI - INFO: GET /user/search?username=chan	http://localhost:5173
+[06/08/2023, 20:48:56] myBackendAPI - INFO: GET /user/search?username=cha	http://localhost:5173
+[06/08/2023, 20:48:56] myBackendAPI - INFO: GET /user/search?username=ch	http://localhost:5173
+[06/08/2023, 20:49:00] myBackendAPI - INFO: GET /user/search?username=cw	http://localhost:5173
+[06/08/2023, 20:54:47] myBackendAPI - INFO: GET /user/chandra	http://localhost:5173
+[06/08/2023, 20:54:47] myBackendAPI - INFO: GET /posts	http://localhost:5173
+[06/08/2023, 20:55:42] myBackendAPI - INFO: GET /user/search?username=cha	http://localhost:5173
+[06/08/2023, 20:55:42] myBackendAPI - INFO: GET /user/search?username=chan	http://localhost:5173
+[06/08/2023, 20:55:44] myBackendAPI - INFO: GET /user/search?username=cha	http://localhost:5173
+[06/08/2023, 20:55:47] myBackendAPI - INFO: GET /user/search?username=cwk	http://localhost:5173
+[06/08/2023, 20:56:03] myBackendAPI - INFO: GET /user/chandra	http://localhost:5173
+[06/08/2023, 20:56:03] myBackendAPI - INFO: GET /posts	http://localhost:5173
+[06/08/2023, 20:56:06] myBackendAPI - INFO: GET /user/search?username=cha	http://localhost:5173
+[06/08/2023, 20:56:10] myBackendAPI - INFO: GET /user/search?username=chan	http://localhost:5173
+[06/08/2023, 20:56:10] myBackendAPI - INFO: GET /user/search?username=chand	http://localhost:5173
+[06/08/2023, 20:56:10] myBackendAPI - INFO: GET /user/search?username=chandr	http://localhost:5173
+[06/08/2023, 20:56:11] myBackendAPI - INFO: GET /user/search?username=chandra	http://localhost:5173
+[06/08/2023, 20:56:11] myBackendAPI - INFO: GET /user/search?username=chandr	http://localhost:5173
+[06/08/2023, 20:56:11] myBackendAPI - INFO: GET /user/search?username=chand	http://localhost:5173
+[06/08/2023, 20:56:12] myBackendAPI - INFO: GET /user/search?username=chan	http://localhost:5173
+[06/08/2023, 20:56:12] myBackendAPI - INFO: GET /user/search?username=cha	http://localhost:5173
+[06/08/2023, 20:56:16] myBackendAPI - INFO: GET /user/search?username=raa	http://localhost:5173
+[06/08/2023, 20:56:16] myBackendAPI - INFO: GET /user/search?username=raaa	http://localhost:5173
+[06/08/2023, 20:56:16] myBackendAPI - INFO: GET /user/search?username=raa	http://localhost:5173
+[06/08/2023, 20:56:20] myBackendAPI - INFO: GET /user/search?username=cwk	http://localhost:5173
+[06/08/2023, 20:56:26] myBackendAPI - INFO: GET /user/search?username=www	http://localhost:5173
+[06/08/2023, 20:56:30] myBackendAPI - INFO: GET /user/search?username=cwk	http://localhost:5173
+[06/08/2023, 20:56:32] myBackendAPI - INFO: GET /user/search?username=cha	http://localhost:5173
+[06/08/2023, 20:56:32] myBackendAPI - INFO: GET /user/search?username=chan	http://localhost:5173
+[06/08/2023, 20:56:33] myBackendAPI - INFO: GET /user/search?username=cha	http://localhost:5173
+[06/08/2023, 20:57:21] myBackendAPI - INFO: GET /user/chandra	http://localhost:5173
+[06/08/2023, 20:57:21] myBackendAPI - INFO: GET /posts	http://localhost:5173
+[06/08/2023, 20:57:24] myBackendAPI - INFO: GET /user/search?username=heh	http://localhost:5173
+[06/08/2023, 20:57:25] myBackendAPI - INFO: GET /user/search?username=hehe	http://localhost:5173
+[06/08/2023, 20:57:26] myBackendAPI - INFO: GET /user/search?username=heh	http://localhost:5173
+[06/08/2023, 20:57:27] myBackendAPI - INFO: GET /user/search?username=cha	http://localhost:5173
+[06/08/2023, 20:57:27] myBackendAPI - INFO: GET /user/search?username=chan	http://localhost:5173
+[06/08/2023, 20:57:28] myBackendAPI - INFO: GET /user/search?username=chand	http://localhost:5173
+[06/08/2023, 20:57:28] myBackendAPI - INFO: GET /user/search?username=chandr	http://localhost:5173
+[06/08/2023, 20:57:28] myBackendAPI - INFO: GET /user/search?username=chandra	http://localhost:5173
+[06/08/2023, 20:57:29] myBackendAPI - INFO: GET /user/search?username=chandr	http://localhost:5173
+[06/08/2023, 20:57:29] myBackendAPI - INFO: GET /user/search?username=chand	http://localhost:5173
+[06/08/2023, 20:57:29] myBackendAPI - INFO: GET /user/search?username=chan	http://localhost:5173
+[06/08/2023, 20:57:30] myBackendAPI - INFO: GET /user/search?username=cha	http://localhost:5173
+[06/08/2023, 20:57:31] myBackendAPI - INFO: GET /user/search?username=cwk	http://localhost:5173
+[06/08/2023, 20:57:39] myBackendAPI - INFO: GET /auth/logout	http://localhost:5173
+[06/08/2023, 20:58:22] myBackendAPI - INFO: POST /auth/register	http://localhost:5173
+[06/08/2023, 20:58:29] myBackendAPI - INFO: POST /auth/register	http://localhost:5173
+[06/08/2023, 20:58:39] myBackendAPI - INFO: POST /auth/login	http://localhost:5173
+[06/08/2023, 20:58:39] myBackendAPI - INFO: GET /user/chanchan	http://localhost:5173
+[06/08/2023, 20:58:39] myBackendAPI - INFO: GET /posts	http://localhost:5173
+[06/08/2023, 20:58:45] myBackendAPI - INFO: GET /user/search?username=cha	http://localhost:5173
+[06/08/2023, 20:58:45] myBackendAPI - INFO: GET /user/search?username=chan	http://localhost:5173
+[06/08/2023, 20:58:50] myBackendAPI - INFO: GET /user/search?username=cha	http://localhost:5173
+[06/08/2023, 20:58:54] myBackendAPI - INFO: GET /user/search?username=cwk	http://localhost:5173
+[06/08/2023, 20:59:23] myBackendAPI - INFO: GET /user/search?username=cwk	http://localhost:5173
+[06/08/2023, 20:59:24] myBackendAPI - INFO: GET /user/search?username=cwkd	http://localhost:5173
+[06/08/2023, 20:59:25] myBackendAPI - INFO: GET /user/search?username=cwkdd	http://localhost:5173
+[06/08/2023, 20:59:25] myBackendAPI - INFO: GET /user/search?username=cwkddw	http://localhost:5173
+[06/08/2023, 20:59:25] myBackendAPI - INFO: GET /user/search?username=cwkddwa	http://localhost:5173
+[06/08/2023, 20:59:25] myBackendAPI - INFO: GET /user/search?username=cwkddwaw	http://localhost:5173
+[06/08/2023, 20:59:25] myBackendAPI - INFO: GET /user/search?username=cwkddwawd	http://localhost:5173
+[06/08/2023, 20:59:26] myBackendAPI - INFO: GET /user/search?username=cwkddwawds	http://localhost:5173
+[06/08/2023, 20:59:26] myBackendAPI - INFO: GET /user/search?username=cwkddwawdsa	http://localhost:5173
+[06/08/2023, 20:59:26] myBackendAPI - INFO: GET /user/search?username=cwkddwawdsad	http://localhost:5173
+[06/08/2023, 21:00:20] myBackendAPI - INFO: GET /user/search?username=cwkddwawdsa	http://localhost:5173
+[06/08/2023, 21:00:20] myBackendAPI - INFO: GET /user/search?username=cwkddwawds	http://localhost:5173
+[06/08/2023, 21:00:20] myBackendAPI - INFO: GET /user/search?username=cwkddwawd	http://localhost:5173
+[06/08/2023, 21:00:20] myBackendAPI - INFO: GET /user/search?username=cwkddwaw	http://localhost:5173
+[06/08/2023, 21:00:20] myBackendAPI - INFO: GET /user/search?username=cwkddwa	http://localhost:5173
+[06/08/2023, 21:00:20] myBackendAPI - INFO: GET /user/search?username=cwkddw	http://localhost:5173
+[06/08/2023, 21:00:22] myBackendAPI - INFO: GET /user/search?username=cwkdd	http://localhost:5173
+[06/08/2023, 21:00:22] myBackendAPI - INFO: GET /user/search?username=cwkd	http://localhost:5173
+[06/08/2023, 21:00:22] myBackendAPI - INFO: GET /user/search?username=cwk	http://localhost:5173
+[06/08/2023, 21:00:25] myBackendAPI - INFO: GET /user/search?username=cwk	http://localhost:5173
+[06/08/2023, 21:00:54] myBackendAPI - INFO: GET /user/chanchan	http://localhost:5173
+[06/08/2023, 21:00:54] myBackendAPI - INFO: GET /posts	http://localhost:5173
+[06/08/2023, 21:11:26] myBackendAPI - INFO: GET /user/search?username=cwkdadwdsd	http://localhost:5173
+[06/08/2023, 21:11:38] myBackendAPI - INFO: GET /user/search?username=cwk	http://localhost:5173
+[06/08/2023, 21:12:22] myBackendAPI - INFO: GET /user/search?username=cwk	http://localhost:5173
+[06/08/2023, 21:12:53] myBackendAPI - INFO: GET /user/search?username=cwk	http://localhost:5173
+[06/09/2023, 20:12:37] myBackendAPI - INFO: GET /user/chanchan	http://localhost:5173
+[06/09/2023, 20:12:37] myBackendAPI - INFO: GET /posts	http://localhost:5173
+[06/09/2023, 20:12:37] myBackendAPI - INFO: GET /auth/refresh	http://localhost:5173
+[06/09/2023, 20:12:38] myBackendAPI - INFO: GET /auth/refresh	http://localhost:5173
+[06/09/2023, 20:12:38] myBackendAPI - INFO: GET /user/chanchan	http://localhost:5173
+[06/09/2023, 20:12:39] myBackendAPI - INFO: GET /posts	http://localhost:5173
+[06/09/2023, 20:13:29] myBackendAPI - INFO: GET /user/chanchan/follower	http://localhost:5173
+[06/09/2023, 20:13:29] myBackendAPI - INFO: GET /posts/chanchan/user	http://localhost:5173
+[06/09/2023, 20:13:29] myBackendAPI - INFO: GET /user/chanchan/following	http://localhost:5173
+[06/09/2023, 20:13:44] myBackendAPI - INFO: GET /user/cwk	http://localhost:5173
+[06/09/2023, 20:13:45] myBackendAPI - INFO: GET /user/cwk/follower	http://localhost:5173
+[06/09/2023, 20:13:45] myBackendAPI - INFO: GET /user/cwk/following	http://localhost:5173
+[06/09/2023, 20:13:45] myBackendAPI - INFO: GET /posts/cwk/user	http://localhost:5173
+[06/09/2023, 20:13:49] myBackendAPI - INFO: PATCH /user/cwk/follow	http://localhost:5173
+[06/09/2023, 20:13:52] myBackendAPI - INFO: GET /user/chanchan	http://localhost:5173
+[06/09/2023, 20:13:52] myBackendAPI - INFO: GET /user/cwk	http://localhost:5173
+[06/09/2023, 20:15:28] myBackendAPI - INFO: GET /user/chanchan	http://localhost:5173
+[06/09/2023, 20:15:29] myBackendAPI - INFO: GET /posts/chanchan/user	http://localhost:5173
+[06/09/2023, 20:15:29] myBackendAPI - INFO: GET /user/chanchan/follower	http://localhost:5173
+[06/09/2023, 20:15:29] myBackendAPI - INFO: GET /user/chanchan/following	http://localhost:5173
+[06/09/2023, 20:17:11] myBackendAPI - INFO: GET /posts	http://localhost:5173
+[06/09/2023, 20:17:28] myBackendAPI - INFO: GET /user/search?username=cwk	http://localhost:5173
+[06/09/2023, 20:19:25] myBackendAPI - INFO: GET /user/search?username=cwk	http://localhost:5173
+[06/09/2023, 20:20:35] myBackendAPI - INFO: GET /user/cwk	http://localhost:5173
+[06/09/2023, 20:20:36] myBackendAPI - INFO: GET /posts/cwk/user	http://localhost:5173
+[06/09/2023, 20:20:36] myBackendAPI - INFO: GET /user/cwk/follower	http://localhost:5173
+[06/09/2023, 20:20:36] myBackendAPI - INFO: GET /user/cwk/following	http://localhost:5173
+[06/09/2023, 20:20:48] myBackendAPI - INFO: GET /user/search?username=chan	http://localhost:5173
+[06/09/2023, 20:20:52] myBackendAPI - INFO: GET /posts/chanchan/user	http://localhost:5173
+[06/09/2023, 20:20:52] myBackendAPI - INFO: GET /user/chanchan/following	http://localhost:5173
+[06/09/2023, 20:20:52] myBackendAPI - INFO: GET /user/chanchan/follower	http://localhost:5173
+[06/09/2023, 20:20:55] myBackendAPI - INFO: GET /user/chandra/following	http://localhost:5173
+[06/09/2023, 20:20:55] myBackendAPI - INFO: GET /posts/chandra/user	http://localhost:5173
+[06/09/2023, 20:20:55] myBackendAPI - INFO: GET /user/chandra/follower	http://localhost:5173
+[06/09/2023, 20:20:55] myBackendAPI - INFO: GET /user/chandra	http://localhost:5173
+[06/09/2023, 20:22:36] myBackendAPI - INFO: GET /user/search?username=chan	http://localhost:5173
+[06/09/2023, 20:22:37] myBackendAPI - INFO: GET /user/search?username=chandra	http://localhost:5173
+[06/09/2023, 20:22:41] myBackendAPI - INFO: GET /user/search?username=chandrah	http://localhost:5173
+[06/09/2023, 20:23:24] myBackendAPI - INFO: GET /user/search?username=chan	http://localhost:5173

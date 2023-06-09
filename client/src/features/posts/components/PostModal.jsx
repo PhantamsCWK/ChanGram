@@ -18,10 +18,6 @@ const PostModal = ({ postId }) => {
     return
   }
 
-  const sleep = async (ms) => {
-    await new Promise((resolve, reject) => setTimeout(resolve, ms))
-  }
-
   useEffect(() => {
     if(postId) {
       getPost(postId);
@@ -63,9 +59,9 @@ const PostModal = ({ postId }) => {
                                   <span className='text-xs'>Jakarta</span>
                               </div>
                           </div>
-                          <button>
+                          <span onClick={() => window.post_setting_modal.showModal()} className='hover:cursor-pointer hover:bg-gray-300 rounded-xl p-1'>
                               <BiDotsHorizontal />
-                          </button>
+                          </span>
                       </div>
 
                       <div className='h-[365px]'>

@@ -2,7 +2,7 @@ import rateLimit from "express-rate-limit";
 
 export const loginRateLimit = rateLimit({
     windowMs: 60 * 60 * 1000,
-    max: 5,
+    max: 10,
     message: { name: "rateLimit" , message: "Too many login attempts from this IP, please try again after a 1 hour" },
     handler: (req, res, next, options) => {
         res.status(options.statusCode)

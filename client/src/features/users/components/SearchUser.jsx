@@ -1,39 +1,58 @@
 import React, { useEffect, useState } from 'react'
 import { BiSearchAlt2, BiX } from 'react-icons/bi'
-import { Modal } from '../../../components';
+import { Modal, UserListBar } from '../../../components';
+import { useLazyGetSearchUserQuery } from '../usersApiSlice';
 
 const SearchUser = () => {
     const [isSearch, setIsSearch] = useState(false)
-    const [SearchQuery, setSearchQuery] = useState("");
+    const [searchQuery, setSearchQuery] = useState("");
+    const [ SearchUser, { data: users, isLoading, error } ] = useLazyGetSearchUserQuery();
+
+
+    const handleSearchUser = () => {
+        if(searchQuery.length >= 3) {
+            SearchUser(searchQuery);
+        }
+    }
+
 
     useEffect(() => {
-        if(SearchQuery.length <= 3) return 
-        
-        console.log("fetching some users")
-    }, [SearchQuery])
+        const debounceQuery = setTimeout(handleSearchUser, 1000);
+
+        return () => clearTimeout(debounceQuery);
+    }, [searchQuery])
 
     return (
     <Modal idModal="search_user">
-        <div method='dialog' className="modal-box w-11/12 max-w-5xl relative sm:w-9/12 lg:w-7/12">
+        <div method='dialog' className="modal-box w-11/12 max-w-5xl sm:w-9/12 lg:w-8/12">
             <div className="form-control">
-                <label className="input-group input-group-md w-full">
+                <label className="join w-full">
                     {
-                        !isSearch && !SearchQuery && (
-                            <button type='button' className='btn btn-primary'>
+                        !isSearch && !searchQuery && (
+                            <button type='button' className='join-item btn btn-primary'>
                                 <BiSearchAlt2 size={25} />
                             </button>
                         )
                     }
-                    <input type="text" onFocus={() => setIsSearch(true)} onBlur={() => setIsSearch(false)} onChange={(e) => setSearchQuery(e.target.value)} value={SearchQuery} placeholder="Type here" className="input input-primary input-bordered input-md w-full text-lg focus:outline-none" />
+                    <input 
+                        type="text" 
+                        onFocus={() => setIsSearch(true)} 
+                        onBlur={() => setIsSearch(false)} 
+                        onChange={(e) => setSearchQuery(e.target.value)} 
+                        value={searchQuery} 
+                        placeholder="Type here" 
+                        className="join-item input input-primary input-bordered input-md w-full text-lg text-primary font-semibold focus:outline-none" 
+                    />
                     {
-                        SearchQuery && (
-                            <span onClick={() => setSearchQuery("") } className=' bg-inherit border-t border-r border-b border-purple-800 hover:cursor-pointer'>
-                                <BiX size={25} color='#570DF8' />
-                            </span>
+                        searchQuery && (
+                            <button onClick={() => setSearchQuery("") } className='join-item btn btn-outline btn-primary'>
+                                <BiX size={25} />
+                            </button>
                         )
                     }
                 </label>
             </div>
+            <UserListBar users={searchQuery && users && users} isLoading={isLoading} isError={error} isNoneFollow />
         </div>
     </Modal>
   )

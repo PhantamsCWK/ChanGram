@@ -5,5 +5,6 @@ import ExploreFeed from "./components/ExploreFeed";
 import UserPosts from "./components/UserPosts";
 import CreatePost from "./components/CreatePost";
 import PostModal from "./components/PostModal";
+import PostSettingModal from "./components/PostSettingModal";
 
-export { PostsSection, PostDetail, StoryBar, ExploreFeed, UserPosts, CreatePost, PostModal};
+export { PostsSection, PostDetail, StoryBar, ExploreFeed, UserPosts, CreatePost, PostModal, PostSettingModal};

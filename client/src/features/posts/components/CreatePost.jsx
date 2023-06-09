@@ -17,6 +17,10 @@ const CreatePost = () => {
         }
     });
 
+    const sleep = async (ms) => {
+        await new Promise((resolve, reject) => setTimeout(resolve, ms))
+    }
+
     useEffect(() => {
         if(!isImageExist) {
             setPreviewImage(undefined);
@@ -38,10 +42,12 @@ const CreatePost = () => {
         const formData = new FormData();
         formData.append("description", data.description);
         formData.append("picture", data.file[0])
- 
+        
         try {
             await createPost(formData).unwrap();
-
+            await sleep(4000);
+            window.create_post.close();
+            
         } catch (error) {
             console.log(error)
         }
@@ -53,21 +59,28 @@ const CreatePost = () => {
 
     return (
     <Modal idModal="create_post">
-        <div className="modal-box w-11/12 max-w-5xl sm:w-9/12 lg:w-7/12">
+        <div className="modal-box w-11/12 max-w-5xl sm:w-9/12 lg:w-8/12">
         {
-            isLoading
-            ? (
+            error ? (
+                <div className='flex flex-col justify-center items-center h-96 w-full text-2xl font-bold text-[#570DF8]'>
+                    something error please try again later
+                </div>
+            ) : isLoading ? (
                 <div className='flex flex-col justify-center items-center h-96 w-full'>
                     <PropagateLoader color='#570DF8' size={30} />
                 </div>
             )
-            : (
+            : isSuccess ? (
+                <div className='flex flex-col justify-center items-center h-96 w-full text-5xl font-bold text-[#570DF8]'>
+                    Success
+                </div>
+            ) : (
                 <form onSubmit={handleSubmit(onSubmit)} className='flex flex-col gap-5 w-full '>
                     <input type="file" {...register("file")} onChange={onSelectImage} accept='image/png, image/jpeg' className="file-input file-input-bordered file-input-primary file-input-sm w-full" />
                     {
                         isImageExist && (
                             <div className='grid grid-cols-3 gap-5'>
-                                <div className=' col-span-2'>
+                                <div className='col-span-2 w-full h-full'>
                                     <img src={previewImage} alt="" />
                                 </div>
                                 <div className=''>
@@ -79,6 +92,7 @@ const CreatePost = () => {
                     }
                 </form>
             )
+            
         }
         </div>
         

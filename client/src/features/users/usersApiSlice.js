@@ -13,6 +13,24 @@ const usersApiSlice = apiSlice.injectEndpoints({
             ]
         }),
 
+        getSearchUser: builder.query({
+            query: username => `/user/search?username=${username}`,
+            transformResponse: responseData => {
+                const users = responseData.users;
+                return users;
+            },
+            providesTags: (result, error, arg) => {
+                if(result) {
+                    return [
+                        "User",
+                        ...result.map(user => ({ type: "User", id: user.username }))
+                    ]
+                } else {
+                    return ["User"]
+                }
+            }
+        }),
+
         getFollowingUser: builder.query({
             query: username => `/user/${username}/following`,
             transformResponse: responseData => responseData.following
@@ -58,4 +76,4 @@ const usersApiSlice = apiSlice.injectEndpoints({
     })
 });
 
-export const { useGetUserQuery, useGetFollowerUserQuery, useGetFollowingUserQuery, useAddRemoveFollowMutation, useDeleteUserMutation } = usersApiSlice
+export const { useGetUserQuery, useGetFollowerUserQuery, useGetFollowingUserQuery, useAddRemoveFollowMutation, useDeleteUserMutation, useLazyGetSearchUserQuery } = usersApiSlice

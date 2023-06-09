@@ -148,3 +148,51 @@ Use mongoose.model(name, schema)	GET /posts	undefined
     --- property 'client' closes the circle	PATCH /user	undefined
 [06/07/2023, 12:52:35] myBackendAPI - ERROR: 400: User or Password wrong	POST /auth/login	http://localhost:5173
 [06/07/2023, 13:50:57] myBackendAPI - ERROR: MongoServerSelectionError: connection <monitor> to 52.220.201.167:27017 timed out	PATCH /user	undefined
+[06/07/2023, 14:46:05] myBackendAPI - ERROR: 400: User or Password wrong	POST /auth/login	http://localhost:5173
+[06/07/2023, 14:53:29] myBackendAPI - ERROR: 400: User or Password wrong	POST /auth/login	http://localhost:5173
+[06/07/2023, 14:55:04] myBackendAPI - ERROR: 400: User or Password wrong	POST /auth/login	http://localhost:5173
+[06/07/2023, 14:56:26] myBackendAPI - ERROR: 400: User or Password wrong	POST /auth/login	http://localhost:5173
+[06/07/2023, 14:57:14] myBackendAPI - ERROR: 400: User or Password wrong	POST /auth/login	http://localhost:5173
+[06/07/2023, 15:00:11] myBackendAPI - ERROR: 400: User or Password wrong	POST /auth/login	http://localhost:5173
+[06/07/2023, 15:09:04] myBackendAPI - ERROR: rateLimit: Too many login attempts from this IP, please try again after a 1 hour	POST /auth/login	http://localhost:5173
+[06/07/2023, 15:09:36] myBackendAPI - ERROR: 400: User or Password wrong	POST /auth/login	http://localhost:5173
+[06/07/2023, 15:17:45] myBackendAPI - ERROR: 400: User or Password wrong	POST /auth/login	http://localhost:5173
+[06/07/2023, 15:19:08] myBackendAPI - ERROR: 400: User or Password wrong	POST /auth/login	http://localhost:5173
+[06/07/2023, 15:19:12] myBackendAPI - ERROR: 400: User or Password wrong	POST /auth/login	http://localhost:5173
+[06/07/2023, 15:28:25] myBackendAPI - ERROR: 400: User or Password wrong	POST /auth/login	http://localhost:5173
+[06/07/2023, 15:29:53] myBackendAPI - ERROR: rateLimit: Too many login attempts from this IP, please try again after a 1 hour	POST /auth/login	http://localhost:5173
+[06/07/2023, 15:34:39] myBackendAPI - ERROR: rateLimit: Too many login attempts from this IP, please try again after a 1 hour	POST /auth/login	http://localhost:5173
+[06/07/2023, 15:38:19] myBackendAPI - ERROR: rateLimit: Too many login attempts from this IP, please try again after a 1 hour	POST /auth/login	http://localhost:5173
+[06/07/2023, 15:58:46] myBackendAPI - ERROR: 400: User or Password wrong	POST /auth/login	http://localhost:5173
+[06/07/2023, 15:59:08] myBackendAPI - ERROR: 400: User or Password wrong	POST /auth/login	http://localhost:5173
+[06/07/2023, 16:01:14] myBackendAPI - ERROR: 400: User or Password wrong	POST /auth/login	http://localhost:5173
+[06/07/2023, 16:01:17] myBackendAPI - ERROR: 400: User or Password wrong	POST /auth/login	http://localhost:5173
+[06/07/2023, 16:01:18] myBackendAPI - ERROR: rateLimit: Too many login attempts from this IP, please try again after a 1 hour	POST /auth/login	http://localhost:5173
+[06/07/2023, 16:02:01] myBackendAPI - ERROR: rateLimit: Too many login attempts from this IP, please try again after a 1 hour	POST /auth/login	http://localhost:5173
+[06/07/2023, 16:11:06] myBackendAPI - ERROR: rateLimit: Too many login attempts from this IP, please try again after a 1 hour	POST /auth/login	http://localhost:5173
+[06/07/2023, 16:13:55] myBackendAPI - ERROR: rateLimit: Too many login attempts from this IP, please try again after a 1 hour	POST /auth/login	http://localhost:5173
+[06/07/2023, 16:13:59] myBackendAPI - ERROR: rateLimit: Too many login attempts from this IP, please try again after a 1 hour	POST /auth/login	http://localhost:5173
+[06/07/2023, 16:14:00] myBackendAPI - ERROR: rateLimit: Too many login attempts from this IP, please try again after a 1 hour	POST /auth/login	http://localhost:5173
+[06/07/2023, 16:14:34] myBackendAPI - ERROR: rateLimit: Too many login attempts from this IP, please try again after a 1 hour	POST /auth/login	http://localhost:5173
+[06/07/2023, 16:14:35] myBackendAPI - ERROR: rateLimit: Too many login attempts from this IP, please try again after a 1 hour	POST /auth/login	http://localhost:5173
+[06/07/2023, 16:14:36] myBackendAPI - ERROR: rateLimit: Too many login attempts from this IP, please try again after a 1 hour	POST /auth/login	http://localhost:5173
+[06/07/2023, 16:14:41] myBackendAPI - ERROR: rateLimit: Too many login attempts from this IP, please try again after a 1 hour	POST /auth/login	http://localhost:5173
+[06/07/2023, 16:16:41] myBackendAPI - ERROR: rateLimit: Too many login attempts from this IP, please try again after a 1 hour	POST /auth/login	http://localhost:5173
+[06/07/2023, 16:16:44] myBackendAPI - ERROR: rateLimit: Too many login attempts from this IP, please try again after a 1 hour	POST /auth/login	http://localhost:5173
+[06/07/2023, 16:16:45] myBackendAPI - ERROR: rateLimit: Too many login attempts from this IP, please try again after a 1 hour	POST /auth/login	http://localhost:5173
+[06/07/2023, 16:17:00] myBackendAPI - ERROR: rateLimit: Too many login attempts from this IP, please try again after a 1 hour	POST /auth/login	http://localhost:5173
+[06/07/2023, 20:01:26] myBackendAPI - ERROR: 400: User or Password wrong	POST /auth/login	http://localhost:5173
+[06/07/2023, 20:39:33] myBackendAPI - ERROR: 400: User or Password wrong	POST /auth/login	http://localhost:5173
+[06/07/2023, 20:39:44] myBackendAPI - ERROR: 400: User or Password wrong	POST /auth/login	http://localhost:5173
+[06/07/2023, 20:41:01] myBackendAPI - ERROR: 400: User or Password wrong	POST /auth/login	http://localhost:5173
+[06/07/2023, 20:41:04] myBackendAPI - ERROR: rateLimit: Too many login attempts from this IP, please try again after a 1 hour	POST /auth/login	http://localhost:5173
+[06/07/2023, 20:41:12] myBackendAPI - ERROR: rateLimit: Too many login attempts from this IP, please try again after a 1 hour	POST /auth/login	http://localhost:5173
+[06/08/2023, 14:18:40] myBackendAPI - ERROR: 400: User or Password wrong	POST /auth/login	http://localhost:5173
+[06/08/2023, 14:18:58] myBackendAPI - ERROR: rateLimit: Too many login attempts from this IP, please try again after a 1 hour	POST /auth/login	http://localhost:5173
+[06/08/2023, 14:19:18] myBackendAPI - ERROR: rateLimit: Too many login attempts from this IP, please try again after a 1 hour	POST /auth/login	http://localhost:5173
+[06/08/2023, 14:19:19] myBackendAPI - ERROR: rateLimit: Too many login attempts from this IP, please try again after a 1 hour	POST /auth/login	http://localhost:5173
+[06/08/2023, 14:19:21] myBackendAPI - ERROR: rateLimit: Too many login attempts from this IP, please try again after a 1 hour	POST /auth/login	http://localhost:5173
+[06/08/2023, 14:19:22] myBackendAPI - ERROR: rateLimit: Too many login attempts from this IP, please try again after a 1 hour	POST /auth/login	http://localhost:5173
+[06/08/2023, 14:22:20] myBackendAPI - ERROR: rateLimit: Too many login attempts from this IP, please try again after a 1 hour	POST /auth/login	http://localhost:5173
+[06/08/2023, 14:22:25] myBackendAPI - ERROR: rateLimit: Too many login attempts from this IP, please try again after a 1 hour	POST /auth/login	http://localhost:5173
+[06/08/2023, 14:22:43] myBackendAPI - ERROR: rateLimit: Too many login attempts from this IP, please try again after a 1 hour	POST /auth/login	http://localhost:5173

@@ -2,7 +2,7 @@ import { body, check, validationResult } from "express-validator";
 import User from "../../models/User.js";
 
 export const registerValidation = async (req, res, next) => {
-    await body("username").isString().isLength({ min: 4 }).withMessage("username must be min 4 length")
+    await body("username").isString().isLength({ min: 3 }).withMessage("username must be min 3 length")
     .customSanitizer(input => {
         return input.replace(/\s/g, '').toLowerCase();
     })
