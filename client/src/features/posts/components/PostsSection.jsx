@@ -14,7 +14,7 @@ const PostsSection = () => {
   });
   const { data: posts, error, isLoading } = useGetAllPostQuery();
   const [likeAndDislike ] = useLikeAndDislikeMutation();
-  const { id: userAuthId } = useAuth();
+  const { id: authUserId } = useAuth();
 
   const handleLikeAndDislike = async (postId) => {
     await likeAndDislike(postId).unwrap();
@@ -42,7 +42,7 @@ const PostsSection = () => {
       <div className='flex flex-col justify-start items-center gap-5 py-3'>
         {
           posts.map((post, i) => (
-            <PostVerticalCard post={post} userAuthId={userAuthId} handleLikeAndDislike={handleLikeAndDislike} setSettingId={setSettingId} key={i} />
+            <PostVerticalCard post={post} authUserId={authUserId} handleLikeAndDislike={handleLikeAndDislike} setSettingId={setSettingId} key={i} />
             ))
           }
       </div>

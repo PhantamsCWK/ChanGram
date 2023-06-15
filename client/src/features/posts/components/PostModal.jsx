@@ -45,17 +45,7 @@ const PostModal = () => {
         ) : 
           post && post.id === postId && (
             <div className="modal-box max-w-full h-fit w-[400px] md:w-10/12 lg:w-9/12  p-0">
-              {
-                  isMobile 
-                  ? (
-                      <div className='flex flex-col justify-start items-center w-full'>
-                          <h1>IsMobile</h1>
-                      </div>
-                  )
-                  : (
-                     <PostHorizontalCard post={post} authUserId={authUserId} handleLikeAndDislike={handleLikeAndDislike} />
-                  )
-              }
+              <PostHorizontalCard post={post} authUserId={authUserId} handleLikeAndDislike={handleLikeAndDislike} />
             </div>
         )
       }

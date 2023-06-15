@@ -6,7 +6,7 @@ import { BsDot } from "react-icons/bs"
 import People from "../app/assets/giovanni-ilardi-p4CmBgJ7QcA-unsplash.jpg";
 import { Link } from 'react-router-dom';
 
-const PostVerticalCard = ({ post, userAuthId, handleLikeAndDislike, setSettingId }) => {
+const PostVerticalCard = ({ post, authUserId, handleLikeAndDislike, setSettingId }) => {
     const handlePostSetting = (postId, authorId) => {
         setSettingId(() => ({postId, authorId}))
         window.post_setting_modal.showModal();
@@ -38,7 +38,7 @@ const PostVerticalCard = ({ post, userAuthId, handleLikeAndDislike, setSettingId
             <div className='flex flex-row justify-start items-center gap-2'>
                 <button type='button' onClick={() => handleLikeAndDislike(post.id)}>
                 {
-                    post.likes.hasOwnProperty(userAuthId) 
+                    post.likes.hasOwnProperty(authUserId) 
                     ? <AiFillHeart size="28px" color='red' />
                     : <AiOutlineHeart size="28px" />
                 }
@@ -68,7 +68,7 @@ const PostVerticalCard = ({ post, userAuthId, handleLikeAndDislike, setSettingId
         </div>
 
         <span className=' bg-gray-300 w-full h-[1px]'></span>
-  </article>
+    </article>
   )
 }
 

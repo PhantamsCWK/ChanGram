@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
-import { set, useForm } from 'react-hook-form'
-import { PropagateLoader } from "react-spinners"
+import { useForm } from 'react-hook-form'
+import { BounceLoader } from "react-spinners"
 
 import { Modal } from '../../../components';
 import { useCreatePostMutation } from '../postsApiSlice';
@@ -68,7 +68,7 @@ const CreatePost = () => {
                 </div>
             ) : isLoading ? (
                 <div className='flex flex-col justify-center items-center h-96 w-full'>
-                    <PropagateLoader color='#570DF8' size={30} />
+                    <BounceLoader color='#570DF8' size={50} />
                 </div>
             )
             : isSuccess ? (

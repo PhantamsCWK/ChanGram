@@ -1,15 +1,15 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import { Modal } from '../../../components'
-import { useDeletePostMutation, useLazyGetPostQuery } from '../postsApiSlice';
+import { useDeletePostMutation } from '../postsApiSlice';
 import { useAuth } from '../../../hooks';
 import { BounceLoader } from 'react-spinners';
 import { useDispatch } from 'react-redux';
 import { clearPostId } from '../postModalSlice';
 
 const PostSettingModal = ({ settingId, setSettingId }) => {
-  const { id: userAuthId } = useAuth();
+  const { id: authUserId } = useAuth();
   const dispatch = useDispatch();
-  const isAuthor = settingId.authorId === userAuthId
+  const isAuthor = settingId.authorId === authUserId
 
   const [ deletePost, { isLoading: isDeleteLoading } ] = useDeletePostMutation();
 
