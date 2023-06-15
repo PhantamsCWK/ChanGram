@@ -1,14 +1,15 @@
 import React from 'react'
 import { FeedsGrid } from '../../../components'
 import { useGetAllPostQuery } from '../postsApiSlice';
+import PostSettingModal from './PostSettingModal';
 
 const ExploreFeed = () => {
-  const { data: posts, error, isLoading } = useGetAllPostQuery();
+  const { data: posts, isError, isLoading } = useGetAllPostQuery();
 
-  if (error) {
+  if (isError) {
     return (
       <h1>
-        Error
+        Error Fetching
       </h1>
     )
   }

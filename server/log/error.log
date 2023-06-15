@@ -196,3 +196,6 @@ Use mongoose.model(name, schema)	GET /posts	undefined
 [06/08/2023, 14:22:20] myBackendAPI - ERROR: rateLimit: Too many login attempts from this IP, please try again after a 1 hour	POST /auth/login	http://localhost:5173
 [06/08/2023, 14:22:25] myBackendAPI - ERROR: rateLimit: Too many login attempts from this IP, please try again after a 1 hour	POST /auth/login	http://localhost:5173
 [06/08/2023, 14:22:43] myBackendAPI - ERROR: rateLimit: Too many login attempts from this IP, please try again after a 1 hour	POST /auth/login	http://localhost:5173
+[06/15/2023, 14:26:23] myBackendAPI - ERROR: MongoServerSelectionError: getaddrinfo ENOTFOUND ac-glcokiv-shard-00-00.09fouly.mongodb.net	GET /posts/6489d9757bc9e93d94cadf36	http://localhost:5173
+[06/15/2023, 14:26:40] myBackendAPI - ERROR: MongoServerSelectionError: getaddrinfo ENOTFOUND ac-glcokiv-shard-00-00.09fouly.mongodb.net	GET /posts/6489da537bc9e93d94cadf49	http://localhost:5173
+[06/15/2023, 14:57:13] myBackendAPI - ERROR: MongoNetworkTimeoutError: connection 15 to 18.139.242.108:27017 timed out	GET /user/chandra	http://localhost:5173

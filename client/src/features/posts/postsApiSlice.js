@@ -102,10 +102,7 @@ const postsApiSlice = apiSlice.injectEndpoints({
                 url: `/posts/${postId}`,
                 method: "DELETE",
             }),
-            invalidatesTags: (result, error, arg) => [
-                "Post",
-                { type: "Post", id: arg }
-            ]
+            invalidatesTags: () => [{ type: "Post", id: "LIST" }]
         }),
 
         likeAndDislike: builder.mutation({

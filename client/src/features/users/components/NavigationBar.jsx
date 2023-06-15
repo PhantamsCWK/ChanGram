@@ -7,24 +7,15 @@ import { useGetUserQuery } from '../usersApiSlice';
 
 const NavigationBar = () => {
   const isMobile = useMediaQuery("(max-width: 768px)");
-  const { id, username } = useAuth();
-  const { data: user, isLoading, isError } = useGetUserQuery(username);
-
-  if(isLoading){
-    return
-  }
-
-  if(isError){
-    console.log("error")
-    return
-  }
+  const { username } = useAuth();
+  const { data: user } = useGetUserQuery(username);
 
   return (
     <div>
         {
             isMobile 
-            ? <Bottombar user={user && user} />
-            : <SideBar user={user && user} />
+            ? <Bottombar userPhoto={user ? user.photoPath : null} username={username} />
+            : <SideBar userPhoto={user ? user.photoPath : null} username={username} />
         }
     </div>
   )

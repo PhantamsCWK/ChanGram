@@ -1,8 +1,6 @@
-import React from 'react'
-import People from '../app/assets/giovanni-ilardi-p4CmBgJ7QcA-unsplash.jpg'
-import { useMediaQuery } from "../hooks"
+import React from 'react';
+import { useMediaQuery } from "../hooks";
 import { BiSearchAlt2 } from 'react-icons/bi';
-import { useDispatch, useSelector } from 'react-redux';
 import { ExploreFeed } from '../features/posts';
 
 const Explore = () => {

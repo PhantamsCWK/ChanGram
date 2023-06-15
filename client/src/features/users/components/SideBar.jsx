@@ -6,7 +6,7 @@ import { useSendLogoutMutation } from '../../auth/authApiSlice';
 import { useDispatch } from 'react-redux';
 import { logOut } from '../../auth/authSlice';
 
-const SideBar = ({ user }) => {
+const SideBar = ({ userPhoto, username }) => {
   const dispatch = useDispatch();
 
   const isMatch = useMediaQuery("(min-width: 1024px )");
@@ -66,15 +66,15 @@ const SideBar = ({ user }) => {
               </button>
             </div>
             <div className='py-[0.4rem]'>
-              <Link to={user.username } className='flex items-center justify-start gap-5'>
+              <Link to={username } className='flex items-center justify-start gap-5'>
                 <div className='border border-black rounded-full w-[26px] h-[26px] overflow-hidden'>
                   {
-                    user.picturePath 
-                    ? <img src={user.picturePath} alt={user.username} className=' object-cover' />
+                    userPhoto 
+                    ? <img src={userPhoto} alt={username} className=' object-cover' />
                     : <BiUser size={25} />
                   }
                 </div>
-                { isMatch && <span>{user.username}</span> }
+                { isMatch && <span>{username}</span> }
               </Link>
             </div>
             <div className='pt-[60px]'>

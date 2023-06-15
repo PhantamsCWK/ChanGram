@@ -9,7 +9,7 @@ const CreatePost = () => {
     const [isImageExist, setImageExist] = useState(false);
     const [previewImage, setPreviewImage] = useState();
 
-    const [createPost, { isLoading, error, isSuccess } ] = useCreatePostMutation()
+    const [createPost, { isLoading, error, isSuccess, reset: resetCreate } ] = useCreatePostMutation()
     const { register, handleSubmit, reset } = useForm({
         defaultValues: { 
             file: "",
@@ -46,6 +46,7 @@ const CreatePost = () => {
         try {
             await createPost(formData).unwrap();
             await sleep(4000);
+            resetCreate()
             window.create_post.close();
             
         } catch (error) {

@@ -3,5 +3,7 @@ import FeedsGrid from "./FeedsGrid";
 import Modal from "./Modal";
 import UserListBar from "./UserListBar";
 import Alert from "./Alert";
+import PostHorizontalCard from "./PostHorizontalCard";
+import PostVerticalCard from "./PostVerticalCard";
 
-export { Footer, FeedsGrid, Modal, UserListBar, Alert };
+export { Footer, FeedsGrid, Modal, UserListBar, Alert, PostHorizontalCard, PostVerticalCard };

@@ -1,20 +1,31 @@
 import React, { useState } from 'react'
 import { BsChatDotsFill, BsHeartFill } from 'react-icons/bs'
 import { PostModal } from '../features/posts'
+import { useDispatch } from 'react-redux'
+import { setPostId } from '../features/posts/postModalSlice'
 
-const CardFeed = ({ post, setPostId }) => {
-  const [isHover, setIsHover] = useState(false)
+const CardFeed = ({ post }) => {
+  const [isHover, setIsHover] = useState(false);
+  const dipatch = useDispatch();
 
-  const handleClick = async (id) => {
+  const handleClick = (id) => {
+    dipatch(setPostId(id));
     window.post_modal.showModal();
-    setPostId(id)
     window.history.pushState({}, undefined, `/p/${id}`);
   }
 
   return(
     <div 
-      onMouseEnter={() => setIsHover(true)} 
-      onMouseLeave={() => setIsHover(false)}
+      onMouseEnter={() => {
+        if(!isHover) {
+          setIsHover(true)
+        }
+      }} 
+      onMouseLeave={() => {
+        if(isHover) {
+          setIsHover(false)
+        }
+      }}
       onClick={() => handleClick(post.id)}
       className=' relative overflow-hidden bg-slate-500 h-44 sm:h-56 lg:h-64 xl:h-80' 
     >
@@ -41,8 +52,6 @@ const CardFeed = ({ post, setPostId }) => {
 
 
 const FeedsGrid = ({ posts }) => {
-  const [postId, setPostId] = useState('');
-
   return (
     <>
       <div className='grid grid-cols-3 gap-1 w-full'>
@@ -52,7 +61,7 @@ const FeedsGrid = ({ posts }) => {
               ))
             }
       </div>
-      <PostModal postId={postId} />
+      <PostModal />
     </>
   )
 }

@@ -3,10 +3,6 @@ import { Footer } from '../components';
 import CreatePost from '../features/posts/components/CreatePost';
 import SearchUser from '../features/users/components/SearchUser';
 import { NavigationBar } from '../features/users';
-import { PostSettingModal } from '../features/posts';
-
-
-
 
 const MainLayout = () => {
   return (
@@ -18,7 +14,6 @@ const MainLayout = () => {
       </div>
       <CreatePost />
       <SearchUser />
-      <PostSettingModal />
     </>
   )
 }

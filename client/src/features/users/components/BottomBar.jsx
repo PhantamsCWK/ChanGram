@@ -1,10 +1,10 @@
 import React from 'react'
-import { BiCompass, BiHomeAlt2, BiListUl, BiPaperPlane, BiPlusCircle, BiSearchAlt2, BiUser } from 'react-icons/bi';
+import { BiCompass, BiHomeAlt2, BiPaperPlane, BiPlusCircle, BiUser } from 'react-icons/bi';
 import { Link } from 'react-router-dom';
 
-const Bottombar = ({ user }) => {
+const Bottombar = ({ userPhoto, username }) => {
   return (
-    <div className="btm-nav">
+    <div className="btm-nav z-50">
       <button className="text-primary">
         <Link to="/">
           <BiHomeAlt2 size={25} />
@@ -26,11 +26,11 @@ const Bottombar = ({ user }) => {
         </label>
       </button>
       <button className="text-primary">
-        <Link to={user.username}>
+        <Link to={username}>
           <div className='rounded-full w-[26px] h-[26px] overflow-hidden'>
             {
-              user.picturePath 
-              ? <img src={user.picturePath} alt={user.username} className=' object-cover' />
+              userPhoto
+              ? <img src={userPhoto} alt={username} className=' object-cover' />
               : <BiUser size={25} />
             }
           </div>

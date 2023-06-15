@@ -1,5 +1,5 @@
 import { configureStore } from '@reduxjs/toolkit';
-import { setupListeners } from '@reduxjs/toolkit/query'
+import { setupListeners } from '@reduxjs/toolkit/query';
 import { 
     persistStore, 
     persistReducer,
@@ -13,7 +13,8 @@ import {
 import storage from 'redux-persist/lib/storage';
 
 import { apiSlice } from './services/apiSlice';
-import authReducer from "../features/auth/authSlice"
+import authReducer from "../features/auth/authSlice";
+import postModalReducer from "../features/posts/postModalSlice";
 
 const persistConfig = {
     key: 'root',
@@ -29,6 +30,7 @@ const store = configureStore({
     reducer: {
         [apiSlice.reducerPath]: apiSlice.reducer,
         auth: persistedAuthReducer,
+        postModal: postModalReducer
     },
     middleware: getDefaultMiddleware => getDefaultMiddleware({
             serializableCheck: {
