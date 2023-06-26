@@ -200,3 +200,5 @@ Use mongoose.model(name, schema)	GET /posts	undefined
 [06/15/2023, 14:26:40] myBackendAPI - ERROR: MongoServerSelectionError: getaddrinfo ENOTFOUND ac-glcokiv-shard-00-00.09fouly.mongodb.net	GET /posts/6489da537bc9e93d94cadf49	http://localhost:5173
 [06/15/2023, 14:57:13] myBackendAPI - ERROR: MongoNetworkTimeoutError: connection 15 to 18.139.242.108:27017 timed out	GET /user/chandra	http://localhost:5173
 [06/15/2023, 19:42:44] myBackendAPI - ERROR: CastError: Cast to ObjectId failed for value "[object Object]" (type string) at path "_id" for model "Posts"	DELETE /posts/[object%20Object]	http://localhost:5173
+[06/17/2023, 11:58:51] myBackendAPI - ERROR: 400: User or Password wrong	POST /auth/login	http://localhost:5173
+[06/19/2023, 14:18:44] myBackendAPI - ERROR: 400: User or Password wrong	POST /auth/login	http://localhost:5173

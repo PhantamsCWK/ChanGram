@@ -1,5 +1,5 @@
 import React from 'react'
-import { BiCompass, BiHomeAlt2, BiPaperPlane, BiPlusCircle, BiUser } from 'react-icons/bi';
+import { BiHomeAlt2, BiPaperPlane, BiPlusCircle, BiSearch, BiUser } from 'react-icons/bi';
 import { Link } from 'react-router-dom';
 
 const Bottombar = ({ userPhoto, username }) => {
@@ -12,7 +12,7 @@ const Bottombar = ({ userPhoto, username }) => {
       </button>
       <button className="text-primary">
         <Link to="explore">
-          <BiCompass size={25} />
+          <BiSearch size={25} />
         </Link>
       </button>
       <button className="text-primary">

@@ -5,5 +5,6 @@ import UserListBar from "./UserListBar";
 import Alert from "./Alert";
 import PostHorizontalCard from "./PostHorizontalCard";
 import PostVerticalCard from "./PostVerticalCard";
+import SearchBar from "./SearchBar";
 
-export { Footer, FeedsGrid, Modal, UserListBar, Alert, PostHorizontalCard, PostVerticalCard };
+export { Footer, FeedsGrid, Modal, UserListBar, Alert, PostHorizontalCard, PostVerticalCard, SearchBar };

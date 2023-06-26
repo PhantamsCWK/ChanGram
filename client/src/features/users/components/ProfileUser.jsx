@@ -5,6 +5,7 @@ import { useAuth, useMediaQuery } from '../../../hooks';
 import People from '../../../app/assets/giovanni-ilardi-p4CmBgJ7QcA-unsplash.jpg';
 import { useAddRemoveFollowMutation } from '../usersApiSlice';
 import { ClipLoader } from 'react-spinners';
+import { Link } from 'react-router-dom';
 
 const ProfileUser = ({ user }) => {
   const [ followUser, {isLoading, error} ] = useAddRemoveFollowMutation();
@@ -34,7 +35,7 @@ const ProfileUser = ({ user }) => {
             user.username === userAuthName 
             ? (
               <>
-                <button className="btn btn-ghost btn-sm bg-gray-200">Edit Profile</button>
+                <Link to="/account/edit" className="btn btn-ghost btn-sm bg-gray-200">Edit Profile</Link>
                 <button className="btn btn-ghost btn-sm"><BsGearWide size={20} color='' /></button>
               </>
 

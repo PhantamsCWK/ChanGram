@@ -24,8 +24,8 @@ const SideBar = ({ userPhoto, username }) => {
 
   return (
     <>
-      <div className="h-full pt-5 bg-white border-r border-gray-300 fixed block z-20">
-          <div className={`flex flex-col gap-5 p-5 bg-base-100 ${ isMatch && "lg:w-52"}`}>
+      <div className="h-full pt-5 fixed block z-20 shadow-md">
+          <div className={`flex flex-col gap-5 py-5 px-2 bg-base-100 ${ isMatch && "lg:w-52"}`}>
             <div className='h-[90px]'>
               <Link to="/" className='text-3xl text-center'>
                 {
@@ -35,37 +35,37 @@ const SideBar = ({ userPhoto, username }) => {
                 }
               </Link>
             </div>
-            <div className='py-[0.4rem]'>
+            <div className='py-[0.5rem] pl-1 hover:bg-gray-300 rounded-lg'>
               <Link to="/" className='flex items-center justify-start gap-5'>
                 <BiHomeAlt2 size={25} />
                 { isMatch  && <span>Home</span> }
               </Link>
             </div>
-            <div className='py-[0.4rem]'>
+            <div className='py-[0.5rem] pl-1 hover:bg-gray-300 rounded-lg'>
               <button onClick={() => window.search_user.showModal()} className="flex items-center justify-start gap-5 hover:cursor-pointer">
                 <BiSearchAlt2 size={25} />
                 { isMatch && <span>Search</span> }
               </button>
             </div>
-            <div className='py-[0.4rem]'>
+            <div className='py-[0.5rem] pl-1 hover:bg-gray-300 rounded-lg'>
               <Link to="explore" className='flex items-center justify-start gap-5'>
                 <BiCompass size={25} />
                 { isMatch && <span>Explore</span> }
               </Link>
             </div>
-            {/* <div className='py-[0.4rem]'>
+            {/* <div className='py-[0.5rem] pl-1 hover:bg-gray-300 rounded-lg'>
               <Link to="p/643b9cdd7758ab9187dca666" className='flex items-center justify-start gap-5'>
                 <BiPaperPlane size={25} />
                 { isMatch && <span>Direct</span> }
               </Link>
             </div> */}
-            <div className='py-[0.4rem]'>
+            <div className='py-[0.5rem] pl-1 hover:bg-gray-300 rounded-lg'>
               <button onClick={ () => window.create_post.showModal()} className="flex items-center justify-start gap-5 hover:cursor-pointer">
                 <BiPlusCircle size={25} />
                 { isMatch && <span>Create</span> }
               </button>
             </div>
-            <div className='py-[0.4rem]'>
+            <div className='py-[0.5rem] pl-1 hover:bg-gray-300 rounded-lg'>
               <Link to={username } className='flex items-center justify-start gap-5'>
                 <div className='border border-black rounded-full w-[26px] h-[26px] overflow-hidden'>
                   {
@@ -77,7 +77,8 @@ const SideBar = ({ userPhoto, username }) => {
                 { isMatch && <span>{username}</span> }
               </Link>
             </div>
-            <div className='pt-[60px]'>
+            <div className=' h-16' />
+            <div className='py-[0.5rem] pl-1 hover:bg-gray-300 rounded-lg'>
               <div className="dropdown dropdown-top">
                 <label tabIndex={0} className='flex items-center justify-start gap-5 hover:cursor-pointer'>
                   <BiListUl size={25} />
@@ -90,9 +91,9 @@ const SideBar = ({ userPhoto, username }) => {
                     </label>
                   </li>
                   <li>
-                    <label href="">
+                    <Link to="/account/edit">
                       Settings
-                    </label>
+                    </Link>
                   </li>
                 </ul>
               </div>
