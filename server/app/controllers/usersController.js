@@ -151,13 +151,14 @@ export const addRemoveFollow = async (req, res, next) => {
 }
 
 export const editUser = async (req, res, next) => {
-    const { username, name, bio } = req.body;
+    const { name, bio, gender } = req.body;
+
     const usernameAuth = req.user.username;
 
     try {
         const updatedUser = await User.updateOne(
             { username: usernameAuth }, 
-            { $set: { username, name, bio }} , 
+            { $set: { name, bio, gender }} , 
             { new: true }
             );
         res.status(200).json({ user: updatedUser });

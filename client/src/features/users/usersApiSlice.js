@@ -62,6 +62,16 @@ const usersApiSlice = apiSlice.injectEndpoints({
                 }
             }
         }),
+        editUser: builder.mutation({
+            query: request => ({
+                url: `/user`,
+                method: "PATCH",
+                body: request.data
+            }),
+            invalidatesTags: (result, error, arg) => [
+                { type: "User", id: arg.username }
+            ]
+        }),
 
         deleteUser: builder.mutation({
             query: username => ({
@@ -76,4 +86,4 @@ const usersApiSlice = apiSlice.injectEndpoints({
     })
 });
 
-export const { useGetUserQuery, useGetFollowerUserQuery, useGetFollowingUserQuery, useAddRemoveFollowMutation, useDeleteUserMutation, useLazyGetSearchUserQuery } = usersApiSlice
+export const { useGetUserQuery, useGetFollowerUserQuery, useGetFollowingUserQuery, useAddRemoveFollowMutation, useDeleteUserMutation, useLazyGetSearchUserQuery, useEditUserMutation } = usersApiSlice

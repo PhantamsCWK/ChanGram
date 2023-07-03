@@ -91,7 +91,7 @@ const SideBar = ({ userPhoto, username }) => {
                     </label>
                   </li>
                   <li>
-                    <Link to="/account/edit">
+                    <Link to="/account/my">
                       Settings
                     </Link>
                   </li>

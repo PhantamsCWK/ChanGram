@@ -14,6 +14,7 @@ const Error = lazy(() => import("./pages/Error"));
 const Explore = lazy(() => import("./pages/Explore"));
 const Post = lazy(() => import("./pages/Post"));
 const Profile = lazy(() => import("./pages/Profile"));
+const SettingAccount = lazy(() => import("./pages/SettingAccount"));
 const SettingProfile = lazy(() => import("./pages/SettingProfile"));
 const SettingSecurity = lazy(() => import("./pages/SettingSecurity"));
 
@@ -37,6 +38,7 @@ const App = () => {
             <Route path="p/:postId" element={<Post />} />
             <Route path=':username' element={<Profile />}/>
             <Route path='account' element={ <SettingLayout /> }>
+              <Route path='my' element={<SettingAccount />} />
               <Route path='edit' element={<SettingProfile />} />
               <Route path='security' element={<SettingSecurity />} />
             </Route>

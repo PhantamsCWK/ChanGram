@@ -1,19 +1,26 @@
 import React from 'react'
 import { SettingBar } from '../features/users'
 import { Outlet } from 'react-router-dom'
+import { useMediaQuery } from '../hooks'
 
 const Setting = () => {
+  const isMobile = useMediaQuery("(max-width: 768px)");
 
   return (
-    <section className='pt-[4px] mx-1 lg:mx-[46px]'>
-      <h1 className=' text-2xl font-semibold py-3'>
+    <section className='flex flex-col justify-start items-center pt-[4px] mx-2'>
+      <h1 className='w-full text-left text-2xl font-semibold py-3'>
         Setting
       </h1>
-      <div className='grid grid-cols-8 pt-4 shadow-xl transition-shadow hover:shadow-primary hover:shadow-xl '>
+      <div className=' flex flex-row pt-4 shadow-xl transition-shadow w-full sm:w-11/12'>
+      {
+        isMobile ? (
+          <></>
+        ) : (
+          <SettingBar />
+        )
+      }
 
-        <SettingBar />
-
-        <div className='col-span-6 p-5 border border-red-500'>
+        <div className='p-5 sm:pr-16 w-full'>
             <Outlet />
         </div>
 

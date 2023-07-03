@@ -32,6 +32,10 @@ const UserSchema = new mongoose.Schema({
         type: String,
         default: ""
     },
+    gender: {
+        type: String,
+        default: ""
+    },
     following: {
         type: [{ type: mongoose.Schema.Types.ObjectId, ref: "Users" }],
         default: []
