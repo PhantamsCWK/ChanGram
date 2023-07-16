@@ -38,8 +38,8 @@ const PostModal = () => {
   return (
     <Modal idModal="post_modal" onClose={closeModal}>
       {
-        isLoading || isFetching ? (
-          <div className='flex justify-center items-center w-[260px] p-0'>
+        isLoading && isFetching ? (
+          <div className='modal-box flex justify-center w-[260px] bg-white bg-opacity-5'>
             <BounceLoader color='#570DF8' size={100} />
           </div>
         ) : 

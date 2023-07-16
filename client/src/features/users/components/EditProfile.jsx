@@ -1,11 +1,12 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useForm } from 'react-hook-form';
 import * as zod from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 
+
 import { useEditUserMutation, useGetUserQuery } from '../usersApiSlice';
 import { useAuth } from '../../../hooks';
-import Profile from "../../../app/assets/giovanni-ilardi-p4CmBgJ7QcA-unsplash.jpg";
+import UserImageCropper from './UserImageCropper';
 
 const schema = zod.object({
   name: zod.string().nonempty(),
@@ -55,7 +56,7 @@ const EditForm = ({ user }) => {
               <span>Name</span>
             </div>
 
-            <div className='flex flex-col w-60 sm:w-96 md:w-80 lg:w-96'>
+            <div className='flex flex-col w-60 sm:w-96 md:w-60 lg:w-96'>
               <input
                 type='text'
                 {...register("name")}
@@ -72,7 +73,7 @@ const EditForm = ({ user }) => {
               <span>Bio</span>
             </div>
 
-            <div className='flex flex-col w-60 sm:w-96 md:w-80 lg:w-96'>
+            <div className='flex flex-col w-60 sm:w-96 md:w-60 lg:w-96'>
               <textarea
                 {...register("bio")}
                 className='textarea textarea-primary textarea-bordered textarea-md w-full p-1' />
@@ -87,7 +88,7 @@ const EditForm = ({ user }) => {
               <span>Gender</span>
             </div>
 
-            <div className='flex flex-col w-60 sm:w-96 md:w-80 lg:w-96'>
+            <div className='flex flex-col w-60 sm:w-96 md:w-60 lg:w-96'>
               <select
                 {...register("gender")} 
                 className="select select-primary select-bordered select-sm w-full px-1">
@@ -109,8 +110,7 @@ const EditForm = ({ user }) => {
 }
 
 const EditProfile = () => {
-  const [hoverPicture, setHoverPicture] = useState(false)
-  const { id, username } = useAuth();
+  const { username } = useAuth();
 
   const { data: user, isFetching, error } = useGetUserQuery(username);
 
@@ -119,20 +119,14 @@ const EditProfile = () => {
       <div className='flex flex-col gap-3 border border-gray-300 p-5 rounded-xl'>
 
         <div className='flex justify-start items-center gap-5 md:gap-12'>
-          <div onMouseEnter={() => !hoverPicture && setHoverPicture(true)} onMouseLeave={() => hoverPicture && setHoverPicture(false)} className='relative overflow-hidden w-20 h-20 sm:w-32 sm:h-32 object-cover rounded-full ' >
-            <img className=' absolute' src={user?.photoPath ? user.photoPath : Profile } alt="" />
-            { hoverPicture && (
-              <div className='flex justify-center items-center absolute w-full h-full bg-primary bg-opacity-25 cursor-pointer'>
-              <span className=' text-sm text-white font-bold uppercase'>Change avatar</span>
-              </div>
-            )
-            }
-          </div>
+          <UserImageCropper user={user} />
+          
           <div className='flex flex-col justify-start gap-2'>
             <span className=' text-2xl sm:text-4xl font-semibold'>{user?.username}</span>
             <span className=' text-md sm:text-lg'>{user?.name}</span>
           </div>
         </div>
+
         <div className=' -top-10 bg-gray-300 h-[1px] w-full'/>
 
         <EditForm user={user} />

@@ -5,7 +5,7 @@ const SettingBar = () => {
   const location = useLocation();
 
   return (
-    <aside className=' w-[16rem]'>
+    <aside className='min-w-[176px]'>
         <nav className='flex flex-col justify-start items-start w-full h-[530px]'>
             <Link to="/account/my" className={`pl-8 w-11/12 py-2 ${location.pathname === "/account/my" ? "bg-primary text-white" : "hover:bg-[#e7d8ff]"} rounded-e-full`}>
               My Account
@@ -13,9 +13,9 @@ const SettingBar = () => {
             <Link to="/account/edit" className={`pl-8 w-11/12 py-2 ${location.pathname === "/account/edit" ? "bg-primary text-white" : "hover:bg-[#e7d8ff]"} rounded-e-full`}>
               Profile
             </Link>
-            <Link to="/account/security" className={`pl-8 w-11/12 py-2 ${location.pathname === "/account/security" ? "bg-primary text-white" : "hover:bg-[#e7d8ff]"} rounded-e-full`}>
+            <div to="/account/security" className={`pl-8 w-11/12 py-2 ${location.pathname === "/account/security" ? "bg-primary text-white" : "hover:bg-[#e7d8ff]"} rounded-e-full cursor-not-allowed`}>
               Security
-            </Link>
+            </div>
             <div className={`pl-8 w-11/12 py-2 ${location.pathname === "/account/email" ? "bg-primary text-white" : "hover:bg-[#e7d8ff]"} rounded-e-full cursor-not-allowed`}>
               Email Notification
             </div>

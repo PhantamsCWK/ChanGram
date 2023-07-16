@@ -36,7 +36,7 @@ const CardFeed = ({ post }) => {
                 <ul className='flex flex-col gap-5 mx-auto w-fit'>
                   <li className='flex items-center justify-between gap-7'>
                     <BsHeartFill size={50} />
-                    <span className='text-xl font-black'>10</span>
+                    <span className='text-xl font-black'>{post.likesCount}</span>
                   </li>
                   <li className='flex items-center justify-between gap-7'>
                     <BsChatDotsFill size={50} />

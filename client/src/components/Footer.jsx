@@ -9,13 +9,13 @@ const Footer = () => {
         <p>Copyright © 2023 - All right reserved</p>
       </div> 
       <div className="grid-flow-col gap-4 md:place-self-center md:justify-self-end">
-        <a href="">
+        <a href="https://github.com/PhantamsCWK/ChanGram" target='_blank'>
             <BsGithub size={25} />
         </a>
-        <a href="">
+        <a href="https://www.linkedin.com/in/chandra-wijaya-kusuma-a4564122a/" target='_blank'>
             <BsLinkedin size={25} />
         </a>
-        <a href="">
+        <a href="https://www.instagram.com/chanwisuma/?hl=id" target='_blank'>
             <BsInstagram size={25} />
         </a>
       </div>

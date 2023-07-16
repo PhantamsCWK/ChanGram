@@ -1,12 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { BiBookmark, BiDotsHorizontalRounded, BiPaperPlane } from "react-icons/bi";
 import { AiFillHeart, AiOutlineHeart, AiOutlineMessage } from "react-icons/ai"
-import { BsDot } from "react-icons/bs"
+import { BsDot, BsEmojiSmile, BsSend } from "react-icons/bs"
 
 import People from "../app/assets/giovanni-ilardi-p4CmBgJ7QcA-unsplash.jpg";
 import { Link } from 'react-router-dom';
 
 const PostVerticalCard = ({ post, authUserId, handleLikeAndDislike, setSettingId }) => {
+    const [expandDescription, setExpand] = useState(false)
+    const [comment, setComment] = useState("");
+
     const handlePostSetting = (postId, authorId) => {
         setSettingId(() => ({postId, authorId}))
         window.post_setting_modal.showModal();
@@ -59,12 +62,31 @@ const PostVerticalCard = ({ post, authUserId, handleLikeAndDislike, setSettingId
             ? (<p> {post.description} </p>)
             : (
             <p>
-                {post.description.substring(0,125)}
-                ...
-                <button type='button' className='text-gray-400'>more</button>
+                {
+                    expandDescription ? post.description
+                    : (
+                        <>
+                            {post.description.substring(0,125)}
+                            ...
+                            <button type='button' className='text-gray-400' onClick={() => setExpand(true)}>more</button>
+                        </>
+                    )
+                }
             </p> 
             )
             }
+        </div>
+
+        <div className='flex flex-row justify-start items-center w-full h-full text-sm'>
+            <input type="text" placeholder='Comment' className=' w-10/12 focus:outline-none' value={comment} onChange={(e) => setComment(e.target.value) } />
+            <span className=' w-1/12 text-blue-700'>
+            {
+                comment && <BsSend size="20px"/>
+            }
+            </span>
+            <span className='w-1/12'>
+                <BsEmojiSmile size="20px" />
+            </span>
         </div>
 
         <span className=' bg-gray-300 w-full h-[1px]'></span>

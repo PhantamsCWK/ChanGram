@@ -70,7 +70,11 @@ export const createPost = async (req, res, next) => {
     try {
         const { description } = req.body;
 
-        if (!req.file) return res.status(400).json({ message: "response need file" });
+        if (!req.file) {
+            res.status(400);
+            next({ message: "response need file" });
+            return
+        }
 
         const picture = req.file;
 

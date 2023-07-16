@@ -57,11 +57,15 @@ const UsernameModal = ({ user }) => {
                     </div>
                 </div>
             </form>
+            <div className='float-right'>
+                <button className='btn btn-primary-light btn-sm'>Save</button>
+            </div>
           </div>
           </div>
       </Modal>
     )
 }
+
 const EmailModal = ({ user }) => {
     return (
       <Modal idModal="email_change_modal">
@@ -75,6 +79,7 @@ const EmailModal = ({ user }) => {
       </Modal>
     )
 }
+
 const PhoneModal = ({ user }) => {
     return (
       <Modal idModal="phone_change_modal">
