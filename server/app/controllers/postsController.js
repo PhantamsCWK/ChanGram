@@ -12,7 +12,7 @@ export const getAllPosts = async (req, res, next) => {
             firstName: 1, 
             lastName: 1, 
             picturePath: 1 
-        });
+        }).sort({ createdAt: -1 });
 
         res.status(200).json({ posts });
     } catch (error) {
@@ -69,17 +69,18 @@ export const getPostById = async (req, res, next) => {
 export const createPost = async (req, res, next) => {
     try {
         const { description } = req.body;
+        const picture = req.file;
+        const authId = req.user.id;
 
-        if (!req.file) {
+        if (!picture) {
             res.status(400);
-            next({ message: "response need file" });
+            next({ message: "request need file" });
             return
         }
 
-        const picture = req.file;
 
         const newPost = new Post({ 
-            author: req.user.id, 
+            author: authId, 
             description, 
             pictureUrl: picture.path, 
             pictureId: picture.filename,
@@ -89,7 +90,7 @@ export const createPost = async (req, res, next) => {
         const result = await newPost.save();
 
         await User.updateOne(
-            { _id: req.user.id , username: req.user.username },
+            { _id: req.user.id },
             { $inc: { postsCount: 1 } }
         );
 
@@ -99,8 +100,6 @@ export const createPost = async (req, res, next) => {
     } catch (error) {
         next(error)
     }
-
-
 };
 
 export const deletePost = async (req, res, next) => {
@@ -123,13 +122,13 @@ export const deletePost = async (req, res, next) => {
 export const likePost = async (req, res, next) => {
     try {
         const { id: postId } = req.params;
-        const userId = req.user.id;
+        const authId = req.user.id;
 
         const post =  await Post.findById(postId);
         
         if (!post) return res.status(400).json({ message: "post not found"});
 
-        const isLiked = post.likes?.has(userId);
+        const isLiked = post.likes?.has(authId);
 
         let updatedPost ;
 
@@ -137,7 +136,7 @@ export const likePost = async (req, res, next) => {
             updatedPost = await Post.findOneAndUpdate(
                 { _id: postId, updatedAt: post.updatedAt },
                 { 
-                    $unset: { [`likes.${userId}`]: null },
+                    $unset: { [`likes.${authId}`]: null },
                     $inc: { likesCount: -1 }
                 },
                 { new: true }
@@ -146,7 +145,7 @@ export const likePost = async (req, res, next) => {
             updatedPost = await Post.findOneAndUpdate(
                 { _id: postId, updatedAt: post.updatedAt },
                 { 
-                    $set: { [`likes.${userId}`]: true },
+                    $set: { [`likes.${authId}`]: true },
                     $inc: { likesCount: 1 }
                 },
                 { new: true }

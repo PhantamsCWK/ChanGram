@@ -24,6 +24,10 @@ const UserSchema = new mongoose.Schema({
         type: String,
         default: ""
     },
+    photoId: {
+        type: String,
+        default: ""
+    },
     phoneNumber: {
         type: String,
         default: ""

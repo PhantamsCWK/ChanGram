@@ -1,4 +1,6 @@
 import User from "../models/User.js";
+import bcrypt from "bcrypt";
+import cloudinary from "../config/cloudinary.js";
 
 export const getUser = async (req, res, next) => {
     try {
@@ -80,16 +82,16 @@ export const deleteUser = async (req, res, next) => {
 export const addRemoveFollow = async (req, res, next) => {
     try {
         const { unique } = req.params;
-        const username = req.user.username;
+        const authId = req.user.id;
 
-        if(unique === username) {
+        const followUser = await User.findOne({ username: unique });
+        const currentUser = await User.findById(authId);
+
+        if(unique === currentUser.username) {
             res.status(400)
             next({ name: "BadRequest", message: "can't follow own account" })
             return
         }
-
-        const followUser = await User.findOne({ username: unique });
-        const currentUser = await User.findOne({ username });
 
         let updatedFollowUser;
         let updatedCurrentUser;
@@ -97,7 +99,7 @@ export const addRemoveFollow = async (req, res, next) => {
         if (currentUser.following.includes(followUser._id)) {
             // Delete currentUser Id in Follower followUser
             updatedFollowUser = await User.findOneAndUpdate(
-                { username: unique, updatedAt: followUser.updatedAt }, 
+                { _id: followUser.id, updatedAt: followUser.updatedAt }, 
                 { 
                     $pull: { follower: currentUser._id },
                     $inc: { followerCount: -1 }
@@ -107,7 +109,7 @@ export const addRemoveFollow = async (req, res, next) => {
             
             // Delete followUser Id in Following currentUser
             updatedCurrentUser = await User.findOneAndUpdate(
-                { username: username, updatedAt: currentUser.updatedAt }, 
+                { _id: currentUser.id, updatedAt: currentUser.updatedAt }, 
                 {
                     $pull: { following: followUser._id },
                     $inc: { followingCount: -1 }
@@ -118,7 +120,7 @@ export const addRemoveFollow = async (req, res, next) => {
         } else {
             // Add currentUser Id in Follower followUser
             updatedFollowUser = await User.findOneAndUpdate(
-                { username: unique, updatedAt: followUser.updatedAt }, 
+                { _id: followUser.id, updatedAt: followUser.updatedAt }, 
                 { 
                     $addToSet: { follower: currentUser._id },
                     $inc: { followerCount: 1 }
@@ -128,7 +130,7 @@ export const addRemoveFollow = async (req, res, next) => {
             
             // Add followUser Id in Following currentUser
             updatedCurrentUser = await User.findOneAndUpdate(
-                { username: username, updatedAt: currentUser.updatedAt }, 
+                { _id: currentUser.id, updatedAt: currentUser.updatedAt }, 
                 { 
                     $addToSet: { following: followUser._id },
                     $inc: { followingCount: 1 }
@@ -153,11 +155,11 @@ export const addRemoveFollow = async (req, res, next) => {
 export const editUser = async (req, res, next) => {
     const { name, bio, gender } = req.body;
 
-    const usernameAuth = req.user.username;
+    const authId = req.user.id;
 
     try {
         const updatedUser = await User.updateOne(
-            { username: usernameAuth }, 
+            { _id: authId }, 
             { $set: { name, bio, gender }} , 
             { new: true }
             );
@@ -166,6 +168,155 @@ export const editUser = async (req, res, next) => {
         res.status(400);
         next(error);
     }
+}
+
+export const editPhotoUser = async (req, res, next) => {
+    const authId = req.user.id;
+    const photo = req.file
+
+    if(!photo){
+        res.status(400);
+        next({ message: "request need file" });
+        return
+    }
+
+    const user = User.findById(authId);
+
+    if(user.photoPath && user.photoId){
+        await cloudinary.uploader.destroy(user.photoId);
+    }
+
+    const newUser = await User.updateOne(
+        { _id: authId },
+        { $set: { 
+            photoPath: photo.path,
+            photoId: photo.filename
+        } },
+        { new: true }
+    )
+
+    res.status(202).json({ user: newUser });
+}
+
+export const editUsername = async (req, res, next) => {
+    const { password, username: newUsername } = req.body
+    const authId = req.user.id;
+
+    if (!password || !newUsername) {
+        res.status(400);
+        next({ message: "password and new username require" })
+        return;
+    }
+
+    const user = await User.findById(authId);
+
+    if (newUsername === user.username){
+        res.status(400);
+        next({ message: "new username cannot same with old username" })
+        return;
+    }
 
 
+    const isDuplicated = await User.findOne({ username: newUsername })
+
+    const isMatch = bcrypt.compareSync(password, user.password);
+
+    if (!isMatch) {
+        res.status(400)
+        next({ message: "password wrong" })
+        return
+    }
+
+    if (isDuplicated) {
+        res.status(400)
+        next({ message: "username already pick" })
+        return
+    }
+
+    const newUser = await User.updateOne(
+        { _id: authId },
+        { $set: { username: newUsername } },
+        { new: true }
+    )
+
+    res.status(202).json({ user: newUser });
+}
+
+export const editEmail = async (req, res, next) => {
+    const { email: newEmail } = req.body
+    const authId = req.user.id;
+
+    if(!newEmail) {
+        res.status(400);
+        next({ message: "email require" });
+        return
+    } 
+
+    const emailValidation = (email) => {
+        const pattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/
+        const filter = email.match(pattern);
+        if (!filter) {
+            res.status(400).json({ message: "bad request" })
+            return
+        }
+
+        return filter[0];
+    }
+
+    const filteredEmail = emailValidation(newEmail);
+
+    const isDuplicated = await User.findOne({ email: filteredEmail });
+    
+    if (isDuplicated) {
+        res.status(400);
+        next({ message: "email already pick in another account" });
+        return;
+    }
+    const newUser = await User.updateOne(
+        { _id: authId },
+        { $set: { email: filteredEmail } },
+        { new: true }
+    )
+
+    res.status(202).json({ user: newUser });
+}
+
+export const editPhoneNumber = async (req, res, next) => {
+    const { phone: newPhone } = req.body
+    const authId = req.user.id;
+
+    if(!newPhone) {
+        res.status(400);
+        next({ message: "need phone number" });
+        return
+    }
+
+    const extractPhoneNumber = (phoneNumber) => {
+        const pattern = /\d/g;
+        const digits = phoneNumber.match(pattern);
+        if(!digits) {
+            res.status(400).json({ message: "bad request" })
+            return
+        }
+        const extractedNumber = digits.join("");
+        return extractedNumber;
+    }
+
+    const filteredNumber = extractPhoneNumber(newPhone)
+
+    const isDuplicated = await User.findOne({ phoneNumber: filteredNumber });
+
+    if (isDuplicated) {
+        res.status(400);
+        next({ message: "phone number already pick in another account" });
+        return;
+    }
+
+    const newUser = await User.updateOne(
+        { _id: authId },
+        { $set: { phoneNumber: filteredNumber } },
+        { new: true }
+    )
+
+    res.status(202).json({ user: newUser });
 }
